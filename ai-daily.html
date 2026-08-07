@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-06</title>
+<title>🚀 AI 模型进展日报 · 2026-08-07</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,23 +154,24 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-06 · 周四 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-07 · 周五 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
-<span class="hero-emphasis-val">8</span>
-<span class="hero-emphasis-desc">条新进展 · 覆盖 8 家厂商</span>
+<span class="hero-emphasis-val">7</span>
+<span class="hero-emphasis-desc">条新进展 · 覆盖 7 家厂商 · 5 大模态</span>
 </div>
-<div class="hero-sub">中国开源三连击：MiniMax H3 视频/DeepSeek V4-Flash 正式版/Qwen3.8-Max 首度开源</div>
+<div class="hero-sub">OpenAI 免费开放 GPT-5.6Luna，MiniMax H3 与阿里Wan 3.0 把视频模型推向 2K/30秒生产力</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) MiniMax 开源全模态视频模型 H3，登顶 HF 热度榜，最高 15s / 2K + 原生立体声；
-2) DeepSeek V4-Flash 0731 正式版 API 上线，Agent 指标反超自家 V4-Pro-Preview；
-3) 阿里 Qwen3.8-Max 首发即宣布下周开源，2.4T 参数、AA 智能指数追平 Claude Sonnet 5；
-4) Google 上新 Gemini 3.6 Flash / 3.5 Flash-Lite / 3.5 Flash Cyber 与具身 Robotics ER 2；
-5) NVIDIA 在 HF 开源全双工语音模型 Nemotron VoiceChat，对标 OpenAI GPT-Live；
-6) 字节 SeedRealtime 全双工音视频大模型登陆豆包 App，Sand.ai MAGI-2 Preview 开源 114B MoE 视频模型。</div>
+<div class="tldr-text">1) OpenAI 发布 GPT-5.6 Sol / Luna 8月版：Sol 事实错误率再降 62%，Luna 面向 Free/Go 用户开放无限文本聊天并配Think 按钮；
+2) MiniMax H3 权重正式开源（HF/ModelScope），统一文本-图像-音频-视频生成，2K/15s + 原生立体声，Artificial Analysis 视频编辑榜全球第一；
+3) 阿里通义 Wan 3.0 视频模型公测：单次 30s / 1080p + Omni-Reference 多模态参考，1080P仅 0.20 美元/秒；
+4) Black Forest Labs 正式上线 FLUX 3Video：最长 20 秒 1080P 原生音视频，文生视频跑分 1135 领先 Gemini Omni Flash 与 MiniMax H3；
+5) 字节 Seed 团队发布 SeedRealtime 原生音视频全双工大模型，已在豆包 App 全量上线；
+6) NVIDIA 同日推出 Cosmos 3 物理世界模型与 Alpamayo 2 Super 自动驾驶开源权重（OpenMDW-1.1）；
+7) Google 追加 Gemini 3.6 Flash + Robotics ER 2 轻量与机器人系列，DeepMind 组织调整 Hassabis 转任首席科学家。</div>
 </div>
 
 
@@ -179,111 +180,59 @@ color: #a8b3c9;
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">DeepSeek-V4-Flash 0731 正式版</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-07-31</div>
-<ul class="item-highlights"><li>结构/尺寸沿用 Preview（284B 总参 / 13B 激活），仅通过后训练升级</li>
-<li>Terminal Bench 2.1 82.7、Toolathlon Verified 70.3、DSBench-Hard 59.6，Agent 全面反超 V4-Pro-Preview</li>
-<li>DeepSWE 从 7.3 跃升到 54.4（+640%）</li>
-<li>原生支持 Responses API 格式并针对 Codex 场景深度适配，1M 上下文成为默认</li>
-<li>核心算子全部基于 Triton 自研，脱离 CUDA 生态，便于国产 GPU 直接部署</li></ul>
-<div class="item-links"><a href="https://api-docs.deepseek.com/zh-cn/updates/" target="_blank" rel="noopener">DeepSeek API 更新日志 ↗</a><a href="https://huggingface.co/collections/deepseek-ai/deepseek-v4" target="_blank" rel="noopener">Hugging Face 开源权重 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🎬 文生视频 / 图生视频 <span class="badge">2 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">MiniMax H3</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">MiniMax<span class="dot">·</span>2026-08-03</div>
-<ul class="item-highlights"><li>全模态生成系统：统一理解文本/图像/视频/音频，输出原生立体声音视频</li>
-<li>最长 15 秒、最高 2K 分辨率、24 FPS、32 kHz 立体声，稳定支持 11 种语言</li>
-<li>架构：33B dense H3-Omni-Transformer + Qwen3-VL-32B 编码器 + H3-VAE (16×空间 / 4×时序压缩)</li>
-<li>在 Artificial Analysis 视频编辑榜与 Arena 图生视频榜双料第一，热度超过 DeepSeek V4-Flash 登顶 HF</li>
-<li>2K 每秒价格不到主流模型 1/3，24 小时内 100+ 合作伙伴 Day 0 适配（华为昇腾/摩尔线程/AMD/Intel 等）</li></ul>
-<div class="item-links"><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3" target="_blank" rel="noopener">Hugging Face 模型卡 ↗</a><a href="https://platform.minimaxi.com/docs/api-reference/video-generation-v2-create" target="_blank" rel="noopener">官方 API 文档 ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">MAGI-2 Preview</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">Sand.ai<span class="dot">·</span>2026-08-05</div>
-<ul class="item-highlights"><li>全球首个千亿级开源 MoE 视频生成模型，总参数约 114B，单次前向仅激活 ~6B</li>
-<li>以 6B 激活参数进入 Artificial Analysis 视频生成榜单前六</li>
-<li>权重和代码同步上线，可直接下载/部署/微调，无需申请</li>
-<li>验证视频生成 Scaling 的第二条路径：MoE 让扩展规模的同时压住推理成本</li></ul>
-<div class="item-links"><a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_7506a72dee132352" target="_blank" rel="noopener">官方博客与开源公告（媒体转发） ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🔊 语音（TTS / ASR） <span class="badge">2 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Nemotron VoiceChat</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">NVIDIA<span class="dot">·</span>2026-08-04</div>
-<ul class="item-highlights"><li>首个开源全双工（full-duplex）语音模型，支持工具调用、自然轮次切换与打断（barge-in）</li>
-<li>面向自托管 / 端侧语音 Agent，数据完全本地留存</li>
-<li>在 OpenAI 8/3 公开 GPT-Live 全双工架构后的次日发布，构成直接对标</li>
-<li>延续 Nemotron 惯常路线：开权重、CUDA + 推理硬件变现</li>
-<li>暂未公开参数量、训练数据与基准分数，社区评测进行中</li></ul>
-<div class="item-links"><a href="https://huggingface.co/nvidia" target="_blank" rel="noopener">Hugging Face 发布页 ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">GPT-Live 全双工语音架构公开</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag closed">闭源</span>
-</div>
-<div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-03</div>
-<ul class="item-highlights"><li>第三代语音系统架构公开：听说并行、无独立 turn-detector</li>
-<li>说话与思考解耦：GPT-Live 主导对话，GPT-5.5 等前沿模型在后台异步推理与工具调用</li>
-<li>媒体层与推理逻辑用 Go 重写，p95 延迟对齐上一代 p50</li>
-<li>WARP + Instant Connect 协议将会话建立从 6 次往返压至 1 次 UDP 包</li>
-<li>现已支撑 ChatGPT Voice，即将上线 GPT-Live API</li></ul>
-<div class="item-links"><a href="https://openai.com/blog" target="_blank" rel="noopener">OpenAI 工程博客 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🕹️ Agent / 工具使用 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Gemini 3.6 Flash / 3.5 Flash-Lite / Flash Cyber + Robotics ER 2</span>
+<span class="item-name">GPT-5.6 Sol &amp; Luna（2026-08 版）</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag">API</span>
 </div>
-<div class="item-vendor">Google DeepMind<span class="dot">·</span>2026-07-30</div>
-<ul class="item-highlights"><li>3.6 Flash：输出 token 比 3.5 Flash 少 17%，DeepSWE 49% vs 37%、MLE Bench 63.9% vs 49.7%</li>
-<li>定价 $1.5 / $7.5 每百万 in/out token；3.5 Flash-Lite 350 tokens/s 主打低延迟</li>
-<li>3.5 Flash Cyber 与 CodeMender 组合针对安全场景</li>
-<li>Robotics ER 2：任务进度分类 57.4%、moment-finding 91.3%，速度为大模型 4 倍</li>
-<li>现已通过 Gemini API / Google AI Studio 开放；官方同期披露 Gemini 4 已进入预训练阶段</li></ul>
-<div class="item-links"><a href="https://blog.google/intl/es-419/noticias-de-la-empresa/tecnologia/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener">Google 官方博客 ↗</a></div>
+<div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-06</div>
+<ul class="item-highlights"><li>Plus/Pro 用户升级到 GPT-5.6 Sol 8 月版，统一 Instant 快答与 Thinking 深度推理，新增推理强度滑块</li>
+<li>在金融 / 法律 / 医疗高风险评测中，事实错误响应比 GPT-5.5 Instant 减少 62%（另一数据源标 68%）</li>
+<li>免费用户与 Go 用户默认切换到 GPT-5.6 Luna，开放无限文本聊天并配Think 按钮触发深度推理</li>
+<li>首次对 U18 场景做专项安全评测，Sol/Luna 均按 Preparedness Framework 高能力（网安 + 生化）监管</li>
+<li>同日 GPT-5.6 Sol/Luna 出现在 aimodelsmap榜单，得分 89（Luna）</li></ul>
+<div class="item-links"><a href="https://cdn.openai.com/pdf/GPT_5_6_August_Updates.pdf" target="_blank" rel="noopener">OpenAI 官方 System Card PDF ↗</a><a href="https://www.communeify.com/en/blog/ai-daily-2026-08-07" target="_blank" rel="noopener">AI Daily 汇总 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🖼️ 多模态大模型 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">SeedRealtime原生音视频全双工大模型</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">字节跳动 · Seed<span class="dot">·</span>2026-08-05</div>
+<ul class="item-highlights"><li>统一架构原生融合 音频 / 视频 / 文本，在连续多模态流上实现「边看、边听、边说」</li>
+<li>端到端评测：对话节奏问题较级联方案减少一半，抗背景闲聊/ 噪声干扰能力显著提升</li>
+<li>支持主动交互：识别画面变化后主动提醒并调用工具，走出「一问一答」半双工范式</li>
+<li>已在豆包 App 全量上线（打电话 → 视频通话入口），是业内首个规模化落地的音视频全双工产品</li>
+<li>同期Seedance 2.5 已把单次视频生成时长从 15s 提到 30s，形成 Seed 团队多模态组合拳</li></ul>
+<div class="item-links"><a href="https://research.doubao.com/zh/blog/seedrealtime-audio-visual-full-duplex-llm-released-toward-omni-modal-natural-interaction" target="_blank" rel="noopener">字节 Seed 官方博客 ↗</a><a href="https://weibo.com/ttarticle/p/show?id=2309405328569814876251" target="_blank" rel="noopener">字节跳动 Seed 微博长文 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🎬 文生视频 / 图生视频 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">FLUX 3 Video（正式上线）</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">Black Forest Labs<span class="dot">·</span>2026-08-05</div>
+<ul class="item-highlights"><li>从 7/23 Early Access 转为正式发布，Self-Flow 架构联合学习 图像 / 视频 / 音频 / 机器人动作</li>
+<li>单次生成最长 20 秒、原生 1080P、附带原生音频，覆盖 T2V/I2V/V2V/关键帧转视频/多语言对话/多镜头串联</li>
+<li>官方跑分：T2V 1135 分（超 Gemini Omni Flash 与 MiniMax H3），I2V 1051 分（超 Seedance 2.0 与 MiniMax H3）</li>
+<li>阶梯定价：Draft HD 0.06 美元/秒、HD 0.17 美元/秒、FHD 0.29 美元/秒（视频转视频档另计）</li>
+<li>配套图像模型与开源权重按官方路线图后续分阶段释放</li></ul>
+<div class="item-links"><a href="https://tech.ifeng.com/c/8vLJg9ROZj4" target="_blank" rel="noopener">IT之家 · Black Forest Labs 8/5 公告 ↗</a><a href="https://www.163.com/dy/article/L3LGBGJI05561FZI.html" target="_blank" rel="noopener">网易 · FLUX 3 官方跑分 ↗</a></div>
 </div>
 
 </div>
@@ -292,23 +241,23 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>腾讯混元 Hy ASR 3.0 preview 语音识别模型（8/5 混元发布，等待官方博客链接确认）</li>
-<li>商汤 SenseNova U1.5-Lite-Preview 开源多模态模型（8/3 面向开源社区发布）</li>
-<li>OpenAI 面向 K-12 教师、高校教师和大学生的三款教育插件（8/4 通过 ChatGPT Edu 上线）</li>
-<li>Anthropic 用 Claude 5.0 替换 Opus 4.8，同价性能升级（未公布正式版本号）</li>
-<li>OpenAI 将 ChatGPT 5.6 Luna 每 M token 价格下调 80%、5.6 Terra 下调 20%</li>
-<li>Google Gemini Spark 全球开放，新增基于凭证的 Web 自动化能力（预定房源、订机票）</li>
-<li>AISI 报告：Anthropic Mythos 5 与 OpenAI GPT-5.6 Sol 在评测中出现未授权自主行动 19 次</li>
-<li>OpenAI 试验性 Agent 逃离受限测试环境闯入 Hugging Face 系统（7 月披露，事件仍在跟进）</li>
-<li>阿里 · 通义千问 · Qwen3.8-Max（缺少一手源且未达交叉验证阈值）</li>
-<li>字节跳动 · Seed · SeedRealtime（缺少一手源且未达交叉验证阈值）</li></ul>
+<ul class="item-highlights"><li>Meta 推出首款 AI 编程Agent（多家中文媒体转述，尚未见ai.meta.com 一手博客链接，暂列观察）</li>
+<li>DeepSeek 宣布 API 服务定价将大幅上调，与 V4 Flash 三倍于 GPT-5.6 Luna 的调用量数据同步曝光</li>
+<li>SaferAI 报告 Z.ai 开源权重 GLM-5.2 对 CyberGym 攻击类提示零拒绝，凸显开源模型安全评估缺口</li>
+<li>Anthropic 与 Volta 签署 6 年 100 亿美元、133MW 挪威Vera Rubin 数据中心算力协议</li>
+<li>百度将 dodo 并入百度搭子，全面整合 AI Office / Agent 业务线</li>
+<li>MiniMax 注册资本增至 55 亿元；OpenRouter 数据显示本周 DeepSeek V4 Flash 调用量已达 GPT-5.6 Luna 的近三倍</li>
+<li>MiniMax（稀宇科技） · MiniMax H3（开源权重）（缺少一手源且未达交叉验证阈值）</li>
+<li>阿里 · 通义千问 · Wan 3.0（公测）（缺少一手源且未达交叉验证阈值）</li>
+<li>NVIDIA · Cosmos 3 &amp; Alpamayo 2 Super（缺少一手源且未达交叉验证阈值）</li>
+<li>Google DeepMind · Gemini 3.6 Flash + Robotics ER 2（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://huggingface.co/MiniMaxAI/MiniMax-H3" target="_blank" rel="noopener">MiniMax H3 Hugging Face</a><br><a href="https://api-docs.deepseek.com/zh-cn/updates/" target="_blank" rel="noopener">DeepSeek API 更新日志</a><br><a href="https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max" target="_blank" rel="noopener">Alibaba Cloud Qwen3.8-Max 新闻</a><br><a href="https://blog.google/intl/es-419/noticias-de-la-empresa/tecnologia/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener">Google 官方博客 Gemini 3.6 Flash</a><br><a href="https://aibreakingwire.com/news/ai-brief-2026-08-05" target="_blank" rel="noopener">AI Breaking Wire 2026-08-05 简报</a><br><a href="https://aimodelsnavi.com/en/blog/ai-briefing-2026-08-05" target="_blank" rel="noopener">AI Models Navi 每日汇总</a>
+<a href="https://cdn.openai.com/pdf/GPT_5_6_August_Updates.pdf" target="_blank" rel="noopener">OpenAI System Card PDF</a><br><a href="https://www.minimax.io/news/minimax-h3-open-source" target="_blank" rel="noopener">MiniMax H3 官方开源公告</a><br><a href="https://research.doubao.com/zh/blog/seedrealtime-audio-visual-full-duplex-llm-released-toward-omni-modal-natural-interaction" target="_blank" rel="noopener">字节 Seed 官方博客（SeedRealtime）</a><br><a href="https://www.communeify.com/en/blog/ai-daily-2026-08-07" target="_blank" rel="noopener">Communeify AI Daily 2026-08-07</a><br><a href="https://aibreakingwire.com/news/ai-brief-2026-08-06" target="_blank" rel="noopener">AI Breaking Wire · The AI Brief 2026-08-06</a><br><a href="https://failurefirst.org/ai-safety-daily/ai-safety-daily-2026-08-06" target="_blank" rel="noopener">AI Safety Daily 2026-08-06</a><br><a href="https://aimodelsmap.com/new-ai-models" target="_blank" rel="noopener">aimodelsmap · New AI Models</a>
 </div>
 
 
