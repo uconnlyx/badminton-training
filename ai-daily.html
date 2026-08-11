@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-10</title>
+<title>🚀 AI 模型进展日报 · 2026-08-11</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,75 +154,115 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-10 · 周一 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-11 · 周二 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
-<span class="hero-emphasis-val">8</span>
-<span class="hero-emphasis-desc">条新进展 · 覆盖 8 家厂商</span>
+<span class="hero-emphasis-val">7</span>
+<span class="hero-emphasis-desc">条新进展 · 覆盖 7 家厂商</span>
 </div>
-<div class="hero-sub">OpenAI 免费无限对话正式生效，中国厂商 8周 5 模型仍在延烧</div>
+<div class="hero-sub">OpenAI 放出 GPT-5.6-Cyber，Google DeepMind 开源 WeatherNext 气旋模型，中国大模型包揽 OpenRouter 全球调用前四</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) OpenAI 今日（8/10 当周）正式开放 GPT-5.6 Luna 免费用户无限文本对话+Think 按钮；
-2) xAI 发布 Grok Imagine 2.0，登顶 Arena 图像榜 #2，仅次于 GPT-Image-2；
-3) 阿里 Qwen-Image-3.0 Pro/Standard 全面上线 Qwen Cloud，文生图 0.18元/张起；
-4) OpenRouter 上周数据：DeepSeek-V4-Flash 正式版单周 8.83 万亿 Token 登顶全球调用量，环比+570%；
-5) Om AI 发布端侧原生 VLX 多模态模型 + 阿里 CosyVoice Studio 语义化语音平台 + openJiuwen 企业级Agent 蜂群架构（今日集中亮相）</div>
+<div class="tldr-text">1) OpenAI 发布 GPT-5.6-Cyber，专供审核过的网络安全防御人员，敏感网安任务响应率 95%；
+2) Meta 开源 30B 端侧 Agent 模型 Muse Glimmer，单卡可跑；
+3) Google DeepMind 开源 WeatherNext 2 + WeatherNext Cyclones 气旋预报模型（Apache 2.0），三日预报≈过去两日精度；
+4) 阿里千问开放平台正式上线，手机/PC/AI 眼镜三端接入 Agent；
+5) DeepSeek V4-Flash 登顶 OpenRouter，中国模型连续 15 周包揽调用量前四；
+6) NVIDIA NemotronLabs VoiceChat 11B 开放全双工语音 + 实时工具调用（HF 权重）；
+7) Anthropic 永久锁定 Sonnet 5 优惠价，Claude Code 5 天后默认开启自动模式。</div>
 </div>
 
 
 <div class="section">
-<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">2 条</span></div>
+<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">3 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">GPT-5.6 Luna 免费无限对话 + Sol 更新</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
-</div>
-<div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-10</div>
-<ul class="item-highlights"><li>本周（8/10 起）Free / Go 用户免费无限文本对话正式生效，Luna 替代 5.5 Instant 成为默认模型</li>
-<li>新增Think 按钮：Luna 可自行分配更长推理时间，文本场景无次数限制</li>
-<li>Plus/Pro 更新 GPT-5.6 Sol：新增思考强度 slider，事实错误较5.5 Instant 降 68%（Luna 降 62%）</li>
-<li>覆盖 ChatGPT 10亿周活用户；文件/图像/语音仍有独立配额</li></ul>
-<div class="item-links"><a href="https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt" target="_blank" rel="noopener">OpenAI 官方博客 ↗</a><a href="https://www.aiexpert.news/en/ticker/openai-moves-gpt-56-luna-to-free-tier-removes-text-chat-limits-for-1b-users" target="_blank" rel="noopener">AIExpert 报道 ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">V4-Flash 0731 登顶全球调用量</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-09</div>
-<ul class="item-highlights"><li>OpenRouter 数据：上周（8/3-8/9）单周调用 8.83 万亿 Token，环比 +570%，全球第一</li>
-<li>Artificial Analysis 测算：单任务平均成本 0.03 美元，仅为 Claude Fable 5 的 1/100，全球最低</li>
-<li>284B MoE 架构、1M 上下文、MIT 开源；Agent 能力较预览版大幅增强</li>
-<li>全球调用量前四均为中国大模型（腾讯 Hy3、DeepSeek V4-Flash 预览版、小米 MiMo-V2.5 分列 2-4）</li></ul>
-<div class="item-links"><a href="https://www.163.com/dy/article/L3VD22070512B07B.html" target="_blank" rel="noopener">每日经济新闻 · OpenRouter 数据 ↗</a><a href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">DeepSeek 官方 API 文档 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🎨 文生图 / 图生图 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Qwen-Image-3.0 Pro / Standard</span>
+<span class="item-name">GPT-5.6-Cyber</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
 <span class="item-tag">API</span>
 </div>
-<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-05</div>
-<ul class="item-highlights"><li>旗舰 Pro 与标准 Standard 同时开放 API，文生图 0.18 元/张起</li>
-<li>在 Arena.ai 文生图榜单中位列国内第一</li>
-<li>面向所有用户全部开放，海外用户可通过 Qwen Cloud 接入</li>
-<li>同步接入'千问办公'Agent 产品，与 Qwen3.8-Max 形成多模态矩阵</li></ul>
-<div class="item-links"><a href="https://www.163.com/dy/article/L3IGAABB0512B07B.html" target="_blank" rel="noopener">阿里云官方（每经转载） ↗</a><a href="https://www.toutiao.com/w/1872647800560906/" target="_blank" rel="noopener">界面新闻 ↗</a></div>
+<div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-11</div>
+<ul class="item-highlights"><li>GPT-5.6 Sol 的网络安全定制版，向审核过的防御人员开放</li>
+<li>对高级网安任务响应率高达 95%（含漏洞利用链开发等敏感场景）</li>
+<li>面向企业自主网络攻击防御应用，附带滥用监控与审计</li>
+<li>同期 Sam Altman 团队仍在推进代号 Astra / Doug 的下一代预训练</li></ul>
+<div class="item-links"><a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻早餐 · 8月11日 ↗</a><a href="https://new.qq.com/rain/a/20260811A0262O00" target="_blank" rel="noopener">腾讯网转载 ↗</a></div>
+</div>
+
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">DeepSeek V4-Flash 登顶 OpenRouter</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-10</div>
+<ul class="item-highlights"><li>V4-Flash 正式版 8 月 3-9 日周调用量 8.83 万亿 Token，环比 +570%，全球第一</li>
+<li>全球周 Token 总量 69 万亿，中国模型包揽前四（腾讯 Hy3、V4-Preview、小米 MiMo-V2.5）</li>
+<li>中国模型连续 15 周调用量领先美国</li>
+<li>V4-Flash 采用 rolling 'latest' alias，1049K token 上下文，$0.09/M in、$0.18/M out</li>
+<li>母公司深度求索完成二轮融资首批签约，规模 500 亿元、投前 5000 亿元</li></ul>
+<div class="item-links"><a href="https://www.163.com/dy/article/L41QOJ6J051480KF.html" target="_blank" rel="noopener">网易财经 · 前瞻早报 ↗</a><a href="https://weibo.com/7905315703/5330641445980479" target="_blank" rel="noopener">AIGC 日报（微博） ↗</a><a href="http://tpsreport.news/changelog" target="_blank" rel="noopener">TPS Model Changelog ↗</a></div>
+</div>
+
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Sonnet 5 永久锁价 + Claude Code 默认自动模式</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-11</div>
+<ul class="item-highlights"><li>取消 8 月底 Sonnet 5 涨价 50% 计划，发布价永久保留</li>
+<li>Claude Code 5 天后默认开启自动模式，额外 token 由 Anthropic 承担</li>
+<li>实验数据：自动模式拦截危险命令成功率 89% vs 人工审批 13.6%（人工同意率 97% 已流于形式）</li>
+<li>内部代号 Fennec 的 Sonnet 5.5 已进入最后阶段，传闻上下文 200 万 Token</li></ul>
+<div class="item-links"><a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻早餐 · 8月11日 ↗</a><a href="https://www.sohu.com/a/1061259860_130887" target="_blank" rel="noopener">搜狐同源转载 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🔊 语音（TTS / ASR） <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">NemotronLabs VoiceChat 11B</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag opensource">开源</span>
+</div>
+<div class="item-vendor">NVIDIA<span class="dot">·</span>2026-08-03</div>
+<ul class="item-highlights"><li>首个开放权重全双工端到端语音模型，边听边说，端到端延迟 ~450 ms</li>
+<li>Fast Conformer + Nemotron Nano V2 9B + TTS 解码器一体化，取代传统 ASR→LLM→TTS 流水线</li>
+<li>支持对话中实时工具调用与 on-hold filler speech，Artificial Analysis 评测语音推理与对话动态双榜 Top3</li>
+<li>权重上 Hugging Face，OpenMDW 1.1 研究许可 + 代码 Apache-2.0</li>
+<li>支持 A100/H100/H200/B100/B200/RTX-6000，vLLM 加速</li></ul>
+<div class="item-links"><a href="https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B" target="_blank" rel="noopener">Hugging Face 模型卡 ↗</a><a href="https://rits.shanghai.nyu.edu/ai/nvidia-releases-nemotronlabs-voicechat-an-open-full-duplex-voice-model" target="_blank" rel="noopener">NYU Shanghai RITS 深度解读 ↗</a><a href="https://www.huxiu.com/ainews/14512.html" target="_blank" rel="noopener">虎嗅 AI News ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🕹️ Agent / 工具使用 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Muse Glimmer（30B Agent）+ Muse Spark 1.2</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-tag opensource">开源</span>
+</div>
+<div class="item-vendor">Meta AI<span class="dot">·</span>2026-08-11</div>
+<ul class="item-highlights"><li>Muse Glimmer 30B 参数、Apache 2.0、权重上 Hugging Face</li>
+<li>4-bit 量化后仅 24GB 显存即可跑，单卡本地部署</li>
+<li>专为 Agent 任务设计：多步推理、工具调用、失败恢复、100+ 语言</li>
+<li>扎克伯格同步发文《The Future is for Everyone》呼吁开源，10 亿美元基金应对数据中心社区影响</li>
+<li>Muse Spark 1.2 同期上线，配套编码 Agent Muse Code</li></ul>
+<div class="item-links"><a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻早餐 · 8月11日 ↗</a><a href="https://www.sohu.com/a/1061193334_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 ↗</a><a href="http://tpsreport.news/changelog" target="_blank" rel="noopener">TPS AI Model Changelog ↗</a></div>
 </div>
 
 </div>
@@ -231,23 +271,23 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>GPT-6 (Astra) 传闻 10 万亿参数将于 8 月发布，此前因网络安全审查暂停（ChrisGPT 爆料，未官方证实）</li>
-<li>OpenAI 年底'Doug'预训练巨兽传闻，据称使用 NVIDIA 下一代 Vera Rubin 芯片（SemiAnalysis / Pankaj Kumar 曝料）</li>
-<li>Anthropic 与 Volta 达成 6 年 100 亿美元云计算协议，133MW 挪威数据中心 + Nvidia Vera Rubin 系统</li>
-<li>Google DeepMind +多机构 WeatherNext Cyclones 气旋预测模型 (IT之家转报，需官方博客核验)</li>
-<li>字节 SeedRealtime 音视频全双工大模型（字节 Seed Research Feed 待补一手链接）</li>
-<li>xAI · Grok Imagine 2.0（缺少一手源且未达交叉验证阈值）</li>
-<li>Om AI · 端侧原生 VLX 多模态模型（缺少一手源且未达交叉验证阈值）</li>
-<li>阿里 · 通义语音 · CosyVoice Studio（缺少一手源且未达交叉验证阈值）</li>
-<li>openJiuwen · 企业级智能体分布式蜂群架构（缺少一手源且未达交叉验证阈值）</li>
-<li>Meta AI · Muse Spark 1.2（缺少一手源且未达交叉验证阈值）</li></ul>
+<ul class="item-highlights"><li>OpenAI 代号 Astra 的 GPT-6 传闻 8 月内发布，参数或达 10 万亿（未证实）</li>
+<li>Anthropic Sonnet 5.5（Fennec）传闻上下文 200 万 Token、性能逼近 Fable 5</li>
+<li>Anthropic Composer 3 编码模型被 SpaceX 拟以 600 亿美元收购 Cursor 消息带出</li>
+<li>字节 SeedRealtime 全双工音视频模型持续更新，官方源仍缺失</li>
+<li>字节推进最高 10 万亿参数超大模型预训练（金融时报援引知情人）</li>
+<li>Arena 平台出现代号 mona-lisa-1 的疑似 OpenAI 新图像模型</li>
+<li>xAI Grok Imagine Image 2.0 上线（缺 x.ai 一手页面）</li>
+<li>微软自研 AI 芯片 Maia 300 或秋季发布，与台积电洽谈 2027 年 30 万枚交付</li>
+<li>Google DeepMind · WeatherNext 2 + WeatherNext Cyclones（缺少一手源且未达交叉验证阈值）</li>
+<li>阿里 · 通义千问 · 千问开放平台上线（Qwen 三端接入）（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt" target="_blank" rel="noopener">OpenAI 官方博客- GPT-5.6 Sol/Luna</a><br><a href="https://aibreakingwire.com/news/this-week-in-ai-2026-08-09" target="_blank" rel="noopener">aibreakingwire · This Week in AI 8/9</a><br><a href="https://aimodelsmap.com/new-ai-models" target="_blank" rel="noopener">aimodelsmap · New AI Models</a><br><a href="https://www.shopex.cn/news/34901" target="_blank" rel="noopener">商派 AI 日报 8/10</a><br><a href="https://www.163.com/dy/article/L3VD22070512B07B.html" target="_blank" rel="noopener">每日经济新闻 · OpenRouter 调用量周报</a><br><a href="https://www.aiexpert.news/en/ticker/openai-moves-gpt-56-luna-to-free-tier-removes-text-chat-limits-for-1b-users" target="_blank" rel="noopener">AIExpert · OpenAI GPT-5.6 Luna</a>
+<a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻 · 8月11日早餐 FM</a><br><a href="https://www.sohu.com/a/1061193334_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 20260811</a><br><a href="https://new.qq.com/rain/a/20260810A08XPB00" target="_blank" rel="noopener">AI 行业日报 · 8月10日</a><br><a href="http://tpsreport.news/changelog" target="_blank" rel="noopener">TPS AI Model Changelog</a><br><a href="https://weibo.com/7905315703/5330641445980479" target="_blank" rel="noopener">AIGC 日报 · 8月11日（微博）</a><br><a href="https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B" target="_blank" rel="noopener">Hugging Face · NVIDIA VoiceChat 11B</a><br><a href="https://www.unite.ai/googles-weathernext-2-gains-a-full-day-of-cyclone-warning-goes-open-source" target="_blank" rel="noopener">Unite.ai · WeatherNext 深度解读</a>
 </div>
 
 
