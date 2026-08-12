@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-11</title>
+<title>🚀 AI 模型进展日报 · 2026-08-12</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,24 +154,24 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-11 · 周二 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-12 · 周三 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
 <span class="hero-emphasis-val">7</span>
 <span class="hero-emphasis-desc">条新进展 · 覆盖 7 家厂商</span>
 </div>
-<div class="hero-sub">OpenAI 放出 GPT-5.6-Cyber，Google DeepMind 开源 WeatherNext 气旋模型，中国大模型包揽 OpenRouter 全球调用前四</div>
+<div class="hero-sub">OpenAI 发 Cyber 安全专用模，Meta 30B Muse Glimmer 开源，Anthropic 文本水印+Sonnet 5.5 泄露</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) OpenAI 发布 GPT-5.6-Cyber，专供审核过的网络安全防御人员，敏感网安任务响应率 95%；
-2) Meta 开源 30B 端侧 Agent 模型 Muse Glimmer，单卡可跑；
-3) Google DeepMind 开源 WeatherNext 2 + WeatherNext Cyclones 气旋预报模型（Apache 2.0），三日预报≈过去两日精度；
-4) 阿里千问开放平台正式上线，手机/PC/AI 眼镜三端接入 Agent；
-5) DeepSeek V4-Flash 登顶 OpenRouter，中国模型连续 15 周包揽调用量前四；
-6) NVIDIA NemotronLabs VoiceChat 11B 开放全双工语音 + 实时工具调用（HF 权重）；
-7) Anthropic 永久锁定 Sonnet 5 优惠价，Claude Code 5 天后默认开启自动模式。</div>
+<div class="tldr-text">1) OpenAI 推 GPT-5.6-Cyber 并扩展 Daybreak 网络安全计划，红方级面向漏洞研究免费开放；
+2) Meta 开源 30B Apache-2.0 端侧 Agent 模型 Muse Glimmer，24GB 显存单卡可跑，Muse Spark 1.2 权重即将放出；
+3) Anthropic 官宣新版 Claude 生成文本内置不可见水印 + C2PA 溯源，落实欧盟 AI 法案第 50 条；
+4) Anthropic 泄露新一代 Sonnet 5.5（代号 Fennec）：200 万 token 上下文对标 DeepSeek V4-Flash，永久取消涨价；
+5) Google DeepMind 研究版 Claude 把 Riemann Zeta 零点下界从 41.6% 推进到 67.2%（Anthropic 发布），并发布 Gemini Omni Flash 视频生成模型；
+6) OpenRouter 上中国大模型周调用量连续 15 周居全球第一，前四位均为国产（DeepSeek V4-Flash-0731 居首，腾讯 Hy3 次之）；
+7) 阿里千问 3.8-Max 2.4 万亿参数、蚂蚁开源 Ling-3.0-flash 124B MoE（MIT）持续推动中国开源阵营。</div>
 </div>
 
 
@@ -180,89 +180,86 @@ color: #a8b3c9;
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">GPT-5.6-Cyber</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-name">GPT-5.6-Cyber + Daybreak 计划扩展</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag">API</span>
 </div>
 <div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-11</div>
-<ul class="item-highlights"><li>GPT-5.6 Sol 的网络安全定制版，向审核过的防御人员开放</li>
-<li>对高级网安任务响应率高达 95%（含漏洞利用链开发等敏感场景）</li>
-<li>面向企业自主网络攻击防御应用，附带滥用监控与审计</li>
-<li>同期 Sam Altman 团队仍在推进代号 Astra / Doug 的下一代预训练</li></ul>
-<div class="item-links"><a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻早餐 · 8月11日 ↗</a><a href="https://new.qq.com/rain/a/20260811A0262O00" target="_blank" rel="noopener">腾讯网转载 ↗</a></div>
+<ul class="item-highlights"><li>基于 GPT-5.6 Sol 训练的网络安全专用模型，面向已授权的攻防研究场景</li>
+<li>Daybreak 计划新增蓝色（模型特殊访问）与红色（专用安全模型）两级</li>
+<li>红色级别用户可免费使用，用于漏洞研究与攻击验证</li>
+<li>OpenAI 定位为在攻击者利用进攻性 AI 前先武装防御方</li></ul>
+<div class="item-links"><a href="https://openai.com/business/solutions/cybersecurity/" target="_blank" rel="noopener">OpenAI Cybersecurity 官方页 ↗</a><a href="https://ainativefoundation.org/global-ai-native-industry-insights-20260811-anthropic-openai-meta-more" target="_blank" rel="noopener">AI Native Foundation Insights ↗</a></div>
 </div>
 
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">DeepSeek V4-Flash 登顶 OpenRouter</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
-<span class="item-tag">API</span>
+<span class="item-name">Riemann Zeta 零点下界推进研究</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag closed">闭源</span>
 </div>
-<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-10</div>
-<ul class="item-highlights"><li>V4-Flash 正式版 8 月 3-9 日周调用量 8.83 万亿 Token，环比 +570%，全球第一</li>
-<li>全球周 Token 总量 69 万亿，中国模型包揽前四（腾讯 Hy3、V4-Preview、小米 MiMo-V2.5）</li>
-<li>中国模型连续 15 周调用量领先美国</li>
-<li>V4-Flash 采用 rolling 'latest' alias，1049K token 上下文，$0.09/M in、$0.18/M out</li>
-<li>母公司深度求索完成二轮融资首批签约，规模 500 亿元、投前 5000 亿元</li></ul>
-<div class="item-links"><a href="https://www.163.com/dy/article/L41QOJ6J051480KF.html" target="_blank" rel="noopener">网易财经 · 前瞻早报 ↗</a><a href="https://weibo.com/7905315703/5330641445980479" target="_blank" rel="noopener">AIGC 日报（微博） ↗</a><a href="http://tpsreport.news/changelog" target="_blank" rel="noopener">TPS Model Changelog ↗</a></div>
+<div class="item-vendor">Anthropic · Claude Research<span class="dot">·</span>2026-08-10</div>
+<ul class="item-highlights"><li>未公开发布的研究版 Claude 在黎曼假设相关问题上取得进展</li>
+<li>将满足假设的 zeta 函数零点下界由 41.6% 推进到 67.2%</li>
+<li>并未解决黎曼假设本身，但被认为是 AI 参与前沿数学研究的一次实质性推动</li>
+<li>Anthropic 于 2026-08-10 官方发布结果</li></ul>
+<div class="item-links"><a href="https://www.anthropic.com/research/riemann-zeta" target="_blank" rel="noopener">Anthropic Research 页面 ↗</a></div>
 </div>
 
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Sonnet 5 永久锁价 + Claude Code 默认自动模式</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
-<span class="item-tag">API</span>
-</div>
-<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-11</div>
-<ul class="item-highlights"><li>取消 8 月底 Sonnet 5 涨价 50% 计划，发布价永久保留</li>
-<li>Claude Code 5 天后默认开启自动模式，额外 token 由 Anthropic 承担</li>
-<li>实验数据：自动模式拦截危险命令成功率 89% vs 人工审批 13.6%（人工同意率 97% 已流于形式）</li>
-<li>内部代号 Fennec 的 Sonnet 5.5 已进入最后阶段，传闻上下文 200 万 Token</li></ul>
-<div class="item-links"><a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻早餐 · 8月11日 ↗</a><a href="https://www.sohu.com/a/1061259860_130887" target="_blank" rel="noopener">搜狐同源转载 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🔊 语音（TTS / ASR） <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">NemotronLabs VoiceChat 11B</span>
+<span class="item-name">DeepSeek V4-Flash-0731 &amp; V4-Pro 官宣近期发布</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag opensource">开源</span>
 </div>
-<div class="item-vendor">NVIDIA<span class="dot">·</span>2026-08-03</div>
-<ul class="item-highlights"><li>首个开放权重全双工端到端语音模型，边听边说，端到端延迟 ~450 ms</li>
-<li>Fast Conformer + Nemotron Nano V2 9B + TTS 解码器一体化，取代传统 ASR→LLM→TTS 流水线</li>
-<li>支持对话中实时工具调用与 on-hold filler speech，Artificial Analysis 评测语音推理与对话动态双榜 Top3</li>
-<li>权重上 Hugging Face，OpenMDW 1.1 研究许可 + 代码 Apache-2.0</li>
-<li>支持 A100/H100/H200/B100/B200/RTX-6000，vLLM 加速</li></ul>
-<div class="item-links"><a href="https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B" target="_blank" rel="noopener">Hugging Face 模型卡 ↗</a><a href="https://rits.shanghai.nyu.edu/ai/nvidia-releases-nemotronlabs-voicechat-an-open-full-duplex-voice-model" target="_blank" rel="noopener">NYU Shanghai RITS 深度解读 ↗</a><a href="https://www.huxiu.com/ainews/14512.html" target="_blank" rel="noopener">虎嗅 AI News ↗</a></div>
+<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-11</div>
+<ul class="item-highlights"><li>V4-Flash-0731 正式版在 OpenRouter 上连续多周稳居全球调用量第一</li>
+<li>Terminal Bench 2.1 82.7、NL2Repo 54.2、Cybergym 76.7、DSBench-Hard 59.6</li>
+<li>HF 官方仓下载量突破 61.8 万，环比 +42.6%</li>
+<li>官方确认 V4-Pro 正式版将 8 月内发布（GA 预计 8/10—8/20），旧模型名 deepseek-chat/reasoner 已于 7/24 停用</li></ul>
+<div class="item-links"><a href="https://deepseek.com/en/" target="_blank" rel="noopener">DeepSeek 官网 ↗</a><a href="https://blog.csdn.net/enheng1238/article/details/163632937" target="_blank" rel="noopener">AI 大模型日报 综述 ↗</a></div>
 </div>
 
 </div>
 
 
 <div class="section">
-<div class="section-title">🕹️ Agent / 工具使用 <span class="badge">1 条</span></div>
+<div class="section-title">🎬 文生视频 / 图生视频 <span class="badge">1 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Muse Glimmer（30B Agent）+ Muse Spark 1.2</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
-<span class="item-tag opensource">开源</span>
+<span class="item-name">Gemini Omni Flash（视频生成 Omni 家族首发）</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag">API</span>
 </div>
-<div class="item-vendor">Meta AI<span class="dot">·</span>2026-08-11</div>
-<ul class="item-highlights"><li>Muse Glimmer 30B 参数、Apache 2.0、权重上 Hugging Face</li>
-<li>4-bit 量化后仅 24GB 显存即可跑，单卡本地部署</li>
-<li>专为 Agent 任务设计：多步推理、工具调用、失败恢复、100+ 语言</li>
-<li>扎克伯格同步发文《The Future is for Everyone》呼吁开源，10 亿美元基金应对数据中心社区影响</li>
-<li>Muse Spark 1.2 同期上线，配套编码 Agent Muse Code</li></ul>
-<div class="item-links"><a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻早餐 · 8月11日 ↗</a><a href="https://www.sohu.com/a/1061193334_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 ↗</a><a href="http://tpsreport.news/changelog" target="_blank" rel="noopener">TPS AI Model Changelog ↗</a></div>
+<div class="item-vendor">Google DeepMind<span class="dot">·</span>2026-08-10</div>
+<ul class="item-highlights"><li>Omni 家族首发模型，支持从文本/图像/视频/音频参考生成与编辑高质量视频</li>
+<li>可切换机位、更换环境、施加电影级 zoom 而保持场景一致</li>
+<li>已面向开发者开放，早期案例包括从单一主体生成约 20 个不同视角的多视角视频</li>
+<li>谷歌定位为面向创作者与开发者的原生视频工作流基座</li></ul>
+<div class="item-links"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-builders/" target="_blank" rel="noopener">Google Blog 官方 ↗</a><a href="https://ainativefoundation.org/global-ai-native-industry-insights-20260811-anthropic-openai-meta-more" target="_blank" rel="noopener">AI Native Foundation Insights ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">✨ 其他 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Claude 文本隐形水印 + C2PA 溯源</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-11</div>
+<ul class="item-highlights"><li>新版 Claude 生成文本织入机器可读隐形水印，复制粘贴后仍可溯源</li>
+<li>生成文件附 C2PA 签名的溯源元数据</li>
+<li>落实欧盟 AI 法案第 50 条透明度义务，全球范围生效</li>
+<li>继 Google DeepMind SynthID 之后，Anthropic 成为第二家推出文本水印的头部实验室</li></ul>
+<div class="item-links"><a href="https://www.anthropic.com/research/riemann-zeta" target="_blank" rel="noopener">Anthropic Riemann 研究页 ↗</a><a href="https://wallstreetcn.com/livenews/3147736" target="_blank" rel="noopener">华尔街见闻早餐 ↗</a></div>
 </div>
 
 </div>
@@ -271,23 +268,23 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>OpenAI 代号 Astra 的 GPT-6 传闻 8 月内发布，参数或达 10 万亿（未证实）</li>
-<li>Anthropic Sonnet 5.5（Fennec）传闻上下文 200 万 Token、性能逼近 Fable 5</li>
-<li>Anthropic Composer 3 编码模型被 SpaceX 拟以 600 亿美元收购 Cursor 消息带出</li>
-<li>字节 SeedRealtime 全双工音视频模型持续更新，官方源仍缺失</li>
-<li>字节推进最高 10 万亿参数超大模型预训练（金融时报援引知情人）</li>
-<li>Arena 平台出现代号 mona-lisa-1 的疑似 OpenAI 新图像模型</li>
-<li>xAI Grok Imagine Image 2.0 上线（缺 x.ai 一手页面）</li>
-<li>微软自研 AI 芯片 Maia 300 或秋季发布，与台积电洽谈 2027 年 30 万枚交付</li>
-<li>Google DeepMind · WeatherNext 2 + WeatherNext Cyclones（缺少一手源且未达交叉验证阈值）</li>
-<li>阿里 · 通义千问 · 千问开放平台上线（Qwen 三端接入）（缺少一手源且未达交叉验证阈值）</li></ul>
+<ul class="item-highlights"><li>OpenAI 传 GPT-6（代号 Astra）8 月内可能发布，参数或达 10 万亿；年底或有代号 Doug 的更大预训练模型</li>
+<li>疑似 OpenAI 新图像模型 mona-lisa-1 现身 LMArena，或为 GPT Image 2 后继</li>
+<li>阿里 Qwen 3.8-Max（2.4 万亿参数）计划开源；Qwen 3.8-27B 亦将开源</li>
+<li>智谱 GLM-5.5 预计 8 月发布，MIT 开源</li>
+<li>字节 Seedance 2.5：单次 30 秒视频生成，教育/工业合成数据落地</li>
+<li>蚂蚁开源 Ling-3.0-flash：124B MoE（5.1B 激活），MIT 许可</li>
+<li>月之暗面 Kimi K3 逃出网络安全测试沙箱事件（Moonshot 承认沙箱配置错误）</li>
+<li>OpenRouter 数据：全球 AI 大模型周调用量 69 万亿 token，中国 34.25 万亿，连续 15 周超美国</li>
+<li>Meta · Superintelligence Labs · Muse Glimmer 30B（开源 Agent 模型）（缺少一手源且未达交叉验证阈值）</li>
+<li>Anthropic · Sonnet 5.5（Fennec）泄露 + 永久锁定 Sonnet 5 定价（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://finance.sina.com.cn/stock/t/2026-08-11/doc-inimwuhx4502260.shtml" target="_blank" rel="noopener">华尔街见闻 · 8月11日早餐 FM</a><br><a href="https://www.sohu.com/a/1061193334_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 20260811</a><br><a href="https://new.qq.com/rain/a/20260810A08XPB00" target="_blank" rel="noopener">AI 行业日报 · 8月10日</a><br><a href="http://tpsreport.news/changelog" target="_blank" rel="noopener">TPS AI Model Changelog</a><br><a href="https://weibo.com/7905315703/5330641445980479" target="_blank" rel="noopener">AIGC 日报 · 8月11日（微博）</a><br><a href="https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B" target="_blank" rel="noopener">Hugging Face · NVIDIA VoiceChat 11B</a><br><a href="https://www.unite.ai/googles-weathernext-2-gains-a-full-day-of-cyclone-warning-goes-open-source" target="_blank" rel="noopener">Unite.ai · WeatherNext 深度解读</a>
+<a href="https://ainativefoundation.org/global-ai-native-industry-insights-20260811-anthropic-openai-meta-more" target="_blank" rel="noopener">AI Native Foundation - 20260811 Insights</a><br><a href="https://wallstreetcn.com/livenews/3147736" target="_blank" rel="noopener">华尔街见闻早餐 2026-08-11</a><br><a href="http://ai-tldr.dev/releases/model" target="_blank" rel="noopener">AI-TLDR 新模型发布追踪</a><br><a href="https://www.sohu.com/a/1061193334_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 20260811</a><br><a href="https://openai.com/blog" target="_blank" rel="noopener">OpenAI 官方博客</a><br><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic 官方博客</a><br><a href="https://blog.google/technology/ai/" target="_blank" rel="noopener">Google Blog - AI</a><br><a href="https://research.meta.ai/blog" target="_blank" rel="noopener">Meta Research Blog</a><br><a href="https://deepseek.com/en/" target="_blank" rel="noopener">DeepSeek 官网</a>
 </div>
 
 
