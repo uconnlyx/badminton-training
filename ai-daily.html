@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-17</title>
+<title>🚀 AI 模型进展日报 · 2026-08-18</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,41 +154,56 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-17 · 周一 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-18 · 周二 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
 <span class="hero-emphasis-val">6</span>
-<span class="hero-emphasis-desc">条新进展 · 覆盖 5 家厂商</span>
+<span class="hero-emphasis-desc">条新进展 · 覆盖 6 家厂商</span>
 </div>
-<div class="hero-sub">国产开源三连击（Qwen3.8-27B + GLM-5.3 + DeepSeek Harness）碰上 Gemini 3.7 Flash 半价</div>
+<div class="hero-sub">Anthropic 首度自曝 Model 2 + OpenAI Ultrafast 14× + Cursor Builds 3× 提速</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) 智谱 GLM-5.3 发布：743B MoE 基座不变，纯后训练把编程能力拉高 50%，网络安全 CyberGym 84.5% 反超 GPT-5.6 Sol，两周内开源权重；
-2) 阿里开源 Qwen3.8-27B（Apache 2.0），270 亿参数原生多模态稠密模型，262K 原生上下文、消费级显卡可跑，多项 Coding 基准反超自家 Qwen3.7-Plus；
-3) 谷歌发布 Gemini 3.7 Flash，距 3.6 Flash 仅 3 周，DeepSWE v1.1 从 49.0% → 65.3%、AutomationBench 从 17.0% → 30.4%，年底前价格砍半；
-4) DeepSeek V4-Pro 正式版 GA + 首款 Agent 框架 Harness v0.1 开源（MIT，GitHub 45 小时破 10 万 star），8 月 17 日起启用峰谷计价；
-5) 阿里千问全球下载破 30 亿次登顶 Hugging Face 开源榜首，衍生模型超 30 万个。</div>
+<div class="tldr-text">1) Anthropic 发布 186 页第二份《风险报告》，首次披露内部模型 Model 2（能力超过 Mythos 5，CoBench 62.8% vs 50.3%）且暂无发布计划；
+2) OpenAI 预览 GPT-5.6 Sol Ultrafast 模式，推理速度峰值达 750 token/s、最高提速 14 倍，先在 API 灰度；
+3) Google Gemini 3.7 Flash 上线，DeepSWE 从 49.0%→65.3%、AutomationBench 17.0%→30.4%，年内输入输出双双半价（0.75/3.75 美元）；
+4) Cursor Builds 让 Cloud Agents 冷启动加速 3×、首 token 生成再快 3×，8/17 起对所有环境默认开启；
+5) 智谱 GLM-5.3 成为编程能力最强开源模型（Terminal-Bench 4.6→28.3、DeepSWE 66.9），并涌现网络安全审计能力，两周后开源；
+6) 世界模型进入 24FPS 画面 + 48kHz 立体声原生同步时代（Noiz AI HelixWorld 1.0）。</div>
 </div>
 
 
 <div class="section">
-<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">4 条</span></div>
+<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">3 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">GLM-5.3</span>
+<span class="item-name">Model 2 · 内部旗舰（第二份风险报告首度披露）</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag closed">闭源</span>
+</div>
+<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-14</div>
+<ul class="item-highlights"><li>在内部 CoBench（449 个真实 R&amp;D 问题）得 62.8%，高于 Mythos 5 的 50.3% 与 Mythos Preview 的 54.8%；</li>
+<li>AECI 指数约比 Mythos 5 高 1.5 分，被公司归为 Mythos-class；已完成内部部署前审查、在公司内使用量与 Mythos 5 相近；</li>
+<li>Anthropic 明确暂无对外发布计划，已用于编码、数据生成与智能体任务，写下合入生产代码库的绝大多数代码；</li>
+<li>报告同步将高风险场景 misalignment 与 CB-1 风险由 very low 上调为 low，并披露 133M 次生物安全分类器关停 11 个月漏洞。</li></ul>
+<div class="item-links"><a href="https://www.anthropic.com/aug-2026-risk-report" target="_blank" rel="noopener">Anthropic 官方风险报告页 ↗</a><a href="https://www.163.com/dy/article/L4CB0DCC0519DDQ2.html" target="_blank" rel="noopener">第一财经·网易转载 ↗</a></div>
+</div>
+
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">GPT-5.6 Sol · Ultrafast Mode 预览</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag">API</span>
 </div>
-<div class="item-vendor">智谱 · Z.ai<span class="dot">·</span>2026-08-14</div>
-<ul class="item-highlights"><li>743B MoE 基座与 GLM-5.2 完全相同，全部提升来自后训练缩放（Post-training Scaling）</li>
-<li>编程能力较 GLM-5.2 提升约 50%：Terminal-Bench 3.0 从 4.6% → 28.3%，DeepSWE v1.1 从 46.2% → 66.9%，Z.ai Code Bench 拿下开源 SOTA</li>
-<li>网络安全能力涌现式跃升：CyberGym 84.5%（超 Mythos 5 的 83.8%、GPT-5.6 Sol 的 83.6%），ExploitBench 24.4% → 54.4%</li>
-<li>配合国内安全团队在 269 个开源项目中发现 2436 个漏洞，含一个潜伏 45 年的 DNS 老 bug</li>
-<li>承诺约两周内（8 月 28 日左右）开放权重，同步启动'开源的盾'计划</li></ul>
-<div class="item-links"><a href="https://z.ai/" target="_blank" rel="noopener">GLM 官网 ↗</a></div>
+<div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-16</div>
+<ul class="item-highlights"><li>推理速度峰值 750 token/s，最高较标准模式提速 14 倍，官方称原生智能无损；</li>
+<li>先行灰度到 OpenAI API 一小批客户，后续随算力扩容开放更多企业；</li>
+<li>官方同步在 Mac 桌面版 ChatGPT 上线 Computer History，替代 Chronicle 研究预览、48 小时本地事件存储、可细粒度排除应用与站点；</li>
+<li>Pro / Business / Enterprise 用户全球可用，EEA / 英国 / 瑞士随后跟进。</li></ul>
+<div class="item-links"><a href="https://openai.com/index/previewing-ultrafast/" target="_blank" rel="noopener">OpenAI 官方预览页 ↗</a><a href="https://ainativefoundation.org/global-ai-native-industry-insights-20260817-openai-google-cursor-more" target="_blank" rel="noopener">AI Native Foundation 报道 ↗</a></div>
 </div>
 
 
@@ -199,86 +214,11 @@ color: #a8b3c9;
 <span class="item-tag">API</span>
 </div>
 <div class="item-vendor">Google DeepMind<span class="dot">·</span>2026-08-13</div>
-<ul class="item-highlights"><li>距 Gemini 3.6 Flash 仅 3 周，主打编程与 Agent，被谷歌称为迄今最强 workhorse model</li>
-<li>DeepSWE v1.1 从 49.0% → 65.3%，FrontierCode 1.1 从 34.4% → 43.6%，AutomationBench 从 17.0% → 30.4%</li>
-<li>WebDev Arena Elo 1588（高于 Claude Sonnet 5、GPT-5.6 Terra、Muse Spark 1.2）；OSWorld 2.0 从 33.8% → 47.9%</li>
-<li>年底前促销价：输入 $0.75/M、输出 $3.75/M，为 3.6 Flash 首发价的一半；2027-01-01 恢复至 $1.5/$7.5</li>
-<li>同日切换为 Gemini Spark 个人 Agent 底座（160+ 国家），也接入 Antigravity/AI Studio/Enterprise 平台</li></ul>
-<div class="item-links"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Google 官方博客 ↗</a><a href="https://9to5google.com/2026/08/13/gemini-3-7-flash-launch/" target="_blank" rel="noopener">9to5Google 报道 ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">DeepSeek V4-Pro-0813（正式版）</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
-</div>
-<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-13</div>
-<ul class="item-highlights"><li>预览版转正 GA：1.6T MoE，1M 上下文，最大输出 38.4 万 tokens，并发上限 500</li>
-<li>Agent 能力大跃升：Terminal Bench 2.1 87.9（距 Anthropic Fable 5 全球第一仅差 0.1），DeepSWE 从 12.8 → 62.7（约 5×）</li>
-<li>9 项 Agent 基准逼近 Fable 5；CyberGym 83.3 对 83.1 几乎打平</li>
-<li>输出定价 $0.87 / 百万 tokens，仍显著低于海外旗舰</li>
-<li>2026-08-17 0 时起启用峰谷计价，高峰时段输出价格上调约 350%</li></ul>
-<div class="item-links"><a href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">DeepSeek API 文档 ↗</a><a href="https://www.deepseek.com/" target="_blank" rel="noopener">DeepSeek 官网 ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Qwen3.8-Max 开源权重 (Qwen3.8-2.4T-A95B)</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-13</div>
-<ul class="item-highlights"><li>首次开放 Max 级别旗舰权重：总参数 2.4T MoE，单次激活约 950 亿</li>
-<li>Artificial Analysis 智能指数 58、编程指数 71.8</li>
-<li>基于 FlagOS 适配 9 款国产芯片（平头哥、昇腾、摩尔线程等），开源与国产算力生态联动</li>
-<li>与两天后的 Qwen3.8-27B 共同构成'旗舰 + 消费级'开源组合，覆盖数据中心到本地 GPU 全谱系</li>
-<li>推动千问登顶 Hugging Face 全球开源模型下载榜首</li></ul>
-<div class="item-links"><a href="https://huggingface.co/collections/Qwen/qwen38" target="_blank" rel="noopener">Hugging Face Qwen 3.8 集合 ↗</a><a href="https://www.modelscope.cn/collections/Qwen/Qwen38" target="_blank" rel="noopener">ModelScope Qwen 3.8 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🖼️ 多模态大模型 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Qwen3.8-27B</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-14</div>
-<ul class="item-highlights"><li>Apache 2.0 协议开源，270 亿参数原生多模态稠密（Dense）模型，vision 内建，非 MoE</li>
-<li>262K 原生上下文，YaRN 外推至 1M tokens；4-bit 量化后 ~17GB VRAM，单张消费级显卡可跑</li>
-<li>编程 &amp; 办公场景反超自家更大模型 Qwen3.7-Plus：SWE-bench Pro 61.7、QwenSWEBench 79.0、Terminal Bench 2.1 73.0（Muse Glimmer 30B 仅 51.7）</li>
-<li>新增 reasoning_effort 参数，可按任务难度动态控制思考深度节省算力</li>
-<li>千问家族全球下载破 30 亿次、衍生模型超 30 万个，登顶 HF 开源榜首</li></ul>
-<div class="item-links"><a href="https://huggingface.co/collections/Qwen/qwen38" target="_blank" rel="noopener">Hugging Face Qwen 3.8 集合 ↗</a><a href="https://www.modelscope.cn/collections/Qwen/Qwen38" target="_blank" rel="noopener">ModelScope Qwen 3.8 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🕹️ Agent / 工具使用 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">DeepSeek Harness v0.1（开源 Agent 框架）</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-13</div>
-<ul class="item-highlights"><li>DeepSeek 首款 Agent 产品，MIT 协议开源，面向全球开发者预览</li>
-<li>核心设计'一切皆插件'：模型、工具、技能、会话、存储、沙箱、循环、UI 全部插件化，可自由替换重组</li>
-<li>发布 45 小时 GitHub 星标破 10.5 万、Fork 超 1 万，48 小时内成为 GitHub Trending 榜首</li>
-<li>官方定位为 DeepSeek 从对话到系统的跃迁，与 V4-Pro 涨价形成'左手模型右手 Harness'对冲</li>
-<li>腾讯 QQ Bot 已接入 Harness（支持单聊/群聊、独立记忆）</li></ul>
-<div class="item-links"><a href="https://www.deepseek.com/" target="_blank" rel="noopener">DeepSeek 官网 ↗</a></div>
+<ul class="item-highlights"><li>距 3.6 Flash 仅三周，主打编程与 Agent；AA 智能指数 56 分（较 3.6 Flash +4），输出速度约 340 token/s；</li>
+<li>DeepSWE v1.1 从 49.0%→65.3%、AutomationBench 从 17.0%→30.4%，官方称此轮提升来自过去三周算法改进；</li>
+<li>已上线 Gemini API / AI Studio / Antigravity，成为 Gemini Spark 新底座；</li>
+<li>年内限时半价：每百万输入 0.75 美元、输出 3.75 美元，2027/1/1 起恢复至 1.50 / 7.50 美元。</li></ul>
+<div class="item-links"><a href="https://deepmind.google/models/gemini/flash/" target="_blank" rel="noopener">Google DeepMind 官方模型页 ↗</a><a href="https://www.sohu.com/a/1063677258_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 20260817 ↗</a></div>
 </div>
 
 </div>
@@ -287,25 +227,28 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>OpenAI 因'critical 级'网络攻击能力评估结果，主动延迟旗舰新模型 Astra 发布，White House 已被告知（Axios 报道，首次一线大厂公开承诺'为安全放慢速度'）</li>
-<li>OpenAI 未发布的 Astra 模型据称已用 Lean 4 证明 10 个悬而未决的数学与理论 CS 老问题（含 Erdős 三题 + 40 年 non-sofic groups 问题）</li>
-<li>OpenAI GPT-5.6-Cyber 上线并将 Daybreak 安全项目拆分为'Blue/Red'两档访问，面向 IBM/Cisco/CrowdStrike 等合作伙伴</li>
-<li>OpenAI GPT-5.6 Sol 推出 Ultrafast 模式（最高 14× 速度）+ 构建者指南，Sol 在 ARC-AGI-3 从 13.3% → 38.3%</li>
-<li>xAI 发布 Grok 4.6（500K 上下文、多模态）+ Grok Bot Agent 公测（缺 x.ai 一手直链，暂列 watch）</li>
-<li>Anthropic Q2 预估营收 115 亿美元（YoY 14 倍），传闻拟以 60 亿美元收购 Decart AI，最快 10 月 IPO</li>
-<li>Google DeepMind 大重组：Hassabis 卸任 CEO 转任董事长，Koray Kavukcuoglu 接手日常，Jeff Dean 等 4 名核心 AI 人离职创办 Discovery Loop</li>
-<li>小红书开源 dots3-note：280B 参数（激活 16B）三模态 Agent 模型，支持 512K 上下文</li>
-<li>字节 Seedance 2.5 视频模型发布（生成时长/多模态理解/编辑精度全面升级），需一手源</li>
-<li>小米 MiMo-V2.5 在通用 GPU 上实现推理速度大幅突破，登顶 OpenRouter 大模型调用量榜首</li>
-<li>Kimi K3 发布，API 定价与 GPT-5.4 同档，'中国模型便宜'叙事开始失效</li>
-<li>AI 记录工具 tl;dv 泄露 18 万+ 会议记录（含 23 国政府直播会议 ID），漏洞 1 月被披露后数月未修</li></ul>
+<ul class="item-highlights"><li>字节 Seedance 2.5 满血版今日在 Pixmax / CapCut Web / TapNow 多平台铺开 1080p，30 秒单段 + 50 项参考素材，成为长叙事 AI 视频生产标配</li>
+<li>Anthropic 暂无新品，官方预计 8 月末至 9 月初发布新模型；Claude Sonnet 5 输入价 9 月 1 日由 2 美元/百万 token 涨至 3 美元</li>
+<li>xAI Grok 4.6 综合实力上升，AA 综合智能指数 61 分并列全球第三，输入 2 美元 / 输出 6 美元定价保持不变</li>
+<li>Google Workspace 默认允许 Gemini 访问企业数据，可手动关闭；同时允许关闭 Gemini 内容可见水印</li>
+<li>Pixel 新功能将启用 Gemini Nano 端侧模型分析 14 天 App 耗电并给续航建议（Android 17 QPR2 Beta3 代码显示）</li>
+<li>DeepMind 8/14 发布 AGI→ASI 路径论文，梳理规模扩张、算法范式变革、递归自我改进、多智能体协作四条技术路线</li>
+<li>IDC 预测 2026 中国 AI 手机出货 1.47 亿台、占比 53% 首次过半，厂商转 Agent 卖点</li>
+<li>Databricks 收官 50 亿美元 F 轮融资，估值 1900 亿美元，创企业级 AI Infra 新纪录</li>
+<li>Dynatrace 官宣收购 AI 可观测性平台 Arize AI，加速传统监控与 LLM/Agent 可观测性融合</li>
+<li>Vals AI 获 a16z 领投 4000 万美元 A 轮，估值 4 亿美元，主打真实业务工作流 AI 评测</li>
+<li>Anthropic Claude Code v2.1.232 发布，默认启用子智能体 Forking，并新增 GitLab clone 与 Windows 权限漏洞修复</li>
+<li>Google Sheets 上线 Sheets canvas，通过 Gemini 用自然语言把表格转为 Dashboard / 学习追踪 / 小型 App</li>
+<li>Cursor · Cloud Agents Builds · 冷启动 3× 提速（缺少一手源且未达交叉验证阈值）</li>
+<li>智谱 · Z.ai · GLM-5.3 · 最强开源编程模型（缺少一手源且未达交叉验证阈值）</li>
+<li>Noiz AI（HKUST · 清华 · CMU · DeepMind 合作） · HelixWorld 1.0 · 首个实时音画同步世界模型（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://twitter.com/Zai_org" target="_blank" rel="noopener">Z.ai 官方 X</a><br><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Google Blog - Gemini 3.7 Flash</a><br><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Hugging Face Qwen</a><br><a href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">DeepSeek API 文档</a><br><a href="https://github.com/deepseek-ai/harness" target="_blank" rel="noopener">DeepSeek Harness GitHub</a><br><a href="https://9to5google.com/2026/08/13/gemini-3-7-flash-launch/" target="_blank" rel="noopener">9to5Google</a><br><a href="https://www.quadradigitalsolutions.com/en/daily-ai-briefing" target="_blank" rel="noopener">Quadra Daily AI Briefing</a>
+<a href="https://www.anthropic.com/aug-2026-risk-report" target="_blank" rel="noopener">Anthropic Aug 2026 Risk Report</a><br><a href="https://openai.com/index/previewing-ultrafast/" target="_blank" rel="noopener">OpenAI Previewing Ultrafast</a><br><a href="https://deepmind.google/models/gemini/flash/" target="_blank" rel="noopener">Google DeepMind Gemini Flash</a><br><a href="https://cursor.com/changelog/08-13-26" target="_blank" rel="noopener">Cursor Changelog 08-13-26</a><br><a href="https://aireleasetracker.com/latest" target="_blank" rel="noopener">AI Release Tracker</a><br><a href="https://www.sohu.com/a/1063677258_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 20260817</a><br><a href="https://ainativefoundation.org/global-ai-native-industry-insights-20260817-openai-google-cursor-more" target="_blank" rel="noopener">AI Native Foundation 20260817</a><br><a href="https://www.communeify.com/en/blog/ai-daily-2026-08-14" target="_blank" rel="noopener">Communeify AI Daily 2026-08-14</a>
 </div>
 
 
