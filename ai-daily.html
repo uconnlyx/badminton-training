@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-19</title>
+<title>🚀 AI 模型进展日报 · 2026-08-20</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,42 +154,77 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-19 · 周三 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-20 · 周四 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
 <span class="hero-emphasis-val">7</span>
 <span class="hero-emphasis-desc">条新进展 · 覆盖 7 家厂商</span>
 </div>
-<div class="hero-sub">MiniMax M2.7 首度自我进化 + 阿里 Qwen 3.8-27B 单卡跑赢闭源</div>
+<div class="hero-sub">谷歌 Gemini 3.7 Flash 三周迭代 + 阿里语音大满贯 + Anthropic Model 2 首度浮出水面</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) MiniMax 发布 Agent 旗舰 M2.7，模型深度参与自身训练/优化，SWE-Pro 56.22 逼近 Opus；
-2) 阿里开源 Qwen 3.8-27B，Artificial Analysis 得分 52 与 GPT-5.6 Luna/GLM-5.2 753B 持平，可跑本地/Apple Silicon；
-3) 字节 Seedance 2.5 支持原生 1080p，Video Arena Video Edit 榜单登顶 1411 分；
-4) Anthropic 发布 /design 技能预览，把 Claude Design 工作流搬进 Claude Code CLI/Desktop；
-5) Cursor 推出 AI 原生 Git 托管 Origin，为并行 Agent 工作流设计，400ms 全球延迟；
-6) Stripe 以 70+ 亿美元收购 OpenRouter，AI 模型网关正式进入支付巨头版图；
-7) Wispr AI 预览 Canto 2B 语音识别模型，专为嘈杂现场环境设计。</div>
+<div class="tldr-text">1) 谷歌发布 Gemini 3.7 Flash，距 3.6 版仅三周，生产定价再腰斩、聚焦编程与 Agent；
+2) 阿里 Qwen-Audio-3.0 系列上线千问平台，在语音识别/合成/理解/音频问答国际评测斩获大满贯；
+3) Anthropic 186 页风险报告首次披露内部 Model 2，CoBench 62.8% 超 Mythos 5，但暂无外发计划；
+4) OpenAI 发布 ChatGPT for Teens，青少年安全模式 + 家长控制 + Study Mode 默认开启；
+5) 阿里再放 HappyShrimp 1.0 全流程 AI 音乐生成 + 昆仑万维 Mureka V9.5 引入 MusiCoT 音乐思维链；
+6) DeepSeek V4-Pro 峰谷差异化定价生效，高峰输出涨至 27 元/百万 Token（约 4.5×），Harness Agent 框架同步开源；
+7) Anthropic Claude Science 上线，覆盖生命科学数字化流程、可调度自有 GPU/SLURM 集群。</div>
 </div>
 
 
 <div class="section">
-<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">1 条</span></div>
+<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">2 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Qwen 3.8-27B</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-name">Model 2（内部旗舰） + 186 页风险报告</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag closed">闭源</span>
+</div>
+<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-18</div>
+<ul class="item-highlights"><li>首次在风险报告中披露内部下一代 Model 2，能力略高于公开最强 Claude Mythos 5</li>
+<li>在 Anthropic 内部 CoBench v2（449 道真实工程问题）拿 62.8%，Mythos 5 为 50.3%</li>
+<li>内部大量用于编码、数据生成与 Agent 任务，但预部署评估未跑完，暂无外发计划</li>
+<li>同报告将高风险场景 misalignment 评级从 very low 上调至 low，主因是网安评估不确定性上升</li></ul>
+<div class="item-links"><a href="https://www.anthropic.com/aug-2026-risk-report" target="_blank" rel="noopener">Anthropic 官方风险报告 ↗</a><a href="https://aibacon.net/posts/anthropic-august-2026-risk-report-model-2-cobench-misalignment-low.html" target="_blank" rel="noopener">AI Bacon 深度解读（CoBench 62.8%） ↗</a></div>
+</div>
+
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">ChatGPT for Teens</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-19</div>
+<ul class="item-highlights"><li>面向 13-17 岁用户的独立 ChatGPT，年龄预测系统自动进入受限模式</li>
+<li>屏蔽自杀、自残、恋爱/性内容，家长可设 Quiet Hours 与高风险行为通知</li>
+<li>内置 Study Mode 引导做题思路而非直接给答案，测验与学习进度可视化</li>
+<li>官方称受限模式下仍保留完整推理能力，回应青少年安全监管压力</li></ul>
+<div class="item-links"><a href="https://openai.com/index/chatgpt-for-teens" target="_blank" rel="noopener">OpenAI 官方公告 ↗</a><a href="https://www.brightcoast.ai/blog/daily-ai-intel-brief-2026-08-19" target="_blank" rel="noopener">Bright Coast Daily Brief ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🔊 语音（TTS / ASR） <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Qwen-Audio-3.0 系列</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag opensource">开源</span>
 </div>
-<div class="item-vendor">阿里巴巴 · 通义千问<span class="dot">·</span>2026-08-18</div>
-<ul class="item-highlights"><li>开源权重 27B 参数，Artificial Analysis Intelligence Index 得分 52</li>
-<li>与闭源云端 GPT-5.6 Luna、GLM-5.2 753B 打平，本地/Apple Silicon 可跑</li>
-<li>为消费级 GPU 打开高能力 Agentic Workflow / 复杂推理场景</li>
-<li>阿里同期开源 Qwen3.8-2.4T-A95B 旗舰 MoE（2.4T 参数、激活 95B、原生 256K 上下文）</li></ul>
-<div class="item-links"><a href="https://www.communeify.com/en/blog/ai-daily-2026-08-18" target="_blank" rel="noopener">Communeify AI Daily 官宣汇总 ↗</a><a href="https://www.toutiao.com/w/1873815977619463/" target="_blank" rel="noopener">头条 AI 科技速览 ↗</a></div>
+<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-18</div>
+<ul class="item-highlights"><li>覆盖语音识别、合成、理解、音频问答四大方向，采用统一多模态架构</li>
+<li>在多项国际语音评测中取得大满贯，与国际前沿差距进一步缩小</li>
+<li>已在千问 AI 平台上线，同时开放开发者接入</li>
+<li>配合 Qwen3.8 端侧 Day-0 适配，阿里全模态开源矩阵进一步补齐</li></ul>
+<div class="item-links"><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Qwen 官方 · Hugging Face ↗</a><a href="https://modelscope.cn/organization/qwen" target="_blank" rel="noopener">ModelScope · Qwen 主页 ↗</a><a href="https://www.cnblogs.com/itech/p/22534864" target="_blank" rel="noopener">AI Base 报道 ↗</a></div>
 </div>
 
 </div>
@@ -200,16 +235,16 @@ color: #a8b3c9;
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Claude Code /design Skill（Research Preview）</span>
+<span class="item-name">V4-Pro 峰谷定价 + Harness 开发者预览</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
+<span class="item-tag opensource">开源</span>
 </div>
-<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-17</div>
-<ul class="item-highlights"><li>Claude Code CLI 与 Desktop 新增 /design 命令，把 Claude Design artboard 工作流搬进编码环境</li>
-<li>可先生成/检视/微调可编辑 UI artifact，再让 Claude 编译为代码</li>
-<li>面向前端工程师、UI/UX 设计师和全栈开发者</li>
-<li>与前一日风险报告披露的内部 Model 2 呼应，Anthropic 保持产品面持续推进节奏</li></ul>
-<div class="item-links"><a href="https://twitter.com/AnthropicAI/status/design_skill_preview" target="_blank" rel="noopener">Anthropic Claude Code 官方推特 ↗</a><a href="https://www.communeify.com/en/blog/ai-daily-2026-08-18" target="_blank" rel="noopener">Communeify AI Daily 详情 ↗</a></div>
+<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-17</div>
+<ul class="item-highlights"><li>V4-Pro 峰谷差异化定价生效：高峰输出 27 元/百万 Token（约 4.5×），缓存命中最高涨 12×</li>
+<li>空闲时段统一 5 折，V4-Pro-0813 同步开放 100 万上下文 + 38.4 万 Token 最长输出</li>
+<li>首次以定价撬动错峰调用，从『低价换量』转向分层价值定价</li>
+<li>Agent 框架 DeepSeek Harness 开源预览：一切皆插件，模型/工具/技能/沙箱可自由重组</li></ul>
+<div class="item-links"><a href="https://api-docs.deepseek.com" target="_blank" rel="noopener">DeepSeek 官方 API 文档 ↗</a><a href="https://www.163.com/dy/article/L4N5V1DH0556MEZR.html" target="_blank" rel="noopener">网易 · DeepSeek Harness 分析 ↗</a></div>
 </div>
 
 </div>
@@ -218,26 +253,31 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>Anthropic 官方风险报告披露内部 Model 2 强于 Mythos 5，暂不外发（8/14-8/15 发布）</li>
-<li>OpenAI 因未排除下一代 Astra 网络安全隐患延后发布，行业整体放缓前沿节奏</li>
-<li>OpenAI GPT-5.6 Sol 主流 API 平台限时 5 折至 9/18，Vercel / OpenRouter 已生效</li>
-<li>JetBrains Junie 默认引擎升级至 Gemini 3.7 Flash，DeepSWE v1.1 长任务通过率 65.3%</li>
-<li>OpenAI 推 'The Defender's Window' 网络安全项目，Codex + ChatGPT Work 自主漏洞挖掘上线</li>
-<li>MiniMax Music 3.0 传闻可一次性完成作曲/编曲/演奏（一手源待官方发布确认）</li>
-<li>宇树人形机器人'超人'原地跳高 2m、时速 12.66m/s，同步启动科创板 IPO</li>
-<li>Groq 完成 3.5 亿美元融资但估值从 69 亿腰斩至 35 亿，转型为 NVIDIA 生态推理云</li>
-<li>MiniMax（稀宇科技） · MiniMax M2.7（缺少一手源且未达交叉验证阈值）</li>
-<li>字节跳动 · BytePlus / Dreamina · Seedance 2.5（1080p 版）（缺少一手源且未达交叉验证阈值）</li>
-<li>Cursor · Cursor Origin（AI 原生 Git 托管）（缺少一手源且未达交叉验证阈值）</li>
-<li>Stripe × OpenRouter · Stripe 70+ 亿美元收购 OpenRouter（缺少一手源且未达交叉验证阈值）</li>
-<li>Wispr AI · Canto（Preview，2B 语音识别）（缺少一手源且未达交叉验证阈值）</li></ul>
+<ul class="item-highlights"><li>OpenAI 下一代 Astra（疑似 GPT-6，代号 mewfour）传本周四发布，已在 Codex 最高档测试 UI 生成</li>
+<li>OpenAI 披露对 Astra 类模型的推理监控算力开销约 20%，来自 Hugging Face 越狱事件后的加固</li>
+<li>智谱 GLM-5.3 API 正式上线，权重下周五开源，主打复杂编码 + 长程任务 + 防御性网络安全</li>
+<li>智象未来 HiDream-O1-World 交互式世界模型登顶 WBench Navi 分榜（平均 80.9）</li>
+<li>Stripe 完成 70 亿美元收购 OpenRouter，模型路由层被支付巨头纳入</li>
+<li>Anthropic 年化营收突破 650 亿美元，Q2 同比 14×，IPO 估值传闻 2 万亿美元</li>
+<li>Etched 融资 7 亿美元、估值一月翻倍至 210 亿美元，Jane Street 领投并成首客</li>
+<li>Groq 3.5 亿美元 A 轮完成，估值 35 亿美元，英伟达参投，战略从自研 LPU 转向英伟达推理云</li>
+<li>Cerebras 推出 30× 加速推理机架，OpenAI Codex 相关部署跟进</li>
+<li>MIT &amp; Simon Willison 实测 Qwen3.8-27B：智能指数 52 分并列 GPT-5.6 Luna，但被批『过度思考』简单任务</li>
+<li>StateM 论文提出『harness scaling』：$52 让 GPT-5.6 Sol 在 Terminal-Bench 2.1 拿 95.3%</li>
+<li>英伟达+OpenAI+软银官宣 12GW 超大规模 AI 数据中心，英伟达为 OpenAI 俄亥俄站点提供最高 1050 亿美元担保</li>
+<li>支付宝发布中国首个全栈 Agentic 商务平台，肯德基/瑞幸首批接入 AHA 互操作协议</li>
+<li>Warp Factories 上线，主打开箱即用的 AI 软件工厂</li>
+<li>CISA 将 Ray RCE 漏洞 CVE-2025-62593 列为已知在野利用，联邦机构须 3 日内打补丁</li>
+<li>Google DeepMind · Gemini 3.7 Flash（缺少一手源且未达交叉验证阈值）</li>
+<li>阿里 · 通义 &amp; 昆仑万维 · HappyShrimp 1.0 + Mureka V9.5（缺少一手源且未达交叉验证阈值）</li>
+<li>Anthropic · Claude Science（生命科学 AI 工作台）（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://minimax.io/news/minimax-m27-en" target="_blank" rel="noopener">MiniMax 官方新闻页</a><br><a href="https://www.communeify.com/en/blog/ai-daily-2026-08-18" target="_blank" rel="noopener">Communeify AI Daily 2026-08-18</a><br><a href="https://www.communeify.com/en/blog/ai-daily-latest" target="_blank" rel="noopener">Communeify AI Daily Latest (Stripe/OpenRouter)</a><br><a href="http://jjckb.xinhuanet.com/20260318/7d805f389e8c4a79a88268abf4a8ce86/c.html" target="_blank" rel="noopener">经济参考报 · M2.7 报道</a><br><a href="https://www.aastocks.com/tc/stocks/news/aafn-news/NOW.1510122/3" target="_blank" rel="noopener">AAStocks · MiniMax M2.7</a><br><a href="https://explainx.ai/blog/anthropic-model-2-unreleased-risk-report-august-2026" target="_blank" rel="noopener">Anthropic 8月风险报告解读 (explainx.ai)</a><br><a href="https://www.techbytes.app/tech-pulse-daily/2026/august/18" target="_blank" rel="noopener">Tech Pulse Daily 2026-08-18</a>
+<a href="https://www.anthropic.com/aug-2026-risk-report" target="_blank" rel="noopener">Anthropic Risk Report Aug 2026（官方）</a><br><a href="https://openai.com/index/chatgpt-for-teens" target="_blank" rel="noopener">OpenAI · ChatGPT for Teens 官方公告</a><br><a href="https://claude.com/blog/the-claude-science-product-guide" target="_blank" rel="noopener">Claude Science Product Guide（官方 Blog）</a><br><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Qwen 官方 Hugging Face Org</a><br><a href="https://api-docs.deepseek.com" target="_blank" rel="noopener">DeepSeek 官方 API Docs</a><br><a href="https://www.brightcoast.ai/blog/daily-ai-intel-brief-2026-08-19" target="_blank" rel="noopener">Bright Coast · Daily AI Intel Brief 2026-08-19</a><br><a href="https://dcwi.co.uk/news/dcw-frontier-focus-edition-34" target="_blank" rel="noopener">DCW Frontier Focus Edition 34</a><br><a href="https://www.163.com/dy/article/L4N5V1DH0556MEZR.html" target="_blank" rel="noopener">网易 · 智能体元年综述 2026-08-19</a>
 </div>
 
 
