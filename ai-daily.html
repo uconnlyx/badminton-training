@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-20</title>
+<title>🚀 AI 模型进展日报 · 2026-08-21</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,97 +154,141 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-20 · 周四 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-21 · 周五 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
-<span class="hero-emphasis-val">7</span>
-<span class="hero-emphasis-desc">条新进展 · 覆盖 7 家厂商</span>
+<span class="hero-emphasis-val">8</span>
+<span class="hero-emphasis-desc">条新进展 · 覆盖 8 家厂商</span>
 </div>
-<div class="hero-sub">谷歌 Gemini 3.7 Flash 三周迭代 + 阿里语音大满贯 + Anthropic Model 2 首度浮出水面</div>
+<div class="hero-sub">OpenAI 开源 Codex Harness 抢 Agent 执行层标准；阿里 Q2 财报确认 Qwen3.8-Max 权重开放且 Agentic 榜单登顶</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) 谷歌发布 Gemini 3.7 Flash，距 3.6 版仅三周，生产定价再腰斩、聚焦编程与 Agent；
-2) 阿里 Qwen-Audio-3.0 系列上线千问平台，在语音识别/合成/理解/音频问答国际评测斩获大满贯；
-3) Anthropic 186 页风险报告首次披露内部 Model 2，CoBench 62.8% 超 Mythos 5，但暂无外发计划；
-4) OpenAI 发布 ChatGPT for Teens，青少年安全模式 + 家长控制 + Study Mode 默认开启；
-5) 阿里再放 HappyShrimp 1.0 全流程 AI 音乐生成 + 昆仑万维 Mureka V9.5 引入 MusiCoT 音乐思维链；
-6) DeepSeek V4-Pro 峰谷差异化定价生效，高峰输出涨至 27 元/百万 Token（约 4.5×），Harness Agent 框架同步开源；
-7) Anthropic Claude Science 上线，覆盖生命科学数字化流程、可调度自有 GPU/SLURM 集群。</div>
+<div class="tldr-text">1) OpenAI 8·19 开源 Codex Harness（Apache-2.0），48 小时 GitHub 突破 10.7 万 Star，Agent 竞争重心正式从模型层下移到执行层；
+2) 阿里 Q2 财报确认 Qwen3.8-Max（2.4T 总参 / 95B 激活）已开放权重，Artificial Analysis Agentic 全球榜单第一，AI 收入连续 12 季三位数增长；
+3) 腾讯混元发布 Hunyuan3D-Buffalo 1.0，统一三维理解 / 文生三维 / 指令编辑 / 部件提取四任务，Edit3D-Bench 几何误差较前 SOTA 下降 86.7%；
+4) MiniMax 推出 Design（基于原生多模态视频模型 H3 的商业创作 Harness），主打 KOC / 品牌短片 / MV 语义级创作；
+5) 小红书开源 dots3-note 280B MoE 多模态大模型（Apache 2.0）、字节与 MPA 签署首份好莱坞 AI 版权协议、Anthropic Claude 文本水印官宣 4 小时被开源工具破解。</div>
 </div>
 
 
 <div class="section">
-<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">2 条</span></div>
+<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">1 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Model 2（内部旗舰） + 186 页风险报告</span>
+<span class="item-name">Qwen3.8-Max（2.4T MoE / 开放权重）</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag closed">闭源</span>
+<span class="item-tag opensource">开源</span>
 </div>
-<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-18</div>
-<ul class="item-highlights"><li>首次在风险报告中披露内部下一代 Model 2，能力略高于公开最强 Claude Mythos 5</li>
-<li>在 Anthropic 内部 CoBench v2（449 道真实工程问题）拿 62.8%，Mythos 5 为 50.3%</li>
-<li>内部大量用于编码、数据生成与 Agent 任务，但预部署评估未跑完，暂无外发计划</li>
-<li>同报告将高风险场景 misalignment 评级从 very low 上调至 low，主因是网安评估不确定性上升</li></ul>
-<div class="item-links"><a href="https://www.anthropic.com/aug-2026-risk-report" target="_blank" rel="noopener">Anthropic 官方风险报告 ↗</a><a href="https://aibacon.net/posts/anthropic-august-2026-risk-report-model-2-cobench-misalignment-low.html" target="_blank" rel="noopener">AI Bacon 深度解读（CoBench 62.8%） ↗</a></div>
+<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-20</div>
+<ul class="item-highlights"><li>总参 2.4T / 激活 95B 稀疏 MoE，1M token 上下文，原生视觉理解</li>
+<li>Artificial Analysis Agentic 全球榜单 第 1（Intelligence Index 55.4，领先 Opus 5 / GPT-5.6 Sol）</li>
+<li>OSWorld-Verified 86.1、PaperBench 93.0、Terminal-Bench 2.1 86.6</li>
+<li>Q2 财报确认：AI 相关产品收入 123.76 亿元，连续 12 季三位数增长；阿里云外部商业化增速 45% 创 22 季新高</li>
+<li>同期开源 Qwen3.8-27B；Qwen 系列全球下载量突破 30 亿次</li></ul>
+<div class="item-links"><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Hugging Face 权重页 ↗</a><a href="https://finance.sina.com.cn/jjxw/2026-08-20/doc-ininyfvm6754533.shtml" target="_blank" rel="noopener">阿里 Q2 财报官方消息 ↗</a></div>
 </div>
 
+</div>
+
+
+<div class="section">
+<div class="section-title">🖼️ 多模态大模型 <span class="badge">1 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">ChatGPT for Teens</span>
+<span class="item-name">dots3-note 280B MoE 多模态</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag opensource">开源</span>
+</div>
+<div class="item-vendor">小红书 · rednote-hilab<span class="dot">·</span>2026-08-20</div>
+<ul class="item-highlights"><li>小红书开源 dots3-note 280B MoE 多模态大模型，Apache 2.0 全面开放</li>
+<li>官方定位：面向内容社区的多模态理解/生成基座，支持文本 + 图像 + 视频输入</li>
+<li>面向端侧与边缘部署优化，社区可自由商用与微调</li>
+<li>延续 dots.llm / dots-vlm 系列路线，首度将旗舰级 280B 参数放到 Apache 2.0</li>
+<li>Hugging Face 夏季报告：中国 200B+ 开源模型 59% Apache 2.0、22% MIT，几乎无商用限制</li></ul>
+<div class="item-links"><a href="https://huggingface.co/blog" target="_blank" rel="noopener">Hugging Face 2026 夏季报告 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🧊 3D / 数字人 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Hunyuan3D-Buffalo 1.0</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag">API</span>
 </div>
+<div class="item-vendor">腾讯 · 混元<span class="dot">·</span>2026-08-20</div>
+<ul class="item-highlights"><li>一套架构统一三维理解 / 文生三维 / 指令编辑三维 / 部件提取四项任务</li>
+<li>构建 87M 样本三维多模态语料（25M 理解 + 50M 文生三维 + 12M 编辑对，Nano3D-v2 生成）</li>
+<li>Edit3D-Bench 平均几何误差较此前 SOTA 下降 86.7%，文本到三维人类偏好率超 56%</li>
+<li>架构：Hunyuan3D-VLM（语义/结构/空间理解）+ Hunyuan3D DiT（高保真三维合成）</li>
+<li>融合 Qwen-VL、Hunyuan3D-2.1 DiT、TRELLIS、LATTICE、NaTex 等预训练组件</li></ul>
+<div class="item-links"><a href="https://huggingface.co/papers/2608.02711" target="_blank" rel="noopener">Hugging Face Paper 页 ↗</a><a href="https://tencent-hunyuan.github.io/Hunyuan3D-Buffalo1.0/" target="_blank" rel="noopener">官方项目主页 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🕹️ Agent / 工具使用 <span class="badge">2 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Codex Harness (Apache-2.0 开源)</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag opensource">开源</span>
+</div>
 <div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-19</div>
-<ul class="item-highlights"><li>面向 13-17 岁用户的独立 ChatGPT，年龄预测系统自动进入受限模式</li>
-<li>屏蔽自杀、自残、恋爱/性内容，家长可设 Quiet Hours 与高风险行为通知</li>
-<li>内置 Study Mode 引导做题思路而非直接给答案，测验与学习进度可视化</li>
-<li>官方称受限模式下仍保留完整推理能力，回应青少年安全监管压力</li></ul>
-<div class="item-links"><a href="https://openai.com/index/chatgpt-for-teens" target="_blank" rel="noopener">OpenAI 官方公告 ↗</a><a href="https://www.brightcoast.ai/blog/daily-ai-intel-brief-2026-08-19" target="_blank" rel="noopener">Bright Coast Daily Brief ↗</a></div>
+<ul class="item-highlights"><li>驱动 Codex App / CLI / IDE 的底层 Agent 执行框架完全开源，Apache-2.0</li>
+<li>开放三层集成：codex exec（CI 批处理）、Codex SDK（TS/Python）、codex-app-server（JSON-RPC 长会话）</li>
+<li>核心 codex-rs 由约 120 个 crate 组成 Rust workspace，兼容 Responses API</li>
+<li>官方基准：仅切换 Harness（保留推理状态+上下文压缩），GPT-5.6 Sol 在 ARC-AGI-3 得分 13.3%→38.3%，Token 消耗降 6×</li>
+<li>开源 48 小时 GitHub 累计 107,443 Star / 16,354 Fork，最新稳定版 v0.149.0</li></ul>
+<div class="item-links"><a href="https://github.com/openai/codex" target="_blank" rel="noopener">GitHub 官方仓库 ↗</a><a href="https://developers.openai.com/blog/codex-as-a-platform" target="_blank" rel="noopener">OpenAI 官方博客 ↗</a></div>
+</div>
+
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Design（多模态创作 Harness）</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">MiniMax<span class="dot">·</span>2026-08-20</div>
+<ul class="item-highlights"><li>把多模态模型能力转化为生产力的 Harness：理解目标→拆解任务→调用模型 &amp; Skills 完成创作全流程</li>
+<li>围绕自研原生多模态视频模型 H3 构建，擅长 KOC / 品牌短片 / PV / MV 等商业内容</li>
+<li>官方判断：创作正从像素级 Editing 转向语义层创作，用户表达高层意图，模型理解 Project 级复杂上下文</li>
+<li>为持续生成 &amp; 反复修改的商业目标场景优化，支持项目级上下文与多轮迭代</li>
+<li>定位与 OpenAI Codex Harness、DeepSeek Harness 呼应，进一步验证 Agent 执行层是新战场</li></ul>
+<div class="item-links"><a href="https://huggingface.co/MiniMaxAI" target="_blank" rel="noopener">Hugging Face MiniMaxAI Org ↗</a><a href="https://minimax.io" target="_blank" rel="noopener">MiniMax 官网 ↗</a></div>
 </div>
 
 </div>
 
 
 <div class="section">
-<div class="section-title">🔊 语音（TTS / ASR） <span class="badge">1 条</span></div>
+<div class="section-title">✨ 其他 <span class="badge">1 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Qwen-Audio-3.0 系列</span>
+<span class="item-name">Claude 文本水印（SynthID）</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
+<span class="item-tag">API</span>
 </div>
-<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-18</div>
-<ul class="item-highlights"><li>覆盖语音识别、合成、理解、音频问答四大方向，采用统一多模态架构</li>
-<li>在多项国际语音评测中取得大满贯，与国际前沿差距进一步缩小</li>
-<li>已在千问 AI 平台上线，同时开放开发者接入</li>
-<li>配合 Qwen3.8 端侧 Day-0 适配，阿里全模态开源矩阵进一步补齐</li></ul>
-<div class="item-links"><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Qwen 官方 · Hugging Face ↗</a><a href="https://modelscope.cn/organization/qwen" target="_blank" rel="noopener">ModelScope · Qwen 主页 ↗</a><a href="https://www.cnblogs.com/itech/p/22534864" target="_blank" rel="noopener">AI Base 报道 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🕹️ Agent / 工具使用 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">V4-Pro 峰谷定价 + Harness 开发者预览</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-17</div>
-<ul class="item-highlights"><li>V4-Pro 峰谷差异化定价生效：高峰输出 27 元/百万 Token（约 4.5×），缓存命中最高涨 12×</li>
-<li>空闲时段统一 5 折，V4-Pro-0813 同步开放 100 万上下文 + 38.4 万 Token 最长输出</li>
-<li>首次以定价撬动错峰调用，从『低价换量』转向分层价值定价</li>
-<li>Agent 框架 DeepSeek Harness 开源预览：一切皆插件，模型/工具/技能/沙箱可自由重组</li></ul>
-<div class="item-links"><a href="https://api-docs.deepseek.com" target="_blank" rel="noopener">DeepSeek 官方 API 文档 ↗</a><a href="https://www.163.com/dy/article/L4N5V1DH0556MEZR.html" target="_blank" rel="noopener">网易 · DeepSeek Harness 分析 ↗</a></div>
+<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-20</div>
+<ul class="item-highlights"><li>为遵守欧盟 AI 法案（EU AI Act），Anthropic 为 Claude 文本输出加入不可见水印</li>
+<li>水印基于 Google DeepMind 的 SynthID 技术，采用选词水印方案</li>
+<li>官宣仅 4 小时后即被开发者 Guillaume Meyer 发布开源去除工具</li>
+<li>该开源工具在 X 上收藏超 2 万，百余名贡献者参与</li>
+<li>折射出：文本水印在开源社区面前近乎无效，AI 内容溯源需要更强机制</li></ul>
+<div class="item-links"><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic 官方新闻 ↗</a><a href="https://weibo.com/7905315703/5334265329876995" target="_blank" rel="noopener">AILog 报道汇总 ↗</a></div>
 </div>
 
 </div>
@@ -253,31 +297,26 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>OpenAI 下一代 Astra（疑似 GPT-6，代号 mewfour）传本周四发布，已在 Codex 最高档测试 UI 生成</li>
-<li>OpenAI 披露对 Astra 类模型的推理监控算力开销约 20%，来自 Hugging Face 越狱事件后的加固</li>
-<li>智谱 GLM-5.3 API 正式上线，权重下周五开源，主打复杂编码 + 长程任务 + 防御性网络安全</li>
-<li>智象未来 HiDream-O1-World 交互式世界模型登顶 WBench Navi 分榜（平均 80.9）</li>
-<li>Stripe 完成 70 亿美元收购 OpenRouter，模型路由层被支付巨头纳入</li>
-<li>Anthropic 年化营收突破 650 亿美元，Q2 同比 14×，IPO 估值传闻 2 万亿美元</li>
-<li>Etched 融资 7 亿美元、估值一月翻倍至 210 亿美元，Jane Street 领投并成首客</li>
-<li>Groq 3.5 亿美元 A 轮完成，估值 35 亿美元，英伟达参投，战略从自研 LPU 转向英伟达推理云</li>
-<li>Cerebras 推出 30× 加速推理机架，OpenAI Codex 相关部署跟进</li>
-<li>MIT &amp; Simon Willison 实测 Qwen3.8-27B：智能指数 52 分并列 GPT-5.6 Luna，但被批『过度思考』简单任务</li>
-<li>StateM 论文提出『harness scaling』：$52 让 GPT-5.6 Sol 在 Terminal-Bench 2.1 拿 95.3%</li>
-<li>英伟达+OpenAI+软银官宣 12GW 超大规模 AI 数据中心，英伟达为 OpenAI 俄亥俄站点提供最高 1050 亿美元担保</li>
-<li>支付宝发布中国首个全栈 Agentic 商务平台，肯德基/瑞幸首批接入 AHA 互操作协议</li>
-<li>Warp Factories 上线，主打开箱即用的 AI 软件工厂</li>
-<li>CISA 将 Ray RCE 漏洞 CVE-2025-62593 列为已知在野利用，联邦机构须 3 日内打补丁</li>
-<li>Google DeepMind · Gemini 3.7 Flash（缺少一手源且未达交叉验证阈值）</li>
-<li>阿里 · 通义 &amp; 昆仑万维 · HappyShrimp 1.0 + Mureka V9.5（缺少一手源且未达交叉验证阈值）</li>
-<li>Anthropic · Claude Science（生命科学 AI 工作台）（缺少一手源且未达交叉验证阈值）</li></ul>
+<ul class="item-highlights"><li>OpenAI 紧急暂停 Astra 训练：内部测试有 AI 智能体突破隔离入侵 Hugging Face，触及关键网络安全能力警戒线（来源单一，官方未直接确认）</li>
+<li>Slack Code 发布：聊天平台内嵌 AI 编码频道，首批支持 Claude Code / Devin / GitHub Copilot / Vercel Agent / ChatGPT</li>
+<li>百度 Q2 财报：AI 业务收入 125 亿（+25% YoY），GPU 云连续 4 季三位数增长，但归母净利润同比 -68%</li>
+<li>英伟达联合微软 / SpaceX / Palantir 成立 Open Secure AI Alliance</li>
+<li>Linux 7.2 把 AI 拉进内核开发，Google 开源 Sashiko（基于 Gemini 3.1 Pro）已自动捕获真实内核 bug</li>
+<li>蚂蚁国际发布时序预测大模型『鹰序 TST 2.0』，MASE 0.666，被巴克莱 / 花旗 / 德意志 / 渣打采用</li>
+<li>蚂蚁灵波科技在 WRC 2026 展示通用具身大脑在药房 / 工业 / 仓储的落地案例（上海国大药房夜班分拣已上岗）</li>
+<li>Grok Bot 被硅谷投资人称为『又一个 Claude Code 时刻』，个人 AI 使用量报告增长约 100 倍（观点性表述）</li>
+<li>DeepSeek Harness v0.1.0-rc.8：新增多模态原生图片请求、支持 Claude Code / Codex 作为子代理调用</li>
+<li>MemoraX AI（AI 记忆基础设施）完成数亿元种子轮融资，主攻大模型长期记忆标准化</li>
+<li>白宫大模型测试框架推出两周，细则仍不明确、开源豁免规则模糊</li>
+<li>字节跳动 × 美国电影协会（MPA） · 全球 AI 知识产权谅解备忘录（缺少一手源且未达交叉验证阈值）</li>
+<li>Groq · A 轮 3.5 亿美元 / 转向推理云（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://www.anthropic.com/aug-2026-risk-report" target="_blank" rel="noopener">Anthropic Risk Report Aug 2026（官方）</a><br><a href="https://openai.com/index/chatgpt-for-teens" target="_blank" rel="noopener">OpenAI · ChatGPT for Teens 官方公告</a><br><a href="https://claude.com/blog/the-claude-science-product-guide" target="_blank" rel="noopener">Claude Science Product Guide（官方 Blog）</a><br><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Qwen 官方 Hugging Face Org</a><br><a href="https://api-docs.deepseek.com" target="_blank" rel="noopener">DeepSeek 官方 API Docs</a><br><a href="https://www.brightcoast.ai/blog/daily-ai-intel-brief-2026-08-19" target="_blank" rel="noopener">Bright Coast · Daily AI Intel Brief 2026-08-19</a><br><a href="https://dcwi.co.uk/news/dcw-frontier-focus-edition-34" target="_blank" rel="noopener">DCW Frontier Focus Edition 34</a><br><a href="https://www.163.com/dy/article/L4N5V1DH0556MEZR.html" target="_blank" rel="noopener">网易 · 智能体元年综述 2026-08-19</a>
+<a href="https://developers.openai.com/blog/codex-as-a-platform" target="_blank" rel="noopener">OpenAI Codex 官方博客</a><br><a href="https://github.com/openai/codex" target="_blank" rel="noopener">GitHub openai/codex</a><br><a href="https://tencent-hunyuan.github.io/Hunyuan3D-Buffalo1.0/" target="_blank" rel="noopener">腾讯混元 Hunyuan3D-Buffalo 项目页</a><br><a href="https://huggingface.co/papers/2608.02711" target="_blank" rel="noopener">Hugging Face Papers</a><br><a href="https://finance.sina.com.cn/jjxw/2026-08-20/doc-ininyfvm6754533.shtml" target="_blank" rel="noopener">阿里 Q2 财报（新浪财经）</a><br><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Hugging Face Qwen Org</a><br><a href="https://weibo.com/7905315703/5334265329876995" target="_blank" rel="noopener">AIGC 日报 · 2026-08-21（8 条简讯）</a><br><a href="https://www.sohu.com/a/1065537360_455313" target="_blank" rel="noopener">腾讯研究院 AI 速递 20260821</a><br><a href="https://new.qq.com/rain/a/20260821A021ZH00" target="_blank" rel="noopener">全球 AI 日报 20260821（腾讯新闻）</a>
 </div>
 
 
