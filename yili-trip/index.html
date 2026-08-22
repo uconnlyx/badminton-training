@@ -226,27 +226,15 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-(function loadLeaflet(){
-  const urls = [
-    "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js",
-    "https://fastly.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
-  ];
-  let i = 0;
-  function tryLoad(){
-    if (i >= urls.length) { document.getElementById('map').innerHTML = '<div style="padding:40px;text-align:center;color:#888;">地图库加载失败，请刷新'; return; }
-    const s = document.createElement('script');
-    s.src = urls[i];
-    s.onload = () => window.initMap && window.initMap();
-    s.onerror = () => { i++; tryLoad(); };
-    document.head.appendChild(s);
+window.addEventListener('DOMContentLoaded', function() {
+  if (typeof L === 'undefined') {
+    document.getElementById('map').innerHTML = '<div style="padding:40px;text-align:center;color:#888;">地图库加载失败，请刷新页面重试</div>';
+    return;
   }
-  tryLoad();
-})();
-</script>
-<script></script>
-<script>
+  initMap();
+});
 const DAYS = [
   {
     id: 1, date: "9.25 周五", color: "#7F77DD",
@@ -307,7 +295,7 @@ const DAYS = [
       booking: [
         { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-26&checkOut=2026-09-27&keyword=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%20%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94" },
         { platform: "美团", url: "https://www.meituan.com/s/?q=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%20%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94%E9%85%92%E5%BA%97" },
-        { platform: "赛湖景区官方（微信搜"赛里木湖景区"）", url: "https://weixin.sogou.com/weixin?type=1&query=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%E6%99%AF%E5%8C%BA" }
+        { platform: "赛湖景区官方微信", url: "https://weixin.sogou.com/weixin?type=1&query=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%E6%99%AF%E5%8C%BA" }
       ]
     },
     center: [44.63, 81.15], zoom: 10,
@@ -442,7 +430,7 @@ const DAYS = [
   }
 ];
 
-window.initMap = function() {
+window.initMap = function initMap() {
 const map = L.map('map', { zoomControl: true, attributionControl: false }).setView([44.0, 82.0], 8);
 
 const gaodeVec = L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
