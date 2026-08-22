@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>伊犁5日自驾交互攻略 · 9.25–9.29</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0f1115;
+    color: #e6e6e6;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .app {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: 100vh;
+  }
+  .sidebar {
+    background: #161a22;
+    border-right: 1px solid #262b36;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  .header h1 { font-size: 18px; margin: 0 0 4px 0; font-weight: 600; color: #fff; }
+  .header p { font-size: 12px; color: #8a93a4; margin: 0 0 20px 0; }
+  .day-card {
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #1e2330;
+    border: 1px solid #262b36;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .day-card:hover { background: #242a3a; border-color: #3a4256; }
+  .day-card.active { background: #2b3350; border-color: #6b7ee3; }
+  .day-head { display: flex; align-items: center; gap: 10px; }
+  .day-badge {
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 600; font-size: 13px; flex-shrink: 0;
+  }
+  .day-title { font-size: 14px; font-weight: 600; color: #fff; }
+  .day-date { font-size: 12px; color: #8a93a4; }
+  .day-meta { margin-top: 8px; font-size: 12px; color: #a8b0c0; line-height: 1.6; }
+  .chip {
+    display: inline-block; padding: 2px 8px; margin: 4px 4px 0 0;
+    background: #262b36; border-radius: 4px; font-size: 11px; color: #b8c0d0;
+  }
+
+  .map-wrap { position: relative; }
+  #map { width: 100%; height: 100%; background: #eef2f7; }
+
+  .panel {
+    position: absolute; top: 16px; right: 16px;
+    width: 380px; max-height: calc(100vh - 32px);
+    background: #161a22;
+    border: 1px solid #262b36;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    overflow-y: auto;
+    z-index: 500;
+    display: none;
+  }
+  .panel.show { display: block; }
+  .panel-head {
+    padding: 16px 18px; border-bottom: 1px solid #262b36;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: #161a22; z-index: 1;
+  }
+  .panel-title { font-size: 16px; font-weight: 600; color: #fff; margin: 0; }
+  .panel-sub { font-size: 12px; color: #8a93a4; margin: 2px 0 0 0; }
+  .close-btn {
+    background: transparent; border: 0; color: #8a93a4;
+    font-size: 20px; cursor: pointer; padding: 4px 8px;
+  }
+  .close-btn:hover { color: #fff; }
+  .panel-body { padding: 16px 18px; }
+  .section-h { font-size: 13px; font-weight: 600; color: #fff; margin: 14px 0 8px 0; }
+  .section-h:first-child { margin-top: 0; }
+  .timeline { list-style: none; padding: 0; margin: 0; }
+  .timeline li {
+    padding: 8px 0 8px 20px; position: relative;
+    font-size: 13px; color: #c0c7d5; line-height: 1.6;
+    border-left: 1px solid #2b3040; margin-left: 8px;
+  }
+  .timeline li::before {
+    content: ''; position: absolute; left: -5px; top: 14px;
+    width: 9px; height: 9px; border-radius: 50%; background: #6b7ee3;
+  }
+  .timeline .time { color: #7cd4a8; font-weight: 500; }
+  .tips { background: #1e2330; padding: 10px 12px; border-radius: 6px; font-size: 12px; color: #ffcd7a; line-height: 1.7; }
+  .stat-row { display: flex; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .stat { font-size: 12px; color: #a8b0c0; }
+  .stat strong { color: #fff; }
+
+  .legend {
+    position: absolute; bottom: 16px; left: 16px;
+    background: rgba(22,26,34,.92); padding: 10px 14px; border-radius: 8px;
+    border: 1px solid #262b36; font-size: 12px; color: #c0c7d5; z-index: 500;
+  }
+  .legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+  .leaflet-popup-content-wrapper {
+    background: #161a22; color: #e6e6e6; border: 1px solid #262b36;
+  }
+  .leaflet-popup-tip { background: #161a22; }
+  .leaflet-popup-content { font-size: 12px; }
+
+  .marker-pin {
+    width: 34px; height: 34px; border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg); display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 600; font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.35);
+    border: 2px solid #fff;
+    position: relative;
+  }
+  .marker-pin span { transform: rotate(45deg); line-height: 1; text-align: center; }
+  .marker-pin .day-num { font-size: 13px; font-weight: 700; }
+  .marker-pin .idx-num { font-size: 9px; opacity: .9; margin-top: 1px; }
+
+  .marker-hotel {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,.4);
+    border: 3px solid #fff;
+    position: relative;
+  }
+  .marker-hotel .bed { font-size: 18px; line-height: 1; }
+  .marker-hotel .n { font-size: 10px; margin-top: 2px; opacity: .95; }
+  .marker-hotel::after {
+    content: ''; position: absolute; bottom: -8px; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #fff;
+  }
+
+  .lodging-box {
+    display: flex; gap: 10px; align-items: center;
+    padding: 10px 12px; margin: 12px 0;
+    background: linear-gradient(90deg, rgba(107,126,227,.12), transparent);
+    border-left: 3px solid #6b7ee3;
+    border-radius: 6px;
+  }
+  .lodging-box .icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: #6b7ee3; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .lodging-box .name { font-size: 13px; font-weight: 600; color: #fff; }
+  .lodging-box .meta { font-size: 11px; color: #a8b0c0; margin-top: 2px; }
+
+  @media (max-width: 800px) {
+    .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .sidebar { max-height: 40vh; }
+    .panel { width: calc(100% - 32px); }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="header">
+      <h1>伊犁 5 日自驾攻略</h1>
+      <p>9.25 – 9.29 · 约 900km · 每日车程 ≤ 4h</p>
+    </div>
+    <div id="dayList"></div>
+    <div style="margin-top:20px; padding:12px; background:#1e2330; border-radius:8px; font-size:12px; color:#8a93a4; line-height:1.7;">
+      💡 点击左侧每日卡片或地图上的编号点，查看详细攻略
+    </div>
+  </aside>
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div id="panel" class="panel">
+      <div class="panel-head">
+        <div>
+          <h3 id="panelTitle" class="panel-title"></h3>
+          <p id="panelSub" class="panel-sub"></p>
+        </div>
+        <button class="close-btn" onclick="closePanel()">×</button>
+      </div>
+      <div id="panelBody" class="panel-body"></div>
+    </div>
+    <div class="legend">
+      <div><span class="dot" style="background:#7F77DD"></span>Day1 抵达</div>
+      <div><span class="dot" style="background:#378ADD"></span>Day2 赛湖顺时针</div>
+      <div><span class="dot" style="background:#1D9E75"></span>Day3 逆时针+那拉提</div>
+      <div><span class="dot" style="background:#BA7517"></span>Day4 返伊宁+惠远</div>
+      <div><span class="dot" style="background:#D4537E"></span>Day5 送机</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const DAYS = [
+  {
+    id: 1, date: "9.25 周五", color: "#7F77DD",
+    title: "抵达伊宁 · 六星街人文半日",
+    drive: "≈ 20 km / 40 min",
+    weather: "☀️ 晴 / 多云 · 8–22°C",
+    lodging: { name: "亚朵伊宁六星街店", coord: [43.9155, 81.3230], area: "伊宁市区 · 六星街旁", note: "位置最佳，步行 5min 到六星街" },
+    center: [43.912, 81.317], zoom: 13,
+    points: [
+      { name: "伊宁机场", coord: [43.9584, 81.3303], type: "start", desc: "12:30 落地取车（推荐四驱SUV）" },
+      { name: "六星街", coord: [43.9165, 81.3242], type: "sight", desc: "俄罗斯族老街区·彩虹房子·手风琴博物馆(门票30)" },
+      { name: "喀赞其民俗区", coord: [43.8975, 81.3350], type: "sight", desc: "蓝墙巷子·马车游60元/人·全程最出片人文点" },
+      { name: "亚朵伊宁六星街店", coord: [43.9155, 81.3230], type: "hotel", desc: "推荐住宿·位置最佳" }
+    ],
+    schedule: [
+      { time: "12:30", act: "伊宁机场落地，取车" },
+      { time: "13:30", act: "买买提鱼餐厅 · 伊河烤鱼（人均60-80）" },
+      { time: "15:00", act: "六星街漫步 + 手风琴博物馆" },
+      { time: "17:30", act: "喀赞其民俗区 · 蓝墙巷子马车游" },
+      { time: "19:30", act: "塞外江南手抓肉（人均80-100）" },
+      { time: "21:00", act: "入住亚朵六星街店 / 伊犁大饭店" }
+    ],
+    tips: "落地就穿冲锋衣，早晚温差大。第一顿定调吃维族菜。",
+    weatherEval: "晴天概率75%，六星街彩虹房子出片率最高，午后4-6点光线最佳。"
+  },
+  {
+    id: 2, date: "9.26 周六", color: "#378ADD",
+    title: "伊宁 → 赛里木湖（顺时针环湖）",
+    drive: "≈ 220 km / 3.5h",
+    weather: "☀️→⛅ · 伊宁22°C · 赛湖 2–14°C 风大",
+    lodging: { name: "赛湖湖畔驿站 / 蒙古包", coord: [44.6100, 81.0100], area: "赛里木湖北岸 · 海拔 2073m", note: "夜里近 0°C，看星空必带保暖衣" },
+    center: [44.63, 81.15], zoom: 10,
+    points: [
+      { name: "伊宁出发", coord: [43.9165, 81.3242], type: "start", desc: "08:30 走G30京新高速" },
+      { name: "果子沟大桥", coord: [44.3620, 80.8620], type: "viewpoint", desc: "观景台必停·俯瞰山谷" },
+      { name: "赛湖东门", coord: [44.5680, 81.2450], type: "gate", desc: "门票70+区间车70·自驾可入" },
+      { name: "点将台", coord: [44.5050, 81.1200], type: "sight", desc: "俯拍全湖·晴天雪山倒影" },
+      { name: "天鹅湾", coord: [44.6420, 81.0800], type: "sight", desc: "9月候鸟集结·赤麻鸭群" },
+      { name: "南岸松林", coord: [44.4950, 80.9700], type: "sight", desc: "雪山+草原+湖·全程最出片" },
+      { name: "克勒涌珠", coord: [44.6820, 80.9450], type: "sight", desc: "湖边喷泉·打卡点" },
+      { name: "赛湖住宿", coord: [44.6100, 81.0100], type: "hotel", desc: "湖畔驿站·星空营地·必看银河" }
+    ],
+    schedule: [
+      { time: "08:30", act: "伊宁出发，走G30高速" },
+      { time: "09:00-11:30", act: "伊宁→果子沟大桥→赛湖东门" },
+      { time: "12:00", act: "东门入园（湖边野餐，出发前伊宁买馕/酸奶/水果）" },
+      { time: "13:00-18:00", act: "顺时针环湖：点将台→天鹅湾→南岸松林→克勒涌珠" },
+      { time: "18:30", act: "南岸看日落（约20:30）" },
+      { time: "20:00", act: "入住蒙古包·晚餐烤全羊" },
+      { time: "22:00", act: "湖边看星空 · 银河可见期 ✨" }
+    ],
+    tips: "⚠️ 湖区夜间近0°C，必须冲锋衣+抓绒+帽子+手套。周六住宿紧张，务必提前一周订。进湖前清水河镇加满油！",
+    weatherEval: "果子沟大桥晴天几乎是全程视觉巅峰，赛湖有25%阵雨概率但不大，星空条件极佳（9月银河可见期）。"
+  },
+  {
+    id: 3, date: "9.27 周日", color: "#1D9E75",
+    title: "赛湖逆时针 → 那拉提",
+    drive: "≈ 320 km / 3.5-4h",
+    weather: "⛅ 有雾概率30% · 赛湖清晨-1~6°C · 那拉提4-18°C",
+    lodging: { name: "那拉提爱在西游酒店", coord: [43.3200, 84.1700], area: "那拉提镇中心 · 海拔 1800m", note: "如想缩短车程可改住巩乃斯林场木屋" },
+    center: [43.95, 83.5], zoom: 9,
+    points: [
+      { name: "赛湖日出", coord: [44.6100, 81.0100], type: "sunrise", desc: "07:50日出·北岸最佳" },
+      { name: "逆时针环湖", coord: [44.5500, 80.9800], type: "route", desc: "北岸→西海草原→南岸→东门·光线与昨天完全不同" },
+      { name: "乔尔玛烈士陵园", coord: [43.6900, 84.3600], type: "culture", desc: "独库公路建设者纪念馆·人文强推" },
+      { name: "巩乃斯河谷", coord: [43.4500, 84.4500], type: "sight", desc: "空中草原观景台·9月底秋色巅峰" },
+      { name: "那拉提镇", coord: [43.3200, 84.1700], type: "hotel", desc: "那拉提爱在西游酒店 / 巩乃斯林场木屋" }
+    ],
+    schedule: [
+      { time: "07:30", act: "湖边日出+早餐（北岸看日出最佳）" },
+      { time: "08:30-11:30", act: "逆时针环湖：北岸→西海草原→南岸→东门（3h）" },
+      { time: "12:00", act: "出赛湖东门，果子沟服务区午餐" },
+      { time: "13:00", act: "南下走G218独库南段" },
+      { time: "15:30", act: "乔尔玛烈士陵园（人文点）" },
+      { time: "16:30", act: "巩乃斯河谷秋色·白杨黄叶+雪山" },
+      { time: "18:30", act: "抵达那拉提镇入住" },
+      { time: "20:00", act: "草原印象手抓肉（人均90）" }
+    ],
+    tips: "⚠️ 出发当天务必查独库公路是否封路（新疆交警公众号 or 12122），10月初开始按天封。清晨湖边可能薄冰，先热车除霜。",
+    weatherEval: "早雾出仙气效果·独库南段+巩乃斯秋色是此行最惊艳一段。若嫌车程长可缩短住巩乃斯林场压到3h。"
+  },
+  {
+    id: 4, date: "9.28 周一", color: "#BA7517",
+    title: "那拉提草原 → 伊宁 · 惠远古城",
+    drive: "≈ 310 km / 3.5h",
+    weather: "☀️ 晴 · 那拉提4-18°C · 伊宁9-23°C",
+    lodging: { name: "希尔顿花园伊宁店", coord: [43.9450, 81.3300], area: "伊宁北 · 近机场 15min", note: "为次日飞行做准备" },
+    center: [43.75, 82.5], zoom: 9,
+    points: [
+      { name: "那拉提空中草原", coord: [43.3170, 84.1480], type: "sight", desc: "门票95+区间车60·哈萨克游牧文化毡房" },
+      { name: "返程G218", coord: [43.4800, 83.0000], type: "route", desc: "沿伊犁河谷返回，秋色一路陪伴" },
+      { name: "伊宁", coord: [43.9165, 81.3242], type: "stop", desc: "17:00抵达，办入住" },
+      { name: "惠远古城", coord: [44.1700, 80.9400], type: "culture", desc: "清代新疆军政中心·钟鼓楼·伊犁将军府" },
+      { name: "林则徐纪念馆", coord: [44.1720, 80.9420], type: "culture", desc: "室内为主·人文迷强推" },
+      { name: "希尔顿花园伊宁", coord: [43.9450, 81.3300], type: "hotel", desc: "机场15min·为次日飞行准备" }
+    ],
+    schedule: [
+      { time: "08:30", act: "那拉提空中草原（3h足够）" },
+      { time: "12:00", act: "那拉提镇奶疙瘩+烤肉" },
+      { time: "13:00-16:30", act: "那拉提→伊宁（G218返程）" },
+      { time: "17:00", act: "入住希尔顿花园伊宁店" },
+      { time: "18:00", act: "驱车惠远古城 · 伊犁将军府 · 林则徐纪念馆" },
+      { time: "20:00", act: "回味斋过油肉拌面（人均50）" },
+      { time: "21:30", act: "六星街夜景 or 酒店休息" }
+    ],
+    tips: "⚠️ 9月底那拉提草原已泛黄，非夏季绿草原·预期管理好。若不想去可跳过，改成巩乃斯林场看秋景+提早回伊宁。",
+    weatherEval: "全天晴朗，惠远古城钟鼓楼光影极好，人文加餐日无天气风险。"
+  },
+  {
+    id: 5, date: "9.29 周二", color: "#D4537E",
+    title: "伊宁市区 · 送机飞阿拉木图",
+    drive: "≈ 30 km / 1h",
+    weather: "☀️ 晴 · 10-23°C · 完美出发日",
+    lodging: { name: "（当天离开，无住宿）", coord: null, area: "飞往阿拉木图", note: "13:30 还车 · 值机" },
+    center: [43.912, 81.317], zoom: 13,
+    points: [
+      { name: "老皇冠面包房", coord: [43.9170, 81.3240], type: "food", desc: "俄式列巴+奶茶早餐" },
+      { name: "汉人街巴扎", coord: [43.9080, 81.3380], type: "shop", desc: "买干果·薰衣草制品·马奶酒" },
+      { name: "塔什库勒克抓饭", coord: [43.9020, 81.3220], type: "food", desc: "伊宁最有名抓饭老店·人均40" },
+      { name: "伊宁机场", coord: [43.9584, 81.3303], type: "end", desc: "13:30还车 · 值机 · 飞阿拉木图" }
+    ],
+    schedule: [
+      { time: "08:30", act: "六星街老皇冠面包房早餐" },
+      { time: "09:30", act: "汉人街巴扎买伴手礼（薰衣草/干果/马奶酒）" },
+      { time: "12:00", act: "塔什库勒克抓饭·收官午餐" },
+      { time: "13:30", act: "还车 · 机场值机（出境提前3h）" },
+      { time: "16:00+", act: "起飞前往阿拉木图 ✈" }
+    ],
+    tips: "⚠️ 再次确认：伊宁机场是否有直飞阿拉木图航班？如从乌鲁木齐起飞，Day4就要重排！哈萨克斯坦对中方公民30天免签，带护照和小额美元。",
+    weatherEval: "晴朗舒适，逛巴扎和吃饭全无天气影响。"
+  }
+];
+
+const map = L.map('map', { zoomControl: true, attributionControl: false }).setView([44.0, 82.0], 8);
+
+const gaodeVector = L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+  subdomains: '1234', maxZoom: 18
+});
+const gaodeSat = L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}', {
+  subdomains: '1234', maxZoom: 18
+});
+const gaodeSatLabel = L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}', {
+  subdomains: '1234', maxZoom: 18
+});
+const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  subdomains: 'abc', maxZoom: 18
+});
+
+gaodeVector.addTo(map);
+
+const baseLayers = {
+  '高德矢量（默认）': gaodeVector,
+  '高德卫星': L.layerGroup([gaodeSat, gaodeSatLabel]),
+  'OpenStreetMap': osm
+};
+L.control.layers(baseLayers, null, { position: 'topleft', collapsed: true }).addTo(map);
+
+L.control.attribution({ prefix: false }).addAttribution('© 高德地图 / OSM').addTo(map);
+
+const dayLayers = {};
+const routeColors = {};
+DAYS.forEach(d => routeColors[d.id] = d.color);
+
+function haversine(a, b) {
+  if (!a || !b) return 0;
+  const R = 6371;
+  const toRad = x => x * Math.PI / 180;
+  const dLat = toRad(b[0] - a[0]);
+  const dLon = toRad(b[1] - a[1]);
+  const lat1 = toRad(a[0]), lat2 = toRad(b[0]);
+  const h = Math.sin(dLat/2)**2 + Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLon/2)**2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+DAYS.forEach(day => {
+  const layer = L.layerGroup();
+  const coords = day.points.map(p => p.coord);
+
+  if (coords.length >= 2) {
+    L.polyline(coords, {
+      color: day.color, weight: 4, opacity: 0.85,
+      lineCap: 'round', lineJoin: 'round'
+    }).addTo(layer);
+  }
+
+  day.points.forEach((p, idx) => {
+    const isHotel = p.type === 'hotel';
+    let icon;
+    if (isHotel) {
+      icon = L.divIcon({
+        className: 'custom-marker',
+        html: `<div class="marker-hotel" style="background:${day.color}">
+          <div class="bed">🛏</div>
+          <div class="n">D${day.id}住</div>
+        </div>`,
+        iconSize: [44, 44], iconAnchor: [22, 52]
+      });
+    } else {
+      icon = L.divIcon({
+        className: 'custom-marker',
+        html: `<div class="marker-pin" style="background:${day.color}">
+          <span><div class="day-num">D${day.id}</div><div class="idx-num">${idx+1}</div></span>
+        </div>`,
+        iconSize: [34, 34], iconAnchor: [17, 34]
+      });
+    }
+    const popupTitle = isHotel ? `Day ${day.id} · 🛏 住：${p.name}` : `Day ${day.id} · 第${idx+1}站 · ${p.name}`;
+    L.marker(p.coord, { icon, zIndexOffset: isHotel ? 1000 : 0 })
+      .addTo(layer)
+      .bindPopup(`<b style="color:${day.color}">${popupTitle}</b><br>${p.desc}`)
+      .bindTooltip(p.name, { permanent: false, direction: 'top', offset: [0, -30] })
+      .on('click', () => showDay(day.id));
+  });
+
+  layer.addTo(map);
+  dayLayers[day.id] = layer;
+});
+
+const dayList = document.getElementById('dayList');
+DAYS.forEach(day => {
+  const card = document.createElement('div');
+  card.className = 'day-card';
+  card.dataset.dayId = day.id;
+  card.innerHTML = `
+    <div class="day-head">
+      <div class="day-badge" style="background:${day.color}">D${day.id}</div>
+      <div>
+        <div class="day-title">${day.title}</div>
+        <div class="day-date">${day.date} · ${day.drive}</div>
+      </div>
+    </div>
+    <div class="day-meta">${day.weather}</div>
+    <div class="day-meta" style="color:#7cd4a8;margin-top:4px;">🛏 ${day.lodging.name}</div>
+    <div>
+      ${day.points.slice(0, 4).map(p => `<span class="chip">${p.name}</span>`).join('')}
+    </div>
+  `;
+  card.addEventListener('click', () => showDay(day.id));
+  dayList.appendChild(card);
+});
+
+function showDay(id) {
+  const day = DAYS.find(d => d.id === id);
+  if (!day) return;
+
+  document.querySelectorAll('.day-card').forEach(c => {
+    c.classList.toggle('active', +c.dataset.dayId === id);
+  });
+
+  map.flyTo(day.center, day.zoom, { duration: 0.8 });
+
+  document.getElementById('panelTitle').innerText = `Day ${day.id} · ${day.title}`;
+  document.getElementById('panelTitle').style.color = day.color;
+  document.getElementById('panelSub').innerText = `${day.date} · ${day.drive}`;
+
+  const body = document.getElementById('panelBody');
+  const start = day.points[0];
+  const end = day.points[day.points.length - 1];
+  const startToLodgeKm = day.lodging.coord ? haversine(start.coord, day.lodging.coord).toFixed(0) : null;
+  const endToLodgeKm = day.lodging.coord ? haversine(end.coord, day.lodging.coord).toFixed(0) : null;
+
+  const lodgingHtml = day.lodging.coord ? `
+    <div class="lodging-box">
+      <div class="icon">🛏</div>
+      <div>
+        <div class="name">${day.lodging.name}</div>
+        <div class="meta">${day.lodging.area} · ${day.lodging.note}</div>
+        <div class="meta" style="color:#7cd4a8;margin-top:4px;">起点 → 住宿 直线约 ${startToLodgeKm} km · 终点 → 住宿 约 ${endToLodgeKm} km</div>
+      </div>
+    </div>
+  ` : `
+    <div class="lodging-box">
+      <div class="icon">✈</div>
+      <div>
+        <div class="name">${day.lodging.name}</div>
+        <div class="meta">${day.lodging.area} · ${day.lodging.note}</div>
+      </div>
+    </div>
+  `;
+
+  body.innerHTML = `
+    <div class="stat-row">
+      <div class="stat">🌤️ <strong>天气</strong>：${day.weather}</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat">🚗 <strong>今日车程</strong>：${day.drive}</div>
+    </div>
+
+    ${lodgingHtml}
+
+    <div class="section-h">📍 今日节点</div>
+    <div>${day.points.map(p => `<span class="chip">${p.type==='hotel'?'🛏 ':''}${p.name}</span>`).join('')}</div>
+
+    <div class="section-h">🗓️ 时间安排</div>
+    <ul class="timeline">
+      ${day.schedule.map(s => `<li><span class="time">${s.time}</span> · ${s.act}</li>`).join('')}
+    </ul>
+
+    <div class="section-h">🌦️ 天气 & 景点评估</div>
+    <div style="font-size:12px;color:#c0c7d5;line-height:1.7;">${day.weatherEval}</div>
+
+    <div class="section-h">💡 关键提示</div>
+    <div class="tips">${day.tips}</div>
+  `;
+
+  document.getElementById('panel').classList.add('show');
+}
+
+function closePanel() {
+  document.getElementById('panel').classList.remove('show');
+  document.querySelectorAll('.day-card').forEach(c => c.classList.remove('active'));
+}
+
+showDay(1);
+</script>
+</body>
+</html>
