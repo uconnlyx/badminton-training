@@ -142,12 +142,12 @@
   }
 
   .lodging-box {
-    display: flex; gap: 10px; align-items: center;
-    padding: 10px 12px; margin: 12px 0;
-    background: linear-gradient(90deg, rgba(107,126,227,.12), transparent);
+    padding: 12px; margin: 12px 0;
+    background: rgba(107,126,227,.08);
     border-left: 3px solid #6b7ee3;
     border-radius: 6px;
   }
+  .lodging-head { display: flex; gap: 10px; align-items: flex-start; }
   .lodging-box .icon {
     width: 32px; height: 32px; border-radius: 8px;
     background: #6b7ee3; color: #fff;
@@ -155,7 +155,27 @@
     font-size: 16px; flex-shrink: 0;
   }
   .lodging-box .name { font-size: 13px; font-weight: 600; color: #fff; }
-  .lodging-box .meta { font-size: 11px; color: #a8b0c0; margin-top: 2px; }
+  .lodging-box .meta { font-size: 11px; color: #a8b0c0; margin-top: 2px; line-height: 1.6; }
+  .lodging-box .price { color: #ffcd7a; font-weight: 500; }
+  .lodging-box .distance { color: #7cd4a8; margin-top: 4px; font-size: 11px; }
+  .booking-btns { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .booking-btns a {
+    padding: 5px 10px; font-size: 11px;
+    background: #2b3350; color: #a8c3ff;
+    border-radius: 4px; text-decoration: none;
+    border: 1px solid #3a4670;
+  }
+  .booking-btns a:hover { background: #3a4670; color: #fff; }
+  .alt-title { font-size: 11px; color: #8a93a4; margin: 10px 0 6px 0; font-weight: 500; }
+  .alt-item {
+    padding: 8px 10px; margin-bottom: 4px;
+    background: rgba(255,255,255,.03);
+    border-radius: 5px; font-size: 12px;
+  }
+  .alt-item .an { color: #e6e6e6; font-weight: 500; }
+  .alt-item .ap { color: #ffcd7a; font-size: 11px; margin-left: 6px; }
+  .alt-item .anote { color: #8a93a4; font-size: 11px; margin-top: 2px; }
+  .warn { color: #ff9f6b; font-size: 11px; margin-top: 6px; }
 
   @media (max-width: 800px) {
     .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
@@ -206,7 +226,22 @@ const DAYS = [
     title: "抵达伊宁 · 六星街人文半日",
     drive: "≈ 20 km / 40 min",
     weather: "☀️ 晴 / 多云 · 8–22°C",
-    lodging: { name: "亚朵伊宁六星街店", coord: [43.9155, 81.3230], area: "伊宁市区 · 六星街旁", note: "位置最佳，步行 5min 到六星街" },
+    lodging: {
+      name: "亚朵酒店（伊宁六星街店）",
+      coord: [43.9155, 81.3230],
+      area: "伊宁市区 · 六星街步行 5min",
+      note: "首选，位置最好，逛完六星街回酒店只要5min",
+      price: "¥550-750/晚",
+      alternatives: [
+        { name: "伊犁大饭店（老苏式建筑）", price: "¥400-600/晚", note: "复古感强，人文党会喜欢" },
+        { name: "全季酒店（伊宁六星街店）", price: "¥400-550/晚", note: "连锁稳定，性价比" }
+      ],
+      booking: [
+        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?city=576&checkIn=2026-09-25&checkOut=2026-09-26&keyword=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" },
+        { platform: "美团", url: "https://www.meituan.com/s/?q=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" },
+        { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97+%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" }
+      ]
+    },
     center: [43.912, 81.317], zoom: 13,
     points: [
       { name: "伊宁机场", coord: [43.9584, 81.3303], type: "start", desc: "12:30 落地取车（推荐四驱SUV）" },
@@ -230,7 +265,24 @@ const DAYS = [
     title: "伊宁 → 赛里木湖（顺时针环湖）",
     drive: "≈ 220 km / 3.5h",
     weather: "☀️→⛅ · 伊宁22°C · 赛湖 2–14°C 风大",
-    lodging: { name: "赛湖湖畔驿站 / 蒙古包", coord: [44.6100, 81.0100], area: "赛里木湖北岸 · 海拔 2073m", note: "夜里近 0°C，看星空必带保暖衣" },
+    lodging: {
+      name: "赛里木湖·塔玛暇尔酒店（东门 5星）",
+      coord: [44.5680, 81.2450],
+      area: "赛里木湖景区东门 · 海拔 2073m",
+      note: "首选，景区唯一星级酒店，湖景房+地暖，环湖回来直接开到门口",
+      price: "¥800-1200/晚（9月下旬淡季约¥600-900）",
+      alternatives: [
+        { name: "亚朵见野（赛湖游客中心店）", price: "¥800-1200/晚", note: "全屋智能+湖景房，含早餐" },
+        { name: "点将台星空营地（房车/穹顶）", price: "¥1500-2500/晚", note: "透明穹顶看银河，看星空首选" },
+        { name: "白毡部落民宿（哈萨克传统毡房）", price: "¥500-800/顶", note: "西海草原松林旁，原生态毡房" }
+      ],
+      warning: "⚠️ 9.26是周六+旺季末尾，务必提前 2 周订，湖景房紧张",
+      booking: [
+        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-26&checkOut=2026-09-27&keyword=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%20%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94" },
+        { platform: "美团", url: "https://www.meituan.com/s/?q=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%20%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94%E9%85%92%E5%BA%97" },
+        { platform: "赛湖景区官方（微信搜"赛里木湖景区"）", url: "https://weixin.sogou.com/weixin?type=1&query=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%E6%99%AF%E5%8C%BA" }
+      ]
+    },
     center: [44.63, 81.15], zoom: 10,
     points: [
       { name: "伊宁出发", coord: [43.9165, 81.3242], type: "start", desc: "08:30 走G30京新高速" },
@@ -259,7 +311,22 @@ const DAYS = [
     title: "赛湖逆时针 → 那拉提",
     drive: "≈ 320 km / 3.5-4h",
     weather: "⛅ 有雾概率30% · 赛湖清晨-1~6°C · 那拉提4-18°C",
-    lodging: { name: "那拉提爱在西游酒店", coord: [43.3200, 84.1700], area: "那拉提镇中心 · 海拔 1800m", note: "如想缩短车程可改住巩乃斯林场木屋" },
+    lodging: {
+      name: "那拉提爱在西游酒店",
+      coord: [43.3200, 84.1700],
+      area: "那拉提镇中心 · 步行到景区门口 10min",
+      note: "首选，那拉提镇口碑较好的连锁型酒店",
+      price: "¥350-500/晚",
+      alternatives: [
+        { name: "那拉提草原假日酒店", price: "¥300-450/晚", note: "位置佳，餐厅哈萨克风味" },
+        { name: "巩乃斯林场木屋（如想缩短 D3 车程）", price: "¥400-600/晚", note: "秋色最浓，能压缩到 3h 车程" }
+      ],
+      booking: [
+        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-27&checkOut=2026-09-28&keyword=%E9%82%A3%E6%8B%89%E6%8F%90%E7%88%B1%E5%9C%A8%E8%A5%BF%E6%B8%B8" },
+        { platform: "美团", url: "https://www.meituan.com/s/?q=%E9%82%A3%E6%8B%89%E6%8F%90%E9%95%87%20%E9%85%92%E5%BA%97" },
+        { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E9%82%A3%E6%8B%89%E6%8F%90%E9%95%87" }
+      ]
+    },
     center: [43.95, 83.5], zoom: 9,
     points: [
       { name: "赛湖日出", coord: [44.6100, 81.0100], type: "sunrise", desc: "07:50日出·北岸最佳" },
@@ -286,7 +353,22 @@ const DAYS = [
     title: "那拉提草原 → 伊宁 · 惠远古城",
     drive: "≈ 310 km / 3.5h",
     weather: "☀️ 晴 · 那拉提4-18°C · 伊宁9-23°C",
-    lodging: { name: "希尔顿花园伊宁店", coord: [43.9450, 81.3300], area: "伊宁北 · 近机场 15min", note: "为次日飞行做准备" },
+    lodging: {
+      name: "希尔顿花园酒店（伊宁店）",
+      coord: [43.9450, 81.3300],
+      area: "伊宁北 · 距机场 15min 车程",
+      note: "首选，位置为次日 9.29 送机做准备；国际连锁品质稳定",
+      price: "¥600-850/晚",
+      alternatives: [
+        { name: "亚朵酒店（伊宁六星街店）", price: "¥550-750/晚", note: "如果不介意 20min 去机场，回市区体验更好" },
+        { name: "全季酒店（伊宁机场店）", price: "¥350-450/晚", note: "性价比选项，走机场大巴 10min" }
+      ],
+      booking: [
+        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-28&checkOut=2026-09-29&keyword=%E5%B8%8C%E5%B0%94%E9%A1%BF%E8%8A%B1%E5%9B%AD%20%E4%BC%8A%E5%AE%81" },
+        { platform: "美团", url: "https://www.meituan.com/s/?q=%E5%B8%8C%E5%B0%94%E9%A1%BF%E8%8A%B1%E5%9B%AD%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81" },
+        { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E5%B8%8C%E5%B0%94%E9%A1%BF%E4%BC%8A%E5%AE%81" }
+      ]
+    },
     center: [43.75, 82.5], zoom: 9,
     points: [
       { name: "那拉提空中草原", coord: [43.3170, 84.1480], type: "sight", desc: "门票95+区间车60·哈萨克游牧文化毡房" },
@@ -463,19 +545,37 @@ function showDay(id) {
 
   const lodgingHtml = day.lodging.coord ? `
     <div class="lodging-box">
-      <div class="icon">🛏</div>
-      <div>
-        <div class="name">${day.lodging.name}</div>
-        <div class="meta">${day.lodging.area} · ${day.lodging.note}</div>
-        <div class="meta" style="color:#7cd4a8;margin-top:4px;">起点 → 住宿 直线约 ${startToLodgeKm} km · 终点 → 住宿 约 ${endToLodgeKm} km</div>
+      <div class="lodging-head">
+        <div class="icon">🛏</div>
+        <div style="flex:1;">
+          <div class="name">${day.lodging.name}</div>
+          <div class="meta">${day.lodging.area}</div>
+          <div class="meta"><span class="price">${day.lodging.price || ''}</span> · ${day.lodging.note}</div>
+          <div class="distance">起点 → 酒店 直线约 ${startToLodgeKm} km · 终点 → 酒店 约 ${endToLodgeKm} km</div>
+          ${day.lodging.warning ? `<div class="warn">${day.lodging.warning}</div>` : ''}
+        </div>
       </div>
+      <div class="booking-btns">
+        ${(day.lodging.booking || []).map(b => `<a href="${b.url}" target="_blank" rel="noopener">${b.platform}订房 →</a>`).join('')}
+      </div>
+      ${day.lodging.alternatives && day.lodging.alternatives.length ? `
+        <div class="alt-title">备选酒店</div>
+        ${day.lodging.alternatives.map(a => `
+          <div class="alt-item">
+            <span class="an">${a.name}</span><span class="ap">${a.price}</span>
+            <div class="anote">${a.note}</div>
+          </div>
+        `).join('')}
+      ` : ''}
     </div>
   ` : `
     <div class="lodging-box">
-      <div class="icon">✈</div>
-      <div>
-        <div class="name">${day.lodging.name}</div>
-        <div class="meta">${day.lodging.area} · ${day.lodging.note}</div>
+      <div class="lodging-head">
+        <div class="icon">✈</div>
+        <div>
+          <div class="name">${day.lodging.name}</div>
+          <div class="meta">${day.lodging.area} · ${day.lodging.note}</div>
+        </div>
       </div>
     </div>
   `;
