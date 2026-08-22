@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>伊犁5日自驾交互攻略 · 9.25–9.29</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <style>
   * { box-sizing: border-box; }
   body {
@@ -226,7 +226,26 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function loadLeaflet(){
+  const urls = [
+    "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js",
+    "https://fastly.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+  ];
+  let i = 0;
+  function tryLoad(){
+    if (i >= urls.length) { document.getElementById('map').innerHTML = '<div style="padding:40px;text-align:center;color:#888;">地图库加载失败，请刷新'; return; }
+    const s = document.createElement('script');
+    s.src = urls[i];
+    s.onload = () => window.initMap && window.initMap();
+    s.onerror = () => { i++; tryLoad(); };
+    document.head.appendChild(s);
+  }
+  tryLoad();
+})();
+</script>
+<script></script>
 <script>
 const DAYS = [
   {
@@ -423,39 +442,31 @@ const DAYS = [
   }
 ];
 
+window.initMap = function() {
 const map = L.map('map', { zoomControl: true, attributionControl: false }).setView([44.0, 82.0], 8);
 
+const gaodeVec = L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+  subdomains: '1234', maxZoom: 18
+});
+const gaodeSat = L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}', {
+  subdomains: '1234', maxZoom: 18
+});
+const gaodeSatLabel = L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}', {
+  subdomains: '1234', maxZoom: 18
+});
 const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  subdomains: 'abc', maxZoom: 18,
-  attribution: '© OpenStreetMap'
-});
-const wiki = L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-  maxZoom: 18,
-  attribution: '© Wikimedia'
-});
-const esriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 18,
-  attribution: '© Esri'
+  subdomains: 'abc', maxZoom: 18
 });
 
-osm.addTo(map);
+gaodeVec.addTo(map);
 
 const baseLayers = {
-  'OpenStreetMap': osm,
-  'Wikimedia': wiki,
-  'Esri 卫星影像': esriSat
+  '高德矢量': gaodeVec,
+  '高德卫星': L.layerGroup([gaodeSat, gaodeSatLabel]),
+  'OpenStreetMap': osm
 };
 L.control.layers(baseLayers, null, { position: 'topleft', collapsed: true }).addTo(map);
-L.control.attribution({ prefix: false }).addAttribution('© OSM / Esri').addTo(map);
-
-let osmErrCount = 0;
-osm.on('tileerror', () => {
-  osmErrCount++;
-  if (osmErrCount === 3 && map.hasLayer(osm)) {
-    map.removeLayer(osm);
-    wiki.addTo(map);
-  }
-});
+L.control.attribution({ prefix: false }).addAttribution('© 高德 / OSM').addTo(map);
 
 const dayLayers = {};
 const routeColors = {};
@@ -631,6 +642,10 @@ function closePanel() {
 
 const isMobile = window.innerWidth < 800;
 if (!isMobile) showDay(1);
+
+window.closePanel = closePanel;
+window.showDay = showDay;
+};
 </script>
 </body>
 </html>
