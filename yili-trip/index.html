@@ -245,15 +245,16 @@ const DAYS = [
       name: "亚朵酒店（伊宁六星街店）",
       coord: [43.9155, 81.3230],
       area: "伊宁市区 · 六星街步行 5min",
-      note: "首选，位置最好，逛完六星街回酒店只要5min",
-      price: "¥550-750/晚",
+      note: "临近六星街景区，出行逛吃方便，配有书吧、自助洗衣、停车场；周边餐饮丰富，床品舒适",
+      price: "¥380-550/晚（9.25参考价）",
       alternatives: [
-        { name: "伊犁大饭店（老苏式建筑）", price: "¥400-600/晚", note: "复古感强，人文党会喜欢" },
-        { name: "全季酒店（伊宁六星街店）", price: "¥400-550/晚", note: "连锁稳定，性价比" }
+        { name: "伊宁六星街环球港城际酒店", price: "¥350-500/晚", note: "距六星街步行约800米，酒店较新，免费洗衣+迷你吧" },
+        { name: "伊犁花城宾馆（六星街店）", price: "¥280-400/晚", note: "地理位置优越，含自助早餐+洗衣房" },
+        { name: "伊宁广仁郡亚朵酒店", price: "¥450-650/晚", note: "同亚朵系列，花园环境，可享接送机服务" }
       ],
       booking: [
-        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?city=576&checkIn=2026-09-25&checkOut=2026-09-26&keyword=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" },
-        { platform: "美团", url: "https://www.meituan.com/s/?q=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" },
+        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?city=576&checkIn=2026-09-25&checkOut=2026-09-26&keyword=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97+%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" },
+        { platform: "美团", url: "https://i.meituan.com/awp/hfe/block/eb37bdd2f45d51ae6cf5/85404/hotel.html?q=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" },
         { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97+%E4%BC%8A%E5%AE%81%E5%85%AD%E6%98%9F%E8%A1%97" }
       ]
     },
@@ -281,21 +282,22 @@ const DAYS = [
     drive: "≈ 220 km / 3.5h",
     weather: "☀️→⛅ · 伊宁22°C · 赛湖 2–14°C 风大",
     lodging: {
-      name: "赛里木湖·塔玛暇尔酒店（东门 5星）",
+      name: "赛里木湖·塔玛暇尔酒店（东门 · 高端度假）",
       coord: [44.5680, 81.2450],
-      area: "赛里木湖景区东门 · 海拔 2073m",
-      note: "首选，景区唯一星级酒店，湖景房+地暖，环湖回来直接开到门口",
-      price: "¥800-1200/晚（9月下旬淡季约¥600-900）",
+      area: "赛湖景区东门 · 步行可达检票口 · 海拔 2073m",
+      note: "全景落地窗直面湖山，全屋墙暖+餐厅+管家服务，隔音品质好；步行可入园",
+      price: "¥1400-2600/晚（9.26参考价 · 湖景房上浮）",
       alternatives: [
-        { name: "亚朵见野（赛湖游客中心店）", price: "¥800-1200/晚", note: "全屋智能+湖景房，含早餐" },
-        { name: "点将台星空营地（房车/穹顶）", price: "¥1500-2500/晚", note: "透明穹顶看银河，看星空首选" },
-        { name: "白毡部落民宿（哈萨克传统毡房）", price: "¥500-800/顶", note: "西海草原松林旁，原生态毡房" }
+        { name: "亚朵见野（赛湖游客中心店）", price: "¥750-1200/晚", note: "连锁标准化，全屋智能+24h健身+特色早餐；侧视湖景为主" },
+        { name: "湖畔房车营地", price: "¥900-1800/台/晚", note: "湖边草甸房车，独立卫浴+地暖+天窗，看星空少光污染" },
+        { name: "点将台星空营地", price: "¥1600-3000/晚", note: "东岸高地，日出+星空绝佳，房车/星空房带全景天窗" },
+        { name: "白毡部落毡房（西海草原）", price: "¥600-1300/顶", note: "哈萨克传统毡房，原生态体验；夜冷+基础配套简陋" }
       ],
-      warning: "⚠️ 9.26是周六+旺季末尾，务必提前 2 周订，湖景房紧张",
+      warning: "⚠️ 9.26 周六+旺季末，务必提前 2 周订。夜间气温低，营地/毡房务必确认供暖情况",
       booking: [
-        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-26&checkOut=2026-09-27&keyword=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%20%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94" },
-        { platform: "美团", url: "https://www.meituan.com/s/?q=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%20%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94%E9%85%92%E5%BA%97" },
-        { platform: "赛湖景区官方微信", url: "https://weixin.sogou.com/weixin?type=1&query=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%E6%99%AF%E5%8C%BA" }
+        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-26&checkOut=2026-09-27&keyword=%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94" },
+        { platform: "美团", url: "https://i.meituan.com/awp/hfe/block/eb37bdd2f45d51ae6cf5/85404/hotel.html?q=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96%20%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94" },
+        { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96+%E5%A1%94%E7%8E%9B%E6%9A%87%E5%B0%94" }
       ]
     },
     center: [44.63, 81.15], zoom: 10,
@@ -329,16 +331,17 @@ const DAYS = [
     lodging: {
       name: "那拉提爱在西游酒店",
       coord: [43.3200, 84.1700],
-      area: "那拉提镇中心 · 步行到景区门口 10min",
-      note: "首选，那拉提镇口碑较好的连锁型酒店",
-      price: "¥350-500/晚",
+      area: "那拉提镇 · 靠近景区门口 · 出行入园方便",
+      note: "民宿风格，房间干净带庭院，免费停车，老板服务热情；周边餐饮商超齐全",
+      price: "¥320-550/晚（9.27参考价 · 多数含双早）",
       alternatives: [
-        { name: "那拉提草原假日酒店", price: "¥300-450/晚", note: "位置佳，餐厅哈萨克风味" },
-        { name: "巩乃斯林场木屋（如想缩短 D3 车程）", price: "¥400-600/晚", note: "秋色最浓，能压缩到 3h 车程" }
+        { name: "那拉提草原假日酒店", price: "¥420-680/晚", note: "商务度假型，房间宽敞+24h前台+自助早餐+免费停车" },
+        { name: "巩乃斯林场附近木屋民宿", price: "¥350-650/晚", note: "距那拉提景区60km，独库沿线原始森林秘境；山里夜冷需确认供暖" }
       ],
+      warning: "⚠️ 9月底那拉提+巩乃斯昼夜温差大，山里晚上很冷；巩乃斯林场如次日一早要进景区需早起赶路",
       booking: [
         { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-27&checkOut=2026-09-28&keyword=%E9%82%A3%E6%8B%89%E6%8F%90%E7%88%B1%E5%9C%A8%E8%A5%BF%E6%B8%B8" },
-        { platform: "美团", url: "https://www.meituan.com/s/?q=%E9%82%A3%E6%8B%89%E6%8F%90%E9%95%87%20%E9%85%92%E5%BA%97" },
+        { platform: "美团", url: "https://i.meituan.com/awp/hfe/block/eb37bdd2f45d51ae6cf5/85404/hotel.html?q=%E9%82%A3%E6%8B%89%E6%8F%90%E9%95%87%20%E9%85%92%E5%BA%97" },
         { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E9%82%A3%E6%8B%89%E6%8F%90%E9%95%87" }
       ]
     },
@@ -369,19 +372,20 @@ const DAYS = [
     drive: "≈ 310 km / 3.5h",
     weather: "☀️ 晴 · 那拉提4-18°C · 伊宁9-23°C",
     lodging: {
-      name: "希尔顿花园酒店（伊宁店）",
-      coord: [43.9450, 81.3300],
-      area: "伊宁北 · 距机场 15min 车程",
-      note: "首选，位置为次日 9.29 送机做准备；国际连锁品质稳定",
-      price: "¥600-850/晚",
+      name: "全季酒店（伊宁机场店）· 赶机首推 ✈",
+      coord: [43.9520, 81.3300],
+      area: "距伊宁机场约 8-11min 车程 · 最便利",
+      note: "距机场最近，部分房型提供拼车送机；干湿分离、洗衣房、健身房、充电桩齐全，安静适合早班航班",
+      price: "¥320-480/晚（9.28参考价 · 性价比最高）",
       alternatives: [
-        { name: "亚朵酒店（伊宁六星街店）", price: "¥550-750/晚", note: "如果不介意 20min 去机场，回市区体验更好" },
-        { name: "全季酒店（伊宁机场店）", price: "¥350-450/晚", note: "性价比选项，走机场大巴 10min" }
+        { name: "亚朵酒店（伊宁六星街店）", price: "¥380-550/晚", note: "距机场约15min，可就近逛六星街+市区餐饮丰富，兼顾体验" },
+        { name: "希尔顿花园酒店（伊宁店）", price: "¥550-750/晚", note: "距机场约25min，硬件品质最高，房间宽敞+餐厅健身房；赶机需早出发" }
       ],
+      warning: "⚠️ 9.29 飞阿拉木图是国际航班，务必提前 3 小时到机场！全季机场店最合适省心",
       booking: [
-        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-28&checkOut=2026-09-29&keyword=%E5%B8%8C%E5%B0%94%E9%A1%BF%E8%8A%B1%E5%9B%AD%20%E4%BC%8A%E5%AE%81" },
-        { platform: "美团", url: "https://www.meituan.com/s/?q=%E5%B8%8C%E5%B0%94%E9%A1%BF%E8%8A%B1%E5%9B%AD%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81" },
-        { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E5%B8%8C%E5%B0%94%E9%A1%BF%E4%BC%8A%E5%AE%81" }
+        { platform: "携程", url: "https://hotels.ctrip.com/hotels/list?checkIn=2026-09-28&checkOut=2026-09-29&keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97+%E4%BC%8A%E5%AE%81%E6%9C%BA%E5%9C%BA" },
+        { platform: "美团", url: "https://i.meituan.com/awp/hfe/block/eb37bdd2f45d51ae6cf5/85404/hotel.html?q=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97%20%E4%BC%8A%E5%AE%81%E6%9C%BA%E5%9C%BA" },
+        { platform: "飞猪", url: "https://s.alitrip.com/search_hotel.htm?keyword=%E5%85%A8%E5%AD%A3%E9%85%92%E5%BA%97+%E4%BC%8A%E5%AE%81%E6%9C%BA%E5%9C%BA" }
       ]
     },
     center: [43.75, 82.5], zoom: 9,
