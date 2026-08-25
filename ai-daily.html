@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-24</title>
+<title>🚀 AI 模型进展日报 · 2026-08-25</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,73 +154,43 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-24 · 周一 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-25 · 周二 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
-<span class="hero-emphasis-val">8</span>
+<span class="hero-emphasis-val">7</span>
 <span class="hero-emphasis-desc">条新进展 · 覆盖 7 家厂商</span>
 </div>
-<div class="hero-sub">Anthropic 双内测模型曝光 + 英伟达 70亿美元自建开源，模型层与算力层边界模糊</div>
+<div class="hero-sub">阿里 Wan 3.0 上线 + DeepSeek 首曝视觉模型 + Kimi K3 全面接棒</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) Anthropic API 曝光两款新食物代号内测模型 claude-marshmallow-eap / claude-melon-eap，Marshmallow 对话体验据称已超 Opus 5；
-2) 英伟达以 60 亿美元买断 Poolside 训练体系 Model Factory + 10 亿美元入股，109 名工程师并入 Nemotron 开源项目，目标一年内对标 DeepSeek / Kimi K3；
-3) OpenAI 为 Mac 版 ChatGPT 上线 Messages 连接器，通过完全磁盘访问读写本地短信，AI Agent 抢占系统级意图编排入口；
-4) 阿里巴巴港股配售 800 亿港元（约 100 亿美元），净额 100% 投入全栈 AI 能力，为港股史上最大主要市场增发之一；
-5) Vercel 平台数据：开源 AI 模型 Token 份额两个月内从 28% 飙升至 62%，但仅占企业总支出 4% 不到，量在开源侧、钱在闭源侧的剪刀差成型。</div>
+<div class="tldr-text">1) 阿里 Wan 3.0 视频模型正式上线,单次 30 秒并首次读 doc/xls/ppt/pdf/md 转视频;
+2) DeepSeek 首个多模态视觉实验模型 V4-Flash-Vision-Exp 登陆 API,Agent 能力逼近 Opus-4.8;
+3) 月之暗面官宣 K2.5 8 月 31 日退役,2.8T 参数 K3 全面接棒并跻身 Arena T1;
+4) 智谱 GLM-5.3-Max 首度参榜即冲进 Arena 综合榜第 13,匿名 Ox-Alpha 也被指纹锁定为 GLM 变体;
+5) 字节整合 TRAE + 扣子并入豆包,本周将推统一 AI 办公品牌『豆包工作』;
+6) OpenAI 官宣 GPT-5.6 Sol API 降价 20-33%,同期收编 YC 明星 Instant 全队为 Agent 补记忆层;
+7) 英伟达再谈数十亿美元入股 Perplexity,估值将破 300 亿美元。</div>
 </div>
 
 
 <div class="section">
-<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">3 条</span></div>
+<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">1 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Claude Marshmallow-EAP / Melon-EAP（内测）</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag closed">闭源</span>
-</div>
-<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-24</div>
-<ul class="item-highlights"><li>开发者在 Anthropic API 中发现两个未公开代号 claude-marshmallow-eap 与 claude-melon-eap，多位社区成员在 Discord 与 API 访问中交叉确认存在</li>
-<li>早期测试反馈：Marshmallow 综合表现优于 Melon，且对话自然度已超越 7月24日发布的 Opus 5，但仍未达到 Fable 5 旗舰级别</li>
-<li>内部代号从此前动物系（Fennec/Honeycomb）转向食物系，暗示归属新的开发分支；两款大概率对应 Opus / Sonnet 产品线更新</li>
-<li>叠加同日 Anthropic 自研芯片消息：CustomSilicon 部门 2026 年 8 月组建，Amir Salek（原 Google TPU 一至七代主导）加盟，首代芯片瞄准 Claude 推理场景、拟采用三星 2nm 制程</li>
-<li>商业化背景：一年推理毛利率从 38% 拉到 70-85%，Fable 5 上线一个月企业支出份额仅 11%，被更便宜的 Opus 5 反超</li></ul>
-<div class="item-links"><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic 官方新闻 ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Nemotron 开源计划（收编 Poolside）</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-name">Kimi K3(全面接棒 K2.5)</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
 <span class="item-tag opensource">开源</span>
 </div>
-<div class="item-vendor">NVIDIA · Nemotron<span class="dot">·</span>2026-08-23</div>
-<ul class="item-highlights"><li>英伟达与 Poolside 达成约 70 亿美元交易：60 亿美元买断 Model Factory 训练体系非独家授权 + 10 亿美元股权投资，投前估值 120 亿美元</li>
-<li>约 109 名 Poolside 核心工程师将并入英伟达 Nemotron 开源权重模型项目，目标一年内推出可对标 DeepSeek、Kimi K3 的开放权重旗舰</li>
-<li>配合数据侧动作：英伟达洽谈参投 AI 数据供应商 Mercor（估值 200 亿美元），过去一季度已支付数千万美元采购法律 / 金融 / 科学标注数据</li>
-<li>同期黄仁勋发文《开放权重与美国 AI 领导力》为交易铺路，标志芯片厂商正式下场做最强开源模型</li>
-<li>背景：英伟达截至 4 月一季度在非上市股权投资 185.8 亿美元，同比 6.49 亿美元大幅跳升，锁定推理需求的默认硬件位置</li></ul>
-<div class="item-links"><a href="https://blogs.nvidia.com/" target="_blank" rel="noopener">NVIDIA 官方博客 ↗</a><a href="https://huggingface.co/nvidia" target="_blank" rel="noopener">Hugging Face Nemotron ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Tenet（基于 Kimi K3 后训练）</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag closed">闭源</span>
-</div>
-<div class="item-vendor">月之暗面 Moonshot × Harvey<span class="dot">·</span>2026-08-20</div>
-<ul class="item-highlights"><li>OpenAI 创业基金与红杉投资的美国法律 AI 独角兽 Harvey 发布首个基于 Kimi K3 后训练的模型 Tenet（研究预览）</li>
-<li>联合 Fireworks AI 通过异步强化学习后训练，使用约 150 块 B300 GPU、训练两个月</li>
-<li>性能：LAB 基准完成任务接近翻倍，all-pass 率提升 9 个百分点，LAB Contracts 达 SOTA</li>
-<li>成本维持开源模型级别，不到主流闭源模型的四分之一；Harvey 此前完全依赖 OpenAI / Anthropic / Google 闭源模型</li>
-<li>验证国产开源基座在海外垂直场景的商业可行性，中国开源模型出海路径成型</li></ul>
-<div class="item-links"><a href="https://kimi.moonshot.cn/" target="_blank" rel="noopener">Kimi Moonshot 官网 ↗</a><a href="https://www.harvey.ai/" target="_blank" rel="noopener">Harvey AI ↗</a></div>
+<div class="item-vendor">月之暗面 · Kimi<span class="dot">·</span>2026-08-24</div>
+<ul class="item-highlights"><li>官宣万亿参数 K2.5 于 8 月 31 日退役,7 月开源的 2.8T 参数 K3 全面接棒</li>
+<li>K3 基于 KDA 混合线性注意力,原生视觉理解 + 100 万 token 上下文</li>
+<li>日经 × Weights &amp; Biases 全球生成式 AI 实力调查综合排名跃居第 6,超越 Google 与 xAI 模型</li>
+<li>Arena 第 34 周综合榜首次冲进前十(第 10 名, ELO 1489)、代码榜第 6、智能体榜第 4</li>
+<li>美国法律 AI 独角兽 Harvey 基于 K3 后训练出专用模型 Tenet,服务超 2400 家机构</li></ul>
+<div class="item-links"><a href="https://weibo.com/1737694250/5335431924158156" target="_blank" rel="noopener">月之暗面官方微博公告 ↗</a><a href="https://tech.ifeng.com/c/8vqxYHdVdCO" target="_blank" rel="noopener">Arena 第34周榜单-凤凰科技 ↗</a></div>
 </div>
 
 </div>
@@ -231,17 +201,38 @@ color: #a8b3c9;
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Ox Alpha 隐身模型（1M 上下文）</span>
+<span class="item-name">DeepSeek-V4-Flash-Vision-Exp</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag">API</span>
 </div>
-<div class="item-vendor">OpenRouter · Stealth<span class="dot">·</span>2026-08-20</div>
-<ul class="item-highlights"><li>无实验室署名的 stealth/ox-alpha 匿名模型于 8-20 悄然上线 OpenRouter，一周预览期内完全免费开放</li>
-<li>规格：1,048,576 token 上下文、支持文本 / 图像 / 视频三模态输入、最大输出约 13 万 token</li>
-<li>实测：Needle-in-a-Haystack 长上下文测试在约 93.4 万 token 处仍能命中；DeepSWE 113 项任务解决率 58.4%</li>
-<li>独立研究员 Ben Davis 测试其视频编码器、分词器、输出风格高度接近智谱 GLM 系列，『99% 确定』来自智谱；另有说法指向小米 MiMo，均未获官方确认</li>
-<li>标志隐身发布 + OpenRouter 盲测口碑正在成为绕开发布会的常规产品测试通道</li></ul>
-<div class="item-links"><a href="https://openrouter.ai/models" target="_blank" rel="noopener">OpenRouter Models ↗</a><a href="https://huggingface.co/zai-org" target="_blank" rel="noopener">Zhipu Hugging Face ↗</a></div>
+<div class="item-vendor">DeepSeek · 深度求索<span class="dot">·</span>2026-08-24</div>
+<ul class="item-highlights"><li>首个多模态视觉实验模型,登陆 DeepSeek API 平台</li>
+<li>文本能力持平 V4-Flash,多模态 Agent benchmark 逼近 Anthropic Opus-4.8</li>
+<li>支持图像描述、截图 OCR、图表分析,兼容 OpenAI Chat/Responses + Anthropic Messages API</li>
+<li>1M 上下文 + 384K 最长输出,每张图最多折算 384 token,分析千图成本 &lt;20 美分</li>
+<li>同步发布 DeepSeek Harness 0.1.1,免费试用至 8 月 27 日</li></ul>
+<div class="item-links"><a href="https://api-docs.deepseek.com/zh-cn/guides/vision" target="_blank" rel="noopener">DeepSeek 官方 API 文档 ↗</a><a href="https://ainativefoundation.org/china-ai-native-industry-insights-20260824-deepseek-huawei-qoder-more" target="_blank" rel="noopener">AI Native Foundation 报道 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🎬 文生视频 / 图生视频 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Wan 3.0</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">阿里 · 通义万相<span class="dot">·</span>2026-08-24</div>
+<ul class="item-highlights"><li>视频生成模型正式上线,单次可生成 30 秒视频</li>
+<li>首次支持 doc / xls / ppt / pdf / md 文档格式作为输入直接转视频</li>
+<li>在角色、道具、声音、空间关系、风格等细粒度维度稳定保持一致性</li>
+<li>API 定价 480P/720P/1080P 分别 0.3 / 0.6 / 1.2 元每秒,8.24–9.23 限时 7 折</li>
+<li>已在阿里云百炼、千问 AI 平台、万相官网、千问 App 等渠道全量开放</li></ul>
+<div class="item-links"><a href="https://www.163.com/dy/article/L53TR76I0511DDOK.html" target="_blank" rel="noopener">阿里研究院官方公告(网易转载) ↗</a><a href="https://www.cnstock.com/commonDetail/768301" target="_blank" rel="noopener">上海证券报报道 ↗</a></div>
 </div>
 
 </div>
@@ -252,38 +243,17 @@ color: #a8b3c9;
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">ChatGPT for Mac · Messages 连接器</span>
+<span class="item-name">豆包工作(TRAE / 扣子整合)</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
+<span class="item-tag closed">闭源</span>
 </div>
-<div class="item-vendor">OpenAI<span class="dot">·</span>2026-08-24</div>
-<ul class="item-highlights"><li>OpenAI 为 Mac 版 ChatGPT 上线 Messages 连接器，通过 macOS 完全磁盘访问权限直接读取本地短信数据库并起草回复</li>
-<li>延续接入 Apple 健康、金融数据的产品思路，从聊天框迈向系统级意图编排入口</li>
-<li>苹果目前仍掌控底层磁盘权限，但双方合作转冷、苹果加速自研 Siri AI 之下，系统级 AI 指挥权归属成为焦点</li>
-<li>与 8-19 开源的 Codex Harness 形成呼应：开源 Agent 运行时 + 私域数据连接器，产品与执行框架双管齐下</li>
-<li>配套 Codex Harness v0.149.0 于 8-20 发布，GitHub 累计 10.7 万 Star / 1.6 万 Fork（截至 8-21）</li></ul>
-<div class="item-links"><a href="https://openai.com/blog" target="_blank" rel="noopener">OpenAI 官方博客 ↗</a><a href="https://github.com/openai/codex" target="_blank" rel="noopener">Codex Harness GitHub ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">✨ 其他 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">800 亿港元配售 All in AI</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
-</div>
-<div class="item-vendor">阿里巴巴 · 千问<span class="dot">·</span>2026-08-23</div>
-<ul class="item-highlights"><li>阿里巴巴（9988.HK）配售 7.1 亿股新股，每股 112.70 港元、募资约 800 亿港元（约 102 亿美元），预计 8 月 26 日交割</li>
-<li>净额 100% 投入全栈 AI 能力，涵盖算力基建、大模型研发与商业化落地；一小时内获主权财富基金等长线资金超额认购</li>
-<li>Q1 财报显示 AI 相关产品 ARR 突破 495 亿元，连续 12 个季度三位数增长；季度资本开支 676.78 亿元（同比 +75%）</li>
-<li>通义 App 完成品牌升级正式更名『千问』，版本从 3.60.0 跃至 5.0.0；阿里首次把千问与 AI 实验室合并为独立板块披露</li>
-<li>港股史上最大主要市场增发之一，全球规模仅次于谷歌母公司 6 月 800 亿美元与英特尔 8 月 150 亿美元</li></ul>
-<div class="item-links"><a href="https://www.alibabagroup.com/" target="_blank" rel="noopener">阿里巴巴集团官网 ↗</a><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Qwen Hugging Face ↗</a></div>
+<div class="item-vendor">字节跳动 · 豆包<span class="dot">·</span>2026-08-24</div>
+<ul class="item-highlights"><li>TRAE、扣子(Coze)团队整体并入豆包体系,统一向豆包产品负责人赵祺汇报</li>
+<li>TRAE Work、扣子将与豆包工作场景能力整合;TRAE IDE 及 CLI 继续作为豆包编程线</li>
+<li>最快本周推出独立 AI 办公产品『豆包工作』,作为字节 AI 办公统一品牌</li>
+<li>距 7 月 30 日飞书×豆包整合仅 25 天,字节一月内二次收拢 AI 办公资源</li>
+<li>豆包同期以 85 亿元品牌价值领跑《2026 胡润中国品牌榜》AIGC 行业</li></ul>
+<div class="item-links"><a href="https://www.nbd.com.cn/articles/2026-08-24/4554234.html" target="_blank" rel="noopener">每日经济新闻 ↗</a><a href="https://doubao.com/" target="_blank" rel="noopener">豆包官网 ↗</a></div>
 </div>
 
 </div>
@@ -292,25 +262,24 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>Anthropic IPO 拟募资超 1000 亿美元、估值 2 万亿美元，或超 SpaceX 成史上最大 IPO（NYT / Bloomberg，未官宣）</li>
-<li>DeepSeek 重启第二轮融资拟募 500 亿元、投前估值 5000 亿元（《财经》，未官宣）</li>
-<li>Kimi 月之暗面完成 F 轮 35 亿美元、启动 G 轮估值 500 亿美元（多家报道，未官宣）</li>
-<li>Hugging Face 探索出售，估值或超 130 亿美元（Business Insider）</li>
-<li>OpenAI 收购 Agent 记忆层公司 Instant，YC S22 项目 GitHub 1万+ Star（未见 openai.com 直发公告）</li>
-<li>彭博：英伟达通知客户 AI 服务器 2027 年初起涨价 15%+，英伟达未置评（供应链口径）</li>
-<li>腾讯 Hy4 内部测试界面曝光，接棒 WorkBuddy 智能体核心引擎（多方报道，未官宣）</li>
-<li>小米 MiMo-V2.5-Pro 登顶 Artificial Analysis 开源模型并列第一（榜单口径）</li>
-<li>OpenAI 未发布模型以约 2000 美元 API 成本生成 10 项数学突破（Edgen 报道）</li>
-<li>Cloudflare 推出 Kitesurf 无头浏览器 + x402 协议，Agent 专属上网与稳定币付费通道</li>
-<li>Vercel · 开源生态 · 开源模型 Token 份额 62% 里程碑（缺少一手源且未达交叉验证阈值）</li>
-<li>北京人形机器人创新中心 · 天工 Ultra（400m 破人类男子世界纪录）（缺少一手源且未达交叉验证阈值）</li></ul>
+<ul class="item-highlights"><li>Anthropic 最强 Fable 5 企业采购份额停滞在 11%,Opus 5 反超 Fable 5(FT + Ramp 数据)</li>
+<li>Meta 官宣数周内推出消费级 AI 代理平台 HATCH + 10 月上线新一代 Watermelon 大模型</li>
+<li>Anthropic 聘请前谷歌 TPU 项目创始人,强化自研 AI 芯片团队</li>
+<li>小米发布玄戒 O3 3nm AI 旗舰 SoC + O100 AI 加速芯片 + D100 智驾 AI 芯片(安兔兔破 500 万)</li>
+<li>汤森路透基于阿里千问开放权重训练自有 Thomson 大模型,累计投入约 4000 万美元</li>
+<li>小鹏机器人业务首轮融资超 9 亿美元,投后估值 63 亿美元,何小鹏亲任 CEO</li>
+<li>腾讯 ARC 联合发布 SCoPE 相机控制视频扩散 Transformer,基于 Wan2.2-I2V-A14B</li>
+<li>Google 开学季推出 Gemini 学生备考工具包(课堂资料→学习指南/测验/音频简报)</li>
+<li>智谱 · Z.ai · GLM-5.3-Max(疑同源 OpenRouter Ox-Alpha)（缺少一手源且未达交叉验证阈值）</li>
+<li>OpenAI · GPT-5.6 Sol 降价 + 收购 Instant（缺少一手源且未达交叉验证阈值）</li>
+<li>NVIDIA × Perplexity · Perplexity 新一轮融资(300亿+ 估值)（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic News</a><br><a href="https://openai.com/blog" target="_blank" rel="noopener">OpenAI Blog</a><br><a href="https://developers.openai.com/blog/codex-as-a-platform" target="_blank" rel="noopener">OpenAI Developers</a><br><a href="https://www.alibabagroup.com/" target="_blank" rel="noopener">阿里巴巴集团</a><br><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Qwen Hugging Face</a><br><a href="https://github.com/openai/codex" target="_blank" rel="noopener">GitHub · openai/codex</a><br><a href="https://openrouter.ai/models" target="_blank" rel="noopener">OpenRouter</a><br><a href="https://vercel.com/ai" target="_blank" rel="noopener">Vercel AI</a><br><a href="https://new.qq.com/rain/a/20260824A02U3W00" target="_blank" rel="noopener">华尔街见闻早餐 8-24</a><br><a href="https://k.sina.com.cn/article_5952915705_162d248f906703m5qw.html" target="_blank" rel="noopener">机器之心 · Marshmallow/Melon</a>
+<a href="https://api-docs.deepseek.com/zh-cn/guides/vision" target="_blank" rel="noopener">DeepSeek API 官方文档</a><br><a href="https://www.163.com/dy/article/L53TR76I0511DDOK.html" target="_blank" rel="noopener">阿里研究院 Wan 3.0 官宣</a><br><a href="https://weibo.com/1737694250/5335431924158156" target="_blank" rel="noopener">月之暗面官方微博</a><br><a href="https://openlm.ai/chatbot-arena/" target="_blank" rel="noopener">OpenLM Chatbot Arena+</a><br><a href="https://ai-tldr.dev/releases/openai-gpt-5-6-sol-price-cut" target="_blank" rel="noopener">AI/TLDR OpenAI 降价</a><br><a href="https://ainativefoundation.org/china-ai-native-industry-insights-20260824-deepseek-huawei-qoder-more" target="_blank" rel="noopener">AI Native Foundation 日报</a>
 </div>
 
 
