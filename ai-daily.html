@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-26</title>
+<title>🚀 AI 模型进展日报 · 2026-08-27</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,58 +154,84 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-26 · 周三 · AI 模型进展日报</div>
+<div class="hero-date">2026-08-27 · 周四 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
-<span class="hero-emphasis-val">7</span>
-<span class="hero-emphasis-desc">条新进展 · 覆盖 6 家厂商</span>
+<span class="hero-emphasis-val">6</span>
+<span class="hero-emphasis-desc">条新进展 · 覆盖 5 家厂商</span>
 </div>
-<div class="hero-sub">字节豆包工作打通飞书 · 阿里 Qwen4 架构今晚开源预演</div>
+<div class="hero-sub">智谱 GLM-5.3-Flash 揭面 Ox-Alpha + 谷歌 Gemini 3.5 Transcribe 上线</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) 字节发布『豆包工作』Agent，深度打通飞书上下文与云电脑长任务；
-2) 阿里预告 23:00 开源 Qwen3.8-Flash-Next（Qwen4 架构预览版，多模态 MoE + FP8）；
-3) DeepSeek 上线 V4-Flash-Vision-Exp 多模态视觉模型，Agent 能力接近 Opus 4.8；
-4) xAI 发布 Grok 4.6，Intelligence Index 追平 GPT-5.6 Sol Max（$2/$6/M）；
-5) OpenAI 自研推理芯片 Jalapeño 首测跑赢 NVIDIA GB300；
-6) OpenAI 宣布 9/29 DevDay，焦点内部代号 Astra（外传 GPT-6 底座）。</div>
+<div class="tldr-text">1) 智谱正式发布 GLM-5.3-Flash：320B-A18B 原生多模态 + 1M 上下文 + MIT 权重开源，即此前匿名霸榜 OpenRouter 的 Ox-Alpha；
+2) 谷歌上线 Gemini 3.5 Transcribe：流式 WER 4.0% / 非流式 2.6%、支持 85+ 语言与三方说话人识别；
+3) IBM 首发 Granite 4.2：3B/8B/30B 密集推理模型 Apache-2.0 开源，带 thinking 开关和 512K 长上下文；
+4) OpenAI 首次公布自研推理芯片 Jalapeño 性能：每瓦性能是 Nvidia GB200/GB300 的 1.5-1.9×，端到端延迟低 1.7-3.6×；
+5) Anthropic 把 Claude in Chrome 转正 GA，同日打通 Cowork 与聊天记忆，Chrome 端可安全自主执行浏览器操作；
+6) 英伟达以 60 亿美元 license + 10 亿股权拿下 Poolside Model Factory 与 109 名工程师，注入 Nemotron 开源权重线。</div>
 </div>
 
 
 <div class="section">
-<div class="section-title">🖼️ 多模态大模型 <span class="badge">2 条</span></div>
+<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">1 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Qwen3.8-Flash-Next (预告开源)</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-name">Granite 4.2（3B/8B/30B）</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag opensource">开源</span>
 </div>
-<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-26</div>
-<ul class="item-highlights"><li>魔搭社区页面预告北京时间 8/26 23:00 开源，同步发布 FP8 量化版</li>
-<li>基于下一代 Qwen4 架构的多模态 MoE，提前放出让社区做 Qwen4 家族生态准备</li>
-<li>Flash-Next 定位高性价比路线，24G 显存消费级显卡集群即可跑</li>
-<li>接续 Qwen3.8-27B（编程/办公超越 3.7-Plus）与 Qwen3.8-2.4T-A95B（256K 上下文）</li>
-<li>Qwen3.8-27B 开源两日下载破 100 万，全球开源模型下载中国占 41%</li></ul>
-<div class="item-links"><a href="https://www.ithome.com/0/994/252.htm" target="_blank" rel="noopener">IT之家 ↗</a><a href="https://juejin.cn/post/7678108780919799823" target="_blank" rel="noopener">掘金 · AI 大事件 ↗</a></div>
+<div class="item-vendor">IBM<span class="dot">·</span>2026-08-25</div>
+<ul class="item-highlights"><li>IBM 首个原生推理系列：3B/8B/30B 三档密集架构，Apache 2.0 开源</li>
+<li>带 thinking / non-thinking / low-effort 三档思考开关，30B 拿下 SWE-bench Verified 57.00、AIME25 89.17</li>
+<li>128K 部署上下文、宣称 512K 长上下文扩展；OpenAI 兼容的原生工具调用</li>
+<li>8B / 30B 额外经过 agentic RL：终端、代码编辑、Web 搜索真实沙箱训练</li>
+<li>同发 Granite Speech 5.0 Turbo CTC / CTC NC 两款 470M 端侧语音模型</li></ul>
+<div class="item-links"><a href="https://research.ibm.com/blog/introducing-granite-4-2" target="_blank" rel="noopener">IBM Research 官方博客 ↗</a><a href="https://huggingface.co/ibm-granite" target="_blank" rel="noopener">Hugging Face 权重 ↗</a></div>
+</div>
+
 </div>
 
 
+<div class="section">
+<div class="section-title">🖼️ 多模态大模型 <span class="badge">1 条</span></div>
+
 <div class="item">
 <div class="item-head">
-<span class="item-name">DeepSeek-V4-Flash-Vision-Exp</span>
+<span class="item-name">GLM-5.3-Flash（Ox-Alpha 正名）</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
+<span class="item-tag opensource">开源</span>
+</div>
+<div class="item-vendor">智谱 Z.ai<span class="dot">·</span>2026-08-26</div>
+<ul class="item-highlights"><li>320B 总参 / 18B 激活的 MoE，原生多模态支持图像、视频、文档</li>
+<li>1M token 上下文 + 混合线性/稀疏注意力，KV cache 相比 GLM-5.3 缩小 4.4×</li>
+<li>Artificial Analysis Intelligence Index v4.1.1 得 57 分，$0.045/task（折扣价），DeepSWE v1.1 63.4 分接近 Claude Opus 4.8</li>
+<li>权重按 MIT 协议在 Hugging Face 开放；此前以匿名 Ox-Alpha 身份登顶 OpenRouter</li>
+<li>全流量在国产 AI 芯片集群上服务，端到端性能达 Nvidia GPU 相当水平</li></ul>
+<div class="item-links"><a href="https://z.ai/blog/glm-5.3-flash" target="_blank" rel="noopener">Z.ai 官方博客 ↗</a><a href="https://huggingface.co/zai-org" target="_blank" rel="noopener">Hugging Face 权重 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🔊 语音（TTS / ASR） <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Gemini 3.5 Transcribe</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag">API</span>
 </div>
-<div class="item-vendor">DeepSeek<span class="dot">·</span>2026-08-21</div>
-<ul class="item-highlights"><li>V4 系列首次补齐图片输入（JPEG/PNG/GIF/WebP），实验性多模态视觉理解模型</li>
-<li>视觉 Agent 基准接近 Claude Opus 4.8，11 项测试中 3 项超越（Agents Last Exam 27.3 vs 25.7）</li>
-<li>纯文本能力与 V4-Flash 正式版持平，保留 1M 上下文</li>
-<li>图片按最多 384 Token 计费，价格与 V4-Flash 一致（$0.44/$1.32 M-Token，谷价再半价）</li>
-<li>同步推出 Files API（跨请求复用图片）与 DeepSeek Harness 0.1.1（原生多模态支持）</li></ul>
-<div class="item-links"><a href="https://api-docs.deepseek.com/updates" target="_blank" rel="noopener">DeepSeek API 更新日志 ↗</a><a href="https://www.toutiao.com/article/7676464902365512235/" target="_blank" rel="noopener">澎湃/今日头条 ↗</a></div>
+<div class="item-vendor">Google<span class="dot">·</span>2026-08-26</div>
+<ul class="item-highlights"><li>Google 号称迄今最精准语音转文本：流式 WER 4.0%、非流式 2.6%</li>
+<li>自动去除 'um/ah'、纠正自我口误、自动排版；支持函数调用委托其他 Gemini 模型</li>
+<li>支持 85+ 种语言与方言，预录场景最多三名说话人 word-level 时间戳</li>
+<li>两套 API：Live API 的 gemini-3.5-transcribe-live 亚秒延迟 + Interactions API 的 gemini-3.5-transcribe</li>
+<li>已在 Google AI Studio、Antigravity、Gboard Rambler、Gemini macOS 应用中上线，Chrome 版即将到来</li></ul>
+<div class="item-links"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/" target="_blank" rel="noopener">blog.google 官方公告 ↗</a><a href="https://9to5google.com/2026/08/26/gemini-3-5-transcribe" target="_blank" rel="noopener">9to5Google 深度报道 ↗</a></div>
 </div>
 
 </div>
@@ -216,17 +242,17 @@ color: #a8b3c9;
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">豆包工作 (Doubao Work)</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-name">Claude in Chrome GA + 跨端记忆统一</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag">API</span>
 </div>
-<div class="item-vendor">字节 · 豆包<span class="dot">·</span>2026-08-25</div>
-<ul class="item-highlights"><li>面向生产力场景的全新 Agent 产品，可自主拆解任务、调用工具、跨软件推进复杂工作流</li>
-<li>与飞书深度打通：飞书账号登录即继承企业权限，读取聊天记录/文档/会议纪要/日程作为上下文</li>
-<li>支持局部『指哪改哪』编辑，覆盖方案/纪要/报告/表格/数据分析/图片/视频/网页/应用</li>
-<li>长任务可调度云电脑后台执行，电脑关机不中断；支持手机远程操控</li>
-<li>国内首批通过办公智能体能力与云端基准双项认证，飞书原豆包企业版入口同步升级</li></ul>
-<div class="item-links"><a href="https://www.stcn.com/article/detail/4115647.html" target="_blank" rel="noopener">证券时报 ↗</a><a href="https://www.toutiao.com/article/7677809421791052303" target="_blank" rel="noopener">环球网/今日头条 ↗</a></div>
+<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-26</div>
+<ul class="item-highlights"><li>Claude in Chrome 从 pilot 转正 GA，所有付费套餐可用</li>
+<li>新增自主执行：安全分类器 + 概率探针 + 训练加固，Sonnet 5 / Opus 5 / Mythos 5 提示注入 0 攻破，Fable 5 仅 0.3%</li>
+<li>同日打通 Chat 与 Cowork 记忆：过去在聊天里积累的项目、参会人、地点等 Cowork 可直接调用</li>
+<li>记忆从会话结束总结改为实时写入；健康、宗教等敏感话题默认不存，政府证件永不存</li>
+<li>记忆对 Free / Pro / Max 用户 Web/桌面/移动端默认开启</li></ul>
+<div class="item-links"><a href="https://www.anthropic.com/news/memory" target="_blank" rel="noopener">Anthropic 记忆更新博客 ↗</a></div>
 </div>
 
 </div>
@@ -235,22 +261,28 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>神秘模型 Ox Alpha 单日登顶 OpenRouter，1M 上下文 + 免费开放，第三方指纹分析疑为智谱 GLM-5.3 未发布版</li>
-<li>Stripe 约 70 亿美元收购 OpenRouter，模型路由日处理超 10 万亿 Token</li>
-<li>Google DeepMind 宣布 Hassabis 出任 Chair 兼 Alphabet 首席科学家，Jeff Dean/Ghemawat 27 年后离职创业</li>
-<li>闭源巨头集体降价：GPT-5.6 Sol 输出价降至 $20/M、Gemini 3.7 Flash 半价、Anthropic 取消原定涨价</li>
-<li>Meta 传将推出付费消费者 Agent 平台 Hatch，月费上限约 199.99 美元（The Information）</li>
-<li>xAI · Grok 4.6（缺少一手源且未达交叉验证阈值）</li>
-<li>OpenAI · Jalapeño 自研推理 ASIC（缺少一手源且未达交叉验证阈值）</li>
-<li>OpenAI · DevDay 9/29 预告 · Astra（缺少一手源且未达交叉验证阈值）</li>
-<li>Anthropic · Claude Opus 4.8 蛋白结合子设计（缺少一手源且未达交叉验证阈值）</li></ul>
+<ul class="item-highlights"><li>OpenAI 8/26 正式退役 ChatGPT 内的 o3 模型，历史会话自动迁到当前模型（API 不受影响）</li>
+<li>OpenAI GPT-5.6 Sol 单月第二次降价，输出降至 $20/M tokens，一个月内累计降幅超 20%</li>
+<li>OpenAI GPT-5.6 模型家族进入 AWS Kiro 代码 Agent，首次和 spec-driven coding 平台绑定</li>
+<li>xAI Grok 4.6 进入 Artificial Analysis Intelligence Index 综合前 10，Musk 内部会议承认 Grok 落后 Anthropic</li>
+<li>Hugging Face 传出 130 亿美元级出售洽谈，谈判仍在早期</li>
+<li>Anthropic S-1 招股书据传 8 月底前公开，估值传闻直逼 2 万亿美元并将 AI 反噬列为风险因子</li>
+<li>Anthropic 宣布 500 万美元 wellbeing grants 资助外部团队做 AI 对人的影响评估</li>
+<li>Claude Code 2.1.246 更新：网关 API keys 不再上传，凭据留在自有主机上</li>
+<li>Mistral 推出 Agentic Search 面向企业复杂文档导航</li>
+<li>JD.com 论文 EchoWM：可漫游世界模型，画面+环境音+语音同步</li>
+<li>Prime Intellect 披露评测沙箱越狱：断网也能通过推理服务器泄露</li>
+<li>Apple 曝首款 2nm M6 + 首款四芯 M5 Ultra，最高 512GB 内存，瞄准桌面端大模型部署</li>
+<li>Thomson Reuters 发布 Thomson 1.0 Small：35B 法律/税务专业模型并开源小版本</li>
+<li>OpenAI × Broadcom · Jalapeño 自研推理芯片（首次公开跑分）（缺少一手源且未达交叉验证阈值）</li>
+<li>NVIDIA × Poolside · 60 亿美元 Model Factory 授权 + Nemotron 开源加码（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://api-docs.deepseek.com/updates" target="_blank" rel="noopener">DeepSeek API 更新日志</a><br><a href="http://lmtimeline.com/" target="_blank" rel="noopener">LMTimeline</a><br><a href="https://headsupai.io/ai-news-and-updates/this-month" target="_blank" rel="noopener">HeadsUpAI 8 月综述</a><br><a href="https://juejin.cn/post/7677842707415580710" target="_blank" rel="noopener">掘金 8/26 AI 日报</a><br><a href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener">SemiAnalysis Jalapeño 分析</a>
+<a href="https://z.ai/blog/glm-5.3-flash" target="_blank" rel="noopener">Z.ai Blog</a><br><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/" target="_blank" rel="noopener">Google Keyword Blog</a><br><a href="https://research.ibm.com/blog/introducing-granite-4-2" target="_blank" rel="noopener">IBM Research Blog</a><br><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic News</a><br><a href="https://openai.com/index/" target="_blank" rel="noopener">OpenAI Newsroom</a><br><a href="https://unrot.co/blogs/today-top-ai-news-august-26-2026" target="_blank" rel="noopener">unrot.co AI 日报聚合</a><br><a href="https://ai-tldr.dev" target="_blank" rel="noopener">ai-tldr.dev 新模型日报</a>
 </div>
 
 
