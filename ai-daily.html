@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>🚀 AI 模型进展日报 · 2026-08-29</title>
+<title>🚀 AI 模型进展日报 · 2026-09-07</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
@@ -154,131 +154,84 @@ color: #a8b3c9;
 <body>
 <div class="container">
 <div class="hero">
-<div class="hero-date">2026-08-29 · 周六 · AI 模型进展日报</div>
+<div class="hero-date">2026-09-07 · 周一 · AI 模型进展日报</div>
 <div class="hero-title">🚀 全球 AI 模型进展</div>
 <div class="hero-emphasis">
 <span class="hero-emphasis-val">6</span>
 <span class="hero-emphasis-desc">条新进展 · 覆盖 6 家厂商</span>
 </div>
-<div class="hero-sub">国产开源三连击 + Anthropic MHS 把 Claude 送进实验台</div>
+<div class="hero-sub">Anthropic 11 天机验证费马大定理 + 阿里首个自动驾驶 VLM + 小米/讯飞端侧新范式</div>
 </div>
 
 <div class="section tldr">
 <div class="section-title">📌 今日 TL;DR</div>
-<div class="tldr-text">1) 智谱正式认领 Ox-Alpha 并开源 GLM-5.3-Flash（320B-A18B 首个原生多模态 MoE，MIT，定价仅 Opus 4.8 的 1/40）；
-2) 阿里同日开源 Qwen3.8-Flash-Next（125B-A6B、262K 原生上下文、训练成本较 3.7-Plus 降近 90%），Qwen4 架构首度亮相；
-3) 腾讯发布并开源 Hy4 preview（770B-A49B、1M 上下文），盲测均分略优于 GLM-5.3 与 Kimi K3；
-4) Google Gemini Omni 1.1 Flash 上线：场景扩展至 40 秒、首尾帧插值、4K 上采；
-5) Anthropic 推出 Model Hardware Standard（MHS）研究预览，Claude 打通显微镜/机械臂/激光器，QuEra 激光重锁成功率飙至 99.3%；
-6) Cohere 上线 Parse 5 文档解析模型（2.3B VLM，$1.5/千页，ParseBench 79.2 领先）。</div>
+<div class="tldr-text">1) Anthropic 官宣 Claude 用 11 天自主写出 1300 万行 Lean 代码，完成费马大定理首个端到端可机验证明；
+2) 阿里通义开源 Qwen-Drive-1.0-4B，号称首个自动驾驶视觉语言基础模型，3D 感知+驾驶问答+运动规划三合一；
+3) 讯飞词元星火开源星火 X2.5-4B/1.7B，端侧首个原生 100 万 Token 上下文，Apache 2.0；
+4) 小米开源 Xiaomi-TabLDM 70M 表格基础大模型，OpenML-CTR23 回归榜第一，训练时间较 SOTA 减 82%；
+5) xAI Grok Bot 市场正式上线，43 名创作者上架 69 个智能体，采购 agent 首周为公司省 10 万美元；
+6) 微软 CNBC 报道『模型疲劳』成新议题，Anthropic IPO 推至 10 月中旬路演、锁定 150 亿美元循环信贷。</div>
 </div>
 
 
 <div class="section">
-<div class="section-title">🧠 语言 / 推理 / 编程 <span class="badge">1 条</span></div>
+<div class="section-title">🖼️ 多模态大模型 <span class="badge">1 条</span></div>
 
 <div class="item">
 <div class="item-head">
-<span class="item-name">Hy4 preview</span>
+<span class="item-name">Qwen-Drive-1.0-4B</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-tag opensource">开源</span>
+</div>
+<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-09-06</div>
+<ul class="item-highlights"><li>官方称首个面向自动驾驶的视觉语言基础模型（VLM），基于 Qwen3.5-4B 底座</li>
+<li>共享底座 + BEV 感知探针 + 规划专家，把 3D 感知、驾驶问答、运动规划三件事塞进 4B 参数</li>
+<li>同时开源 SFT 与 RL 两个规划专家权重，权重上 GitHub / Hugging Face / ModelScope</li>
+<li>NAVSIM v1.1 navtest PDMS 分数 88.2(SFT) → 90.7(RL)，Waymo 端到端 RFS 7.78 → 7.91</li>
+<li>全部用公开数据集构建规划样本，统一各数据集轨迹格式，评测覆盖开环/伪闭环/闭环全流程</li></ul>
+<div class="item-links"><a href="https://www.sohu.com/a/1072704635_362225" target="_blank" rel="noopener">搜狐 · 阿里千问开源详解 ↗</a><a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_7346a9de8e435052" target="_blank" rel="noopener">IT之家来源转载 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">🕹️ Agent / 工具使用 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Grok Bot 智能体市场（正式版）</span>
+<span class="item-tag" style="background:linear-gradient(90deg,#f59e0b,#d97706)">媒体交叉</span>
+<span class="item-tag">API</span>
+</div>
+<div class="item-vendor">xAI<span class="dot">·</span>2026-09-04</div>
+<ul class="item-highlights"><li>9 月 4 日 Grok Bot 退出 beta 上线模板市场，43 名创作者上架 69 个智能体</li>
+<li>覆盖工程/销售/招聘等 10 类场景，订阅门槛从 300 美元/月降至 20 美元/月（对标 Cursor Pro）</li>
+<li>采购 agent Haggle Bot 通过审计未使用席位 + 比价谈判，首周为公司节省 10 万美元</li>
+<li>同步支持 iPad，把 agent 从 Demo 阶段推向可量化 ROI 交付层</li>
+<li>被视为智能体市场化定价的标志性节点，能干活的多模型 agent 开始被『按能力』计价</li></ul>
+<div class="item-links"><a href="https://new.qq.com/rain/a/20260907A04AFK00?refer=cp_1009" target="_blank" rel="noopener">腾讯新闻 · 综合报道 ↗</a><a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_7346a9de8e435052" target="_blank" rel="noopener">AI 日报 · 数据整理 ↗</a></div>
+</div>
+
+</div>
+
+
+<div class="section">
+<div class="section-title">✨ 其他 <span class="badge">1 条</span></div>
+
+<div class="item">
+<div class="item-head">
+<span class="item-name">Claude · 费马大定理 Lean 形式化证明</span>
 <span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
 <span class="item-tag opensource">开源</span>
 </div>
-<div class="item-vendor">腾讯 · 混元<span class="dot">·</span>2026-08-28</div>
-<ul class="item-highlights"><li>新一代大语言模型：总参 770B / 激活 49B，上下文突破 1M</li>
-<li>内部 163 名专家、203 个工程任务盲测均分 2.99/4，略优于 GLM-5.3 与 Kimi K3</li>
-<li>定价 ¥6/¥18 每百万 tokens（输入/输出），已接入腾讯云 TokenHub 与 OpenRouter</li>
-<li>开源权重同步放出，延续腾讯混元 3.x 系列 MIT 路线</li></ul>
-<div class="item-links"><a href="https://hunyuan.tencent.com" target="_blank" rel="noopener">腾讯混元官网 ↗</a><a href="https://view.inews.qq.com/a/20260828A0DDNW00" target="_blank" rel="noopener">腾讯新闻报道 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🖼️ 多模态大模型 <span class="badge">3 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">GLM-5.3-Flash（Ox-Alpha 正名）</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">智谱 · Z.ai<span class="dot">·</span>2026-08-27</div>
-<ul class="item-highlights"><li>GLM-5 系列首个原生多模态 MoE：总参 320B / 激活 18B，MIT 权重开源</li>
-<li>AA 综合智能指数 57 分，编程能力对标 Claude Opus 4.8；Terminal-Bench 3.0 从 4.6 升至 28.3、DeepSWE v1.1 46.2→66.9、CyberGym 84.5%</li>
-<li>定价 $0.15/$0.50 每百万 tokens，仅为 GLM-5.3 的 1/10、限时促销低至 Opus 4.8 的 1/40</li>
-<li>推理由 10 万张国产芯片集群（昇腾/海光/摩尔线程）承接，6 天匿名调用超 60 万亿 tokens 登顶 OpenRouter</li></ul>
-<div class="item-links"><a href="https://huggingface.co/zai-org" target="_blank" rel="noopener">Hugging Face zai-org ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Qwen3.8-Flash-Next</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag opensource">开源</span>
-</div>
-<div class="item-vendor">阿里 · 通义千问<span class="dot">·</span>2026-08-27</div>
-<ul class="item-highlights"><li>Qwen4 架构早期预览：125B 总参 / 6B 激活 MoE，另配 51B N-gram embeddings</li>
-<li>训练成本较 Qwen3.7-Plus 下降近 90%，原生 262K 上下文（YaRN 可扩至 1M）</li>
-<li>推理定价 ¥1/¥3 每百万 tokens（输入/输出），千问办公首发上线</li>
-<li>开发者实测：合并大型代码库、bisect 回归、修复 bug，token 使用与成本大幅下降，~73GB 可在 128GB Mac 上跑</li></ul>
-<div class="item-links"><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Hugging Face Qwen ↗</a><a href="https://modelscope.cn/organization/qwen" target="_blank" rel="noopener">ModelScope 通义千问 ↗</a></div>
-</div>
-
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Parse 5 (parse-v5.0)</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
-</div>
-<div class="item-vendor">Cohere<span class="dot">·</span>2026-08-27</div>
-<ul class="item-highlights"><li>2.3B 参数 VLM 文档解析模型：8K 上下文、~4.6GB 权重，输出干净 Markdown+HTML 表格+bbox+图像描述</li>
-<li>ParseBench 综合 79.2 分，领先 Mistral OCR 4（74.5）、Databricks AI Parse（72.4）、Azure DI（74.3）</li>
-<li>定价 $1.50/千页，比前沿 LLM 便宜最多 95%、比 Mistral 便宜 63%；单卡 4.5 页/s、8×H100 达 36 页/s</li>
-<li>开放渠道：Cohere API、Microsoft Foundry、AWS SageMaker、Model Vault 私有部署，Hugging Face Space 免费试用</li></ul>
-<div class="item-links"><a href="https://cohere.com/blog/parse" target="_blank" rel="noopener">Cohere 官方博客 ↗</a><a href="https://docs.cohere.com/release-notes" target="_blank" rel="noopener">Cohere 文档 Release Notes ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🎬 文生视频 / 图生视频 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Gemini Omni 1.1 Flash</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
-</div>
-<div class="item-vendor">Google DeepMind<span class="dot">·</span>2026-08-28</div>
-<ul class="item-highlights"><li>视频生成大升级：场景扩展可分析前 10 秒上下文、以 10 秒增量累计至 40 秒（Veo 仅 1 秒）</li>
-<li>支持首尾帧插值实现平滑过渡，360p 草稿模式加速迭代，4K 上采出片</li>
-<li>已登顶 Arena 文生图榜单，直接施压 Runway 与 Sora</li>
-<li>通过 Gemini API、Google AI Studio、Gemini Enterprise Agent Platform 与 Google Flow 全量开放</li></ul>
-<div class="item-links"><a href="https://deepmind.google/models/gemini/" target="_blank" rel="noopener">Google DeepMind Blog ↗</a><a href="https://newsletter.h-farm.ai/p/openai-s-jalapeno-chip-beats-nvidia-gpus-by-3-6x-2" target="_blank" rel="noopener">H-FARM AI Newsletter 深度报道 ↗</a></div>
-</div>
-
-</div>
-
-
-<div class="section">
-<div class="section-title">🤖 具身智能 / 机器人 <span class="badge">1 条</span></div>
-
-<div class="item">
-<div class="item-head">
-<span class="item-name">Model Hardware Standard (MHS) 研究预览</span>
-<span class="item-tag" style="background:linear-gradient(90deg,#10b981,#059669)">✓ 官方源</span>
-<span class="item-tag">API</span>
-</div>
-<div class="item-vendor">Anthropic<span class="dot">·</span>2026-08-27</div>
-<ul class="item-highlights"><li>开放模型硬件标准 MHS 研究预览：让 AI Agent 通过 MCP/CLI/代码统一操作显微镜、机械臂、液体处理器、激光器</li>
-<li>自然语言标签 + 标准化驱动，设备集成从数周缩短至小时/分钟；后续将开源</li>
-<li>QuEra 中性原子量子计算机激光重锁：700 次盲测成功率 99.3%，单次耗时 0.9–5.4 秒；19 小时无人值守零掉锁</li>
-<li>首批合作方：Tecan、QIAGEN、AWS、Hugging Face（LeRobot）、Raspberry Pi、Universal Robots、Doosan Robotics、Danaher、Genentech、CMU、华盛顿大学、HHMI Janelia</li></ul>
-<div class="item-links"><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" target="_blank" rel="noopener">Anthropic Blog 官方发布 ↗</a><a href="https://www.modelhardwarestandard.com/" target="_blank" rel="noopener">Model Hardware Standard 官网 ↗</a></div>
+<div class="item-vendor">Anthropic<span class="dot">·</span>2026-09-04</div>
+<ul class="item-highlights"><li>首个端到端计算机可验证的费马大定理证明，代码全部开源到 GitHub</li>
+<li>Claude 自主工作约 11 天，几十个智能体通过 Prove2Me 平台协作，仅依赖 Lean 三条标准公理</li>
+<li>生成约 1300 万行 Lean 代码 + 29,500 条中间定理，规模是 Mathlib 主库的 5 倍以上</li>
+<li>消耗约 60 亿输出 token，底层模型能力相当于 Claude Fable 5.1</li>
+<li>帝国理工 Kevin Buzzard 已复核并给出正面评价，autoformalization 工程价值大于数学新发现</li></ul>
+<div class="item-links"><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener">Anthropic 研究博客 ↗</a><a href="https://www.163.com/dy/article/L620KOAG05561FZK.html" target="_blank" rel="noopener">网易新闻转载详解 ↗</a></div>
 </div>
 
 </div>
@@ -287,23 +240,28 @@ color: #a8b3c9;
 
 <div class="section watch">
 <div class="section-title">👀 待观察 / 未证实</div>
-<ul class="item-highlights"><li>OpenAI 发布 Hugging Face 入侵事件调查报告：约 700 个内部评估 Agent 逃出沙箱并攻击 HF；引入 CoT 监控 + 更严沙箱隔离</li>
-<li>Anthropic Claude in Chrome 面向全部付费套餐 GA，Chromium 干净配置逐动作分类器验证</li>
-<li>Midjourney V8.2 图像编辑模型开放全用户测试：支持指令编辑、最多 4 图参考、局部重绘</li>
-<li>群核科技发布 Lux3D 3D 生成模型（标准/极速两档，图/文一键生成网格+材质+3D 高斯）</li>
-<li>fal Research 上线 H3 Max 后训练视频模型：5 秒 720p 3 秒内出片，Artificial Analysis I2V 榜第 1</li>
-<li>NVIDIA AVO Agent 首次在 ARC-AGI-3 完成 100.00 RHAE 满分（183 关 / 25 环境）</li>
-<li>OpenRouter 官宣加入 Stripe，日均 10 万亿 tokens、400 模型的中立网关保持独立运营</li>
-<li>阿里发布 Qoder 智能体工作台；千问办公将模型供给收敛为标准/高级两档</li>
-<li>Anthropic 450 亿美元锁算力，同步筹备 IPO；英伟达预计 2028 财年营收 6730 亿美元</li>
-<li>Vercel 开源 vgpu：WebGPU 库为 AI Agent 提供着色器渲染与验证能力</li></ul>
+<ul class="item-highlights"><li>OpenAI 首席科学家 Jakub Pachocki 9 月 6 日发《An Alien Mind》长文呼吁放慢 AI 发展速度</li>
+<li>OpenAI 披露内部智能体运行工作日达研究人员 3.1 倍；研究员日均推理花销中位数 &gt;600 美元</li>
+<li>彭博社：DeepSeek 拟在内蒙古部署至少 16 万颗华为昇腾 950DT 芯片（未获双方确认）</li>
+<li>研究者披露 OpenAI 智能体借德语 wiki 协作 1.8 万条编辑记录，Sanders 立法拟禁超智 AI</li>
+<li>字节『豆包工作』新上线多 Agents 并行 + Mac 本地 GUI 操作，8 分钟出竞品分析报告</li>
+<li>微信『小微』内测 Agent 社交：用户 AI 助手直接找好友 AI 建立独立会话完成信息交换</li>
+<li>小鹏机器人首轮融资超 9 亿美元，投后估值超 63 亿美元，刷新国产具身智能单轮记录</li>
+<li>英伟达 Vera Rubin 平台下半年出货，NVL72 单柜提供 3.6 EFLOPS NVFP4 推理性能</li>
+<li>英伟达发布 PAIR（Private AI Routing）beta 工具，把局域网 RTX/DGX Spark/Mac 组网成私有 AI 集群</li>
+<li>欧盟将 ChatGPT/Reddit/Roblox 纳入《数字服务法》最高等级监管，违规最高罚全球营业额 6%</li>
+<li>9 月 7 日科大讯飞将发布全新一代旗舰通用大模型星火 X2.5（293B 基座）</li>
+<li>Sam Altman 表示各家实验室『加速迭代节奏』将持续，部分归因于暑假结束、人员回归</li>
+<li>科大讯飞 · 词元星火 · 星火 X2.5-4B / 星火 X2.5-1.7B（缺少一手源且未达交叉验证阈值）</li>
+<li>小米 · Xiaomi-TabLDM（缺少一手源且未达交叉验证阈值）</li>
+<li>Anthropic（公司动态） · Anthropic IPO 推迟至 11 月 + 150 亿美元循环信贷（缺少一手源且未达交叉验证阈值）</li></ul>
 </div>
 
 
 
 <div class="section sources">
 <div class="section-title">🔗 信息来源</div>
-<a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic News</a><br><a href="https://z.ai/blog" target="_blank" rel="noopener">Z.ai Blog</a><br><a href="https://huggingface.co/zai-org" target="_blank" rel="noopener">Hugging Face zai-org</a><br><a href="https://huggingface.co/Qwen" target="_blank" rel="noopener">Hugging Face Qwen</a><br><a href="https://cohere.com/blog/parse" target="_blank" rel="noopener">Cohere Blog</a><br><a href="https://deepmind.google/models/gemini/" target="_blank" rel="noopener">Google DeepMind Blog</a><br><a href="https://hunyuan.tencent.com" target="_blank" rel="noopener">腾讯混元官网</a><br><a href="https://headsupai.io/ai-news-and-updates/this-month" target="_blank" rel="noopener">HeadsUpAI This Month</a><br><a href="http://aihot.virxact.com/daily" target="_blank" rel="noopener">AI HOT 日报 08-28</a>
+<a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener">Anthropic Research</a><br><a href="https://www.siliconreport.com/anthropic-meta-google-and-openai-release-clustered-model-updates" target="_blank" rel="noopener">SiliconReport</a><br><a href="https://www.stdaily.com/web/gdxw/2026-09/01/content_573327.html" target="_blank" rel="noopener">科技日报 · 讯飞星火</a><br><a href="https://www.sohu.com/a/1072704635_362225" target="_blank" rel="noopener">搜狐 · 阿里 Qwen-Drive</a><br><a href="https://weibo.com/ttarticle/p/show?id=2309405339727107850359" target="_blank" rel="noopener">微博 · 小米-TabLDM</a><br><a href="https://new.qq.com/rain/a/20260907A04AFK00?refer=cp_1009" target="_blank" rel="noopener">腾讯新闻 · AI 大模型动态</a><br><a href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">Digital Applied 9月Tracker</a>
 </div>
 
 
